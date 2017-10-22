@@ -1,0 +1,33 @@
+{
+  "name": "@buttercup/iconographer",
+  "version": "0.0.0",
+  "description": "Icon fetching, caching and queuing library",
+  "main": "source/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buttercup/iconographer.git"
+  },
+  "keywords": [
+    "icon",
+    "store",
+    "download",
+    "image",
+    "entry",
+    "buttercup"
+  ],
+  "author": "Perry Mitchell <perry@perrymitchell.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buttercup/iconographer/issues"
+  },
+  "homepage": "https://github.com/buttercup/iconographer#readme",
+  "dependencies": {
+    "icojs": "~0.8.1",
+    "is-node": "~1.0.2",
+    "node-fetch": "~1.7.3",
+    "xml-js": "~1.5.1"
+  }
+}
