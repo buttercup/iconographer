@@ -1,44 +1,35 @@
 const nodeFetch = require("node-fetch");
 
-let __fetch,
-    __responseResolver;
+let __dataFetcher,
+    __textFetcher;
 
-function getFetchMethod() {
-    return __fetch || getGlobalFetch() || nodeFetch;
+function fetchData(url) {
+    return nodeFetch(url).then(res => res.buffer());
 }
 
-function getGlobalFetch() {
-    return typeof fetch !== "undefined" ?
-        fetch :
-        null;
+function fetchText(url) {
+    return nodeFetch(url).then(res => res.text());
 }
 
-function getResponseResolver() {
-    return __responseResolver || resolveFetchResponse;
+function getDataFetcher() {
+    return __dataFetcher || fetchData;
 }
 
-function resolveFetchResponse(response, responseType) {
-    switch (responseType) {
-        case "text":
-            return response.text();
-        case "buffer":
-            return response.arrayBuffer();
-        default:
-            throw new Error(`An unrecognised response type was requested: ${responseType}`);
-    }
+function getTextFetcher() {
+    return __textFetcher || fetchText;
 }
 
-function setFetchMethod(fn) {
-    __fetch = fn;
+function setDataFetcher(fn) {
+    __dataFetcher = fn;
 }
 
-function setResponseResolver(fn) {
-    __responseResolver = fn;
+function setTextFetcher(fn) {
+    __textFetcher = fn;
 }
 
 module.exports = {
-    getFetchMethod,
-    getResponseResolver,
-    setFetchMethod,
-    setResponseResolver
+    getDataFetcher,
+    getTextFetcher,
+    setDataFetcher,
+    setTextFetcher
 };

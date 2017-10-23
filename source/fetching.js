@@ -1,11 +1,9 @@
 const convert = require("xml-js");
-const { getFetchMethod, getResponseResolver } = require("./fetch.js");
+const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
 function fetchIconData(iconURL) {
-    const fetch = getFetchMethod();
-    const resolver = getResponseResolver();
-    return fetch(iconURL)
-        .then(res => resolver(res, "buffer"));
+    const fetch = getDataFetcher();
+    return fetch(iconURL);
 }
 
 function fetchLinkAttributes(linkHTML) {
@@ -16,7 +14,9 @@ function fetchLinkAttributes(linkHTML) {
 
 function getIcon(url) {
     return getIcons(url)
-        .then(icon => {
+        .then(icons => {
+            // select largest icon (first)
+            const [icon] = icons;
             if (icon) {
                 return fetchIconData(icon.url)
                     .then(data => Object.assign(icon, { data }));
@@ -62,9 +62,8 @@ function getRawLinks(url) {
 }
 
 function getPageSource(url) {
-    const fetch = getFetchMethod();
-    const resolver = getResponseResolver();
-    return fetch(url).then(res => resolver(res, "text"));
+    const fetch = getTextFetcher();
+    return fetch(url);
 }
 
 function processIconSize(size) {
