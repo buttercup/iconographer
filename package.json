@@ -4,6 +4,7 @@
   "description": "Icon fetching, caching and queuing library",
   "main": "source/index.js",
   "scripts": {
+    "docs": "jsdoc2md source/**/*.js > API.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,5 +32,8 @@
     "is-node": "~1.0.2",
     "node-fetch": "~1.7.3",
     "xml-js": "~1.5.1"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "~3.0.0"
   }
 }
