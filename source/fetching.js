@@ -7,7 +7,7 @@ function fetchIconData(iconURL) {
 }
 
 function fetchLinkAttributes(linkHTML) {
-    const sanitisedHTML = `${linkHTML}</link>`; // link's are crap
+    const sanitisedHTML = `${linkHTML}</link>`; // links are crap
     const struct = convert.xml2js(sanitisedHTML, {compact: true, ignoreText: true});
     return struct && struct.link && struct.link._attributes || {};
 }

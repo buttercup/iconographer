@@ -1,9 +1,13 @@
-const { getIcon } = require("./fetching.js");
+/**
+ * Iconographer library
+ * @module Iconographer
+ */
 
-getIcon("https://medium.com/react-native-development/fixing-problems-in-react-native-caused-by-new-permission-model-on-android-1e547f754b8")
-    .then(res => {
-        console.log("RES", res);
-    })
-    .catch(err => {
-        console.error(err);
-    });
+const Iconographer = require("./Iconographer.js");
+const { setDataFetcher, setTextFetcher } = require("./fetch.js");
+
+module.exports = {
+    Iconographer,
+    setDataFetcher,
+    setTextFetcher
+};

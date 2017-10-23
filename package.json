@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/buttercup/iconographer#readme",
   "dependencies": {
+    "@buttercup/channel-queue": "~0.2.2",
+    "eventemitter3": "~2.0.3",
     "icojs": "~0.8.1",
     "is-node": "~1.0.2",
     "node-fetch": "~1.7.3",
