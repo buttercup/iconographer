@@ -12,6 +12,37 @@
 <dt><a href="#Iconographer">Iconographer</a> ⇐ <code>EventEmitter</code></dt>
 <dd><p>Iconographer class for processing icons and managing storage</p>
 </dd>
+<dt><a href="#MemoryStorageInterface">MemoryStorageInterface</a> ⇐ <code><a href="#StorageInterface">StorageInterface</a></code></dt>
+<dd><p>Icon storage interface for in-memory storage of icons</p>
+</dd>
+<dt><a href="#StorageInterface">StorageInterface</a></dt>
+<dd><p>Storage interface for storing icons</p>
+</dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#fetchData">fetchData(url)</a> ⇒ <code>Promise.&lt;Buffer&gt;</code></dt>
+<dd><p>Fetch data from a URL and return a buffer</p>
+</dd>
+<dt><a href="#fetchText">fetchText(url)</a> ⇒ <code>Promise.&lt;String&gt;</code></dt>
+<dd><p>Fetch text from a URL</p>
+</dd>
+<dt><a href="#setDataFetcher">setDataFetcher(fn)</a></dt>
+<dd><p>Set the data fetching function</p>
+</dd>
+<dt><a href="#setTextFetcher">setTextFetcher(fn)</a></dt>
+<dd><p>Set the text fetching function</p>
+</dd>
+</dl>
+
+## Typedefs
+
+<dl>
+<dt><a href="#Entry">Entry</a> : <code>Object</code></dt>
+<dd><p>Buttercup Entry</p>
+</dd>
 </dl>
 
 <a name="module_Iconographer"></a>
@@ -29,7 +60,7 @@ Iconographer class for processing icons and managing storage
 
 * [Iconographer](#Iconographer) ⇐ <code>EventEmitter</code>
     * [.queue](#Iconographer+queue) : <code>ChannelQueue</code>
-    * [.storageInterface](#Iconographer+storageInterface) : <code>StorageInterface</code>
+    * [.storageInterface](#Iconographer+storageInterface) : [<code>StorageInterface</code>](#StorageInterface)
     * [.emitAsync(key, ...args)](#Iconographer+emitAsync)
     * [.getIconForEntry(buttercupEntry)](#Iconographer+getIconForEntry) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
     * [.getIconForURL(pageURL)](#Iconographer+getIconForURL) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
@@ -49,7 +80,7 @@ Get the channel queue instance
 **Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
 <a name="Iconographer+storageInterface"></a>
 
-### iconographer.storageInterface : <code>StorageInterface</code>
+### iconographer.storageInterface : [<code>StorageInterface</code>](#StorageInterface)
 Get the storage interface instance
 
 **Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
@@ -78,7 +109,7 @@ Requires that the icon was fetched beforehand
 
 | Param | Type | Description |
 | --- | --- | --- |
-| buttercupEntry | <code>Entry</code> | The Buttercup entry instance |
+| buttercupEntry | [<code>Entry</code>](#Entry) | The Buttercup entry instance |
 
 <a name="Iconographer+getIconForURL"></a>
 
@@ -106,7 +137,7 @@ Process the fetching of an icon for a Buttercup entry
 
 | Param | Type | Description |
 | --- | --- | --- |
-| buttercupEntry | <code>Entry</code> | The Buttercup entry instance |
+| buttercupEntry | [<code>Entry</code>](#Entry) | The Buttercup entry instance |
 
 <a name="Iconographer+processIconForURL"></a>
 
@@ -133,7 +164,7 @@ Remove an icon for a Buttercup entry
 
 | Param | Type | Description |
 | --- | --- | --- |
-| buttercupEntry | <code>Entry</code> | The Buttercup entry instance |
+| buttercupEntry | [<code>Entry</code>](#Entry) | The Buttercup entry instance |
 
 <a name="Iconographer+removeIconForURL"></a>
 
@@ -169,3 +200,237 @@ Icon removed event
 Fired with the associated page URL
 
 **Kind**: event emitted by [<code>Iconographer</code>](#Iconographer)  
+<a name="MemoryStorageInterface"></a>
+
+## MemoryStorageInterface ⇐ [<code>StorageInterface</code>](#StorageInterface)
+Icon storage interface for in-memory storage of icons
+
+**Kind**: global class  
+**Extends**: [<code>StorageInterface</code>](#StorageInterface)  
+**See**: StorageInterface  
+
+* [MemoryStorageInterface](#MemoryStorageInterface) ⇐ [<code>StorageInterface</code>](#StorageInterface)
+    * [.decodeIconFromStorage(data)](#StorageInterface+decodeIconFromStorage) ⇒ <code>Promise.&lt;Buffer&gt;</code>
+    * [.deleteIcon(iconKey)](#StorageInterface+deleteIcon) ⇒ <code>Promise</code>
+    * [.encodeIconForStorage(data)](#StorageInterface+encodeIconForStorage) ⇒ <code>Promise.&lt;\*&gt;</code>
+    * [.getIconKeys()](#StorageInterface+getIconKeys) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
+    * [.retrieveIcon(iconKey)](#StorageInterface+retrieveIcon) ⇒ <code>Promise.&lt;\*&gt;</code>
+    * [.storeIcon(iconKey, iconData)](#StorageInterface+storeIcon) ⇒ <code>Promise</code>
+
+<a name="StorageInterface+decodeIconFromStorage"></a>
+
+### memoryStorageInterface.decodeIconFromStorage(data) ⇒ <code>Promise.&lt;Buffer&gt;</code>
+Decode icon data that was pulled from storage
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Returns**: <code>Promise.&lt;Buffer&gt;</code> - A promise that resolves with a buffer  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>\*</code> | The encoded data as it was stored |
+
+<a name="StorageInterface+deleteIcon"></a>
+
+### memoryStorageInterface.deleteIcon(iconKey) ⇒ <code>Promise</code>
+Delete an icon in storage
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Overrides**: [<code>deleteIcon</code>](#StorageInterface+deleteIcon)  
+**Returns**: <code>Promise</code> - A promise that resolves once deletion has completed  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+
+<a name="StorageInterface+encodeIconForStorage"></a>
+
+### memoryStorageInterface.encodeIconForStorage(data) ⇒ <code>Promise.&lt;\*&gt;</code>
+Encode icon data for storage
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Returns**: <code>Promise.&lt;\*&gt;</code> - A promise that resolves with the encoded data ready
+ for storage  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Buffer</code> | The data buffer for encoding |
+
+<a name="StorageInterface+getIconKeys"></a>
+
+### memoryStorageInterface.getIconKeys() ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
+Fetch all icon keys
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Overrides**: [<code>getIconKeys</code>](#StorageInterface+getIconKeys)  
+**Returns**: <code>Promise.&lt;Array.&lt;String&gt;&gt;</code> - A promise that resolves with an array of icon keys  
+<a name="StorageInterface+retrieveIcon"></a>
+
+### memoryStorageInterface.retrieveIcon(iconKey) ⇒ <code>Promise.&lt;\*&gt;</code>
+Retrieve the raw data for an icon
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Overrides**: [<code>retrieveIcon</code>](#StorageInterface+retrieveIcon)  
+**Returns**: <code>Promise.&lt;\*&gt;</code> - A promise that resolves with raw icon data  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+
+<a name="StorageInterface+storeIcon"></a>
+
+### memoryStorageInterface.storeIcon(iconKey, iconData) ⇒ <code>Promise</code>
+Store encoded icon data
+
+**Kind**: instance method of [<code>MemoryStorageInterface</code>](#MemoryStorageInterface)  
+**Overrides**: [<code>storeIcon</code>](#StorageInterface+storeIcon)  
+**Returns**: <code>Promise</code> - A promise that resolves once storage has been completed  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+| iconData | <code>\*</code> | The encoded icon data |
+
+<a name="StorageInterface"></a>
+
+## StorageInterface
+Storage interface for storing icons
+
+**Kind**: global class  
+
+* [StorageInterface](#StorageInterface)
+    * [.decodeIconFromStorage(data)](#StorageInterface+decodeIconFromStorage) ⇒ <code>Promise.&lt;Buffer&gt;</code>
+    * [.deleteIcon(iconKey)](#StorageInterface+deleteIcon) ⇒ <code>Promise</code>
+    * [.encodeIconForStorage(data)](#StorageInterface+encodeIconForStorage) ⇒ <code>Promise.&lt;\*&gt;</code>
+    * [.getIconKeys()](#StorageInterface+getIconKeys) ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
+    * [.retrieveIcon(iconKey)](#StorageInterface+retrieveIcon) ⇒ <code>Promise.&lt;\*&gt;</code>
+    * [.storeIcon(iconKey, iconData)](#StorageInterface+storeIcon) ⇒ <code>Promise</code>
+
+<a name="StorageInterface+decodeIconFromStorage"></a>
+
+### storageInterface.decodeIconFromStorage(data) ⇒ <code>Promise.&lt;Buffer&gt;</code>
+Decode icon data that was pulled from storage
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise.&lt;Buffer&gt;</code> - A promise that resolves with a buffer  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>\*</code> | The encoded data as it was stored |
+
+<a name="StorageInterface+deleteIcon"></a>
+
+### storageInterface.deleteIcon(iconKey) ⇒ <code>Promise</code>
+Delete an icon in storage
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise</code> - A promise that resolves once deletion has completed  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+
+<a name="StorageInterface+encodeIconForStorage"></a>
+
+### storageInterface.encodeIconForStorage(data) ⇒ <code>Promise.&lt;\*&gt;</code>
+Encode icon data for storage
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise.&lt;\*&gt;</code> - A promise that resolves with the encoded data ready
+ for storage  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Buffer</code> | The data buffer for encoding |
+
+<a name="StorageInterface+getIconKeys"></a>
+
+### storageInterface.getIconKeys() ⇒ <code>Promise.&lt;Array.&lt;String&gt;&gt;</code>
+Fetch all icon keys
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise.&lt;Array.&lt;String&gt;&gt;</code> - A promise that resolves with an array of icon keys  
+<a name="StorageInterface+retrieveIcon"></a>
+
+### storageInterface.retrieveIcon(iconKey) ⇒ <code>Promise.&lt;\*&gt;</code>
+Retrieve the raw data for an icon
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise.&lt;\*&gt;</code> - A promise that resolves with raw icon data  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+
+<a name="StorageInterface+storeIcon"></a>
+
+### storageInterface.storeIcon(iconKey, iconData) ⇒ <code>Promise</code>
+Store encoded icon data
+
+**Kind**: instance method of [<code>StorageInterface</code>](#StorageInterface)  
+**Returns**: <code>Promise</code> - A promise that resolves once storage has been completed  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| iconKey | <code>String</code> | The icon key |
+| iconData | <code>\*</code> | The encoded icon data |
+
+<a name="fetchData"></a>
+
+## fetchData(url) ⇒ <code>Promise.&lt;Buffer&gt;</code>
+Fetch data from a URL and return a buffer
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;Buffer&gt;</code> - A promise that resolves with the data in a buffer  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | The URL to fetch |
+
+<a name="fetchText"></a>
+
+## fetchText(url) ⇒ <code>Promise.&lt;String&gt;</code>
+Fetch text from a URL
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;String&gt;</code> - A promise that resolves with the fetched text  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | The URL to fetch |
+
+<a name="setDataFetcher"></a>
+
+## setDataFetcher(fn)
+Set the data fetching function
+
+**Kind**: global function  
+**See**: fetchData  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fn | <code>function</code> \| <code>undefined</code> | The function to use or undefined to reset |
+
+<a name="setTextFetcher"></a>
+
+## setTextFetcher(fn)
+Set the text fetching function
+
+**Kind**: global function  
+**See**: fetchText  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fn | <code>function</code> \| <code>undefined</code> | The function to use or undefined to reset |
+
+<a name="Entry"></a>
+
+## Entry : <code>Object</code>
+Buttercup Entry
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| getMeta | <code>function</code> | Fetch meta from the entry |
+

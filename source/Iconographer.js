@@ -6,6 +6,12 @@ const { getEntryURL } = require("./entry.js");
 const { getIcon } = require("./fetching.js");
 
 /**
+ * Buttercup Entry
+ * @typedef {Object} Entry
+ * @property {Function} getMeta - Fetch meta from the entry
+ */
+
+/**
  * Iconographer class for processing icons and managing storage
  * @augments EventEmitter
  */

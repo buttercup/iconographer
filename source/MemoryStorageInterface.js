@@ -1,5 +1,10 @@
 const StorageInterface = require("./StorageInterface.js");
 
+/**
+ * Icon storage interface for in-memory storage of icons
+ * @see StorageInterface
+ * @augments StorageInterface
+ */
 class MemoryStorageInterface extends StorageInterface {
 
     constructor() {
