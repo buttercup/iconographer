@@ -36,11 +36,10 @@ class Iconographer extends EventEmitter {
      * @type {StorageInterface}
      */
     get storageInterface() {
-        const si = this._storageInterface;
-        if (!si) {
-            si = new MemoryStorageInterface();
+        if (!this._storageInterface) {
+            this._storageInterface = new MemoryStorageInterface();
         }
-        return si;
+        return this._storageInterface;
     }
 
     set storageInterface(si) {
