@@ -16,7 +16,6 @@ const { getIcon } = require("./fetching.js");
  * @augments EventEmitter
  */
 class Iconographer extends EventEmitter {
-
     constructor() {
         super();
         this._storageInterface = null;
@@ -70,9 +69,7 @@ class Iconographer extends EventEmitter {
      */
     getIconForEntry(buttercupEntry) {
         const url = getEntryURL(buttercupEntry);
-        return url ?
-            this.getIconForURL(url) :
-            Promise.resolve(null);
+        return url ? this.getIconForURL(url) : Promise.resolve(null);
     }
 
     /**
@@ -85,14 +82,12 @@ class Iconographer extends EventEmitter {
      */
     getIconForURL(pageURL) {
         return this.queue.channel("icon:store").enqueue(() => {
-            return this.storageInterface
-                .retrieveIcon(pageURL)
-                .then(data => {
-                    if (!data) {
-                        return null;
-                    }
-                    return this.storageInterface.decodeIconFromStorage(data);
-                });
+            return this.storageInterface.retrieveIcon(pageURL).then(data => {
+                if (!data) {
+                    return null;
+                }
+                return this.storageInterface.decodeIconFromStorage(data);
+            });
         });
     }
 
@@ -104,9 +99,7 @@ class Iconographer extends EventEmitter {
      */
     processIconForEntry(buttercupEntry) {
         const url = getEntryURL(buttercupEntry);
-        return url ?
-            this.processIconForURL(url) :
-            Promise.resolve(false);
+        return url ? this.processIconForURL(url) : Promise.resolve(false);
     }
 
     /**
@@ -120,12 +113,12 @@ class Iconographer extends EventEmitter {
     processIconForURL(pageURL) {
         const downloadChannel = this.queue.channel("icon:download");
         const storeChannel = this.queue.channel("icon:store");
-        return downloadChannel
-            .enqueue(() => getIcon(pageURL))
-            .then(iconResult => storeChannel.enqueue(() => {
+        return downloadChannel.enqueue(() => getIcon(pageURL)).then(iconResult =>
+            storeChannel.enqueue(() => {
                 if (iconResult !== null) {
                     const { data } = iconResult;
-                    return this.storageInterface.encodeIconForStorage(data)
+                    return this.storageInterface
+                        .encodeIconForStorage(data)
                         .then(encodedData => this.storageInterface.storeIcon(pageURL, encodedData))
                         .then(() => {
                             /**
@@ -144,7 +137,8 @@ class Iconographer extends EventEmitter {
                  */
                 this.emitAsync("iconFetchFailed", pageURL);
                 return false;
-            }));
+            })
+        );
     }
 
     /**
@@ -155,9 +149,7 @@ class Iconographer extends EventEmitter {
      */
     removeIconForEntry(buttercupEntry) {
         const url = getEntryURL(buttercupEntry);
-        return url ?
-            this.removeIconForURL(url) :
-            Promise.resolve(false);
+        return url ? this.removeIconForURL(url) : Promise.resolve(false);
     }
 
     /**
@@ -167,21 +159,18 @@ class Iconographer extends EventEmitter {
      * @fires Iconographer#iconRemoved
      */
     removeIconForURL(pageURL) {
-        return this.queue.channel("icon:store")
-            .enqueue(() => this.storageInterface
-                .deleteIcon(pageURL)
-                .then(() => {
-                    /**
+        return this.queue.channel("icon:store").enqueue(() =>
+            this.storageInterface.deleteIcon(pageURL).then(() => {
+                /**
                      * Icon removed event
                      * Fired with the associated page URL
                      * @event Iconographer#iconRemoved
                      */
-                    this.emit("iconRemoved", pageURL);
-                    return true;
-                })
-            );
+                this.emit("iconRemoved", pageURL);
+                return true;
+            })
+        );
     }
-
 }
 
 module.exports = Iconographer;

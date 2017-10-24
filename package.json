@@ -5,8 +5,17 @@
   "main": "source/index.js",
   "scripts": {
     "docs": "jsdoc2md source/**/*.js > API.md",
-    "test": "npm run test:unit",
+    "format": "prettier --write '{source,test}/**/*.js'",
+    "precommit": "lint-staged",
+    "test": "run-s test:unit test:format",
+    "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'"
+  },
+  "lint-staged": {
+    "{source,test}/**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -36,8 +45,13 @@
   },
   "devDependencies": {
     "chai": "~4.1.2",
+    "husky": "~0.14.3",
     "jsdoc-to-markdown": "~3.0.0",
+    "lint-staged": "~4.3.0",
     "mocha": "~4.0.1",
+    "npm-run-all": "~4.1.1",
+    "prettier": "~1.7.4",
+    "prettier-check": "~2.0.0",
     "sinon": "~4.0.1",
     "sleep-promise": "~2.0.0"
   }

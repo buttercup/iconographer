@@ -2,7 +2,6 @@
  * Storage interface for storing icons
  */
 class StorageInterface {
-
     /**
      * Decode icon data that was pulled from storage
      * @param {*} data The encoded data as it was stored
@@ -57,7 +56,6 @@ class StorageInterface {
     storeIcon(iconKey, iconData) {
         throw new Error(`Cannot store icon: storeIcon not implemented`);
     }
-
 }
 
 module.exports = StorageInterface;

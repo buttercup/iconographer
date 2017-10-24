@@ -6,7 +6,6 @@ const StorageInterface = require("../source/StorageInterface.js");
 const TEST_URL = "https://buttercup.pw";
 
 describe("Iconographer", function() {
-
     const fakeButtercupEntry = {
         getMeta: key => {
             if (/url/i.test(key)) {
@@ -70,5 +69,4 @@ describe("Iconographer", function() {
             expect(this.ic.getIconForURL.calledWithExactly(TEST_URL)).to.be.true;
         });
     });
-
 });

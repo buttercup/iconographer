@@ -6,7 +6,6 @@ const StorageInterface = require("./StorageInterface.js");
  * @augments StorageInterface
  */
 class MemoryStorageInterface extends StorageInterface {
-
     constructor() {
         super();
         this._icons = {};
@@ -33,7 +32,6 @@ class MemoryStorageInterface extends StorageInterface {
         this.icons[iconKey] = iconData;
         return Promise.resolve();
     }
-
 }
 
 module.exports = MemoryStorageInterface;

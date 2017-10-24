@@ -6,12 +6,15 @@ const ICO_FILE = /\.ico$/i;
 function convertFetchedIconToImage(fetchedIconInfo) {
     const { url, data } = fetchedIconInfo;
     if (ICO_FILE.test(url)) {
-        return icoJS.parse(data, "image/png")
+        return icoJS
+            .parse(data, "image/png")
             .then(selectLargestIco)
-            .then(image => Object.assign({}, fetchedIconInfo, {
-                data: image.buffer,
-                size: image.width
-            }));
+            .then(image =>
+                Object.assign({}, fetchedIconInfo, {
+                    data: image.buffer,
+                    size: image.width
+                })
+            );
     }
     return fetchedIconInfo;
 }

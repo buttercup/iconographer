@@ -1,7 +1,6 @@
 const nodeFetch = require("node-fetch");
 
-let __dataFetcher,
-    __textFetcher;
+let __dataFetcher, __textFetcher;
 
 /**
  * Fetch data from a URL and return a buffer
