@@ -35,6 +35,9 @@
 <dt><a href="#setTextFetcher">setTextFetcher(fn)</a></dt>
 <dd><p>Set the text fetching function</p>
 </dd>
+<dt><a href="#getIconForURL">getIconForURL(url)</a> ⇒ <code>Promise.&lt;(Buffer|null)&gt;</code></dt>
+<dd><p>Get the icon data from a page URL</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -421,6 +424,19 @@ Set the text fetching function
 | Param | Type | Description |
 | --- | --- | --- |
 | fn | <code>function</code> \| <code>undefined</code> | The function to use or undefined to reset |
+
+<a name="getIconForURL"></a>
+
+## getIconForURL(url) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
+Get the icon data from a page URL
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;(Buffer\|null)&gt;</code> - A promise that resolves with a buffer containing the icon or
+ null if no icon was found  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | The target page URL |
 
 <a name="Entry"></a>
 

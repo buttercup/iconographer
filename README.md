@@ -16,6 +16,24 @@ npm install @buttercup/iconographer --save
 
 ## Usage
 
+There's 2 ways to use this library to fetch icons: The simplistic method, which is suitable for grabbing a couple of icons manually, and the managed method, which requires interfacing with the `Iconographer` class and its events:
+
+### Simple icon fetching
+
+You can grab icons from a URL by running the following:
+
+```javascript
+const { getIconForURL } = require("@buttercup/iconographer");
+
+getIconForURL("https://buttercup.pw").then(iconData => {
+    // iconData is either a buffer or null
+});
+```
+
+Icons fetched using `getIconForURL` are cached using a private `Iconographer` instance and an in-memory data store, so be careful not to over-use it.
+
+### Managed (batch) icon fetching
+
 Instantiate the `Iconographer` class to get started:
 
 ```javascript
