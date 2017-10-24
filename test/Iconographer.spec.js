@@ -69,4 +69,46 @@ describe("Iconographer", function() {
             expect(this.ic.getIconForURL.calledWithExactly(TEST_URL)).to.be.true;
         });
     });
+
+    describe("getIconForURL", function() {
+        beforeEach(function() {
+            this.data = Buffer.from([1, 2, 3]);
+            this.ic = new Iconographer();
+            sinon.stub(this.ic.storageInterface, "retrieveIcon").returns(Promise.resolve(this.data));
+            sinon.stub(this.ic.storageInterface, "decodeIconFromStorage").returnsArg(0);
+        });
+
+        it("returns the stored data", function() {
+            return expect(this.ic.getIconForURL(TEST_URL)).to.eventually.equal(this.data);
+        });
+
+        it("requests the icon from the storage interface", function() {
+            return this.ic.getIconForURL(TEST_URL).then(() => {
+                expect(this.ic.storageInterface.retrieveIcon.calledOnce).to.be.true;
+                expect(this.ic.storageInterface.retrieveIcon.calledWithExactly(TEST_URL)).to.be.true;
+            });
+        });
+
+        it("decodes the data using the storage interface", function() {
+            return this.ic.getIconForURL(TEST_URL).then(() => {
+                expect(this.ic.storageInterface.decodeIconFromStorage.calledOnce).to.be.true;
+                expect(this.ic.storageInterface.decodeIconFromStorage.calledWithExactly(this.data)).to.be.true;
+            });
+        });
+    });
+
+    describe("processIconForEntry", function() {
+        beforeEach(function() {
+            this.ic = new Iconographer();
+            sinon.stub(this.ic, "processIconForURL");
+        });
+
+        it("calls processIconForURL with the correct URL", function() {
+            this.ic.processIconForEntry(fakeButtercupEntry);
+            expect(this.ic.processIconForURL.calledOnce).to.be.true;
+            expect(this.ic.processIconForURL.calledWithExactly(TEST_URL)).to.be.true;
+        });
+    });
+
+    describe("processIconForURL", function() {});
 });

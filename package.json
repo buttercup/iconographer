@@ -9,7 +9,8 @@
     "precommit": "lint-staged",
     "test": "run-s test:unit test:format",
     "test:format": "prettier-check '{source,test}/**/*.js'",
-    "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'"
+    "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'",
+    "test:unit:watch": "npm run test:unit -- --watch"
   },
   "lint-staged": {
     "{source,test}/**/*.js": [
@@ -45,6 +46,7 @@
   },
   "devDependencies": {
     "chai": "~4.1.2",
+    "chai-as-promised": "~7.1.1",
     "husky": "~0.14.3",
     "jsdoc-to-markdown": "~3.0.0",
     "lint-staged": "~4.3.0",
