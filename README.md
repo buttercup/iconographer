@@ -2,6 +2,8 @@
 
 > Icon fetching, caching and queuing library
 
+[![Build Status](https://travis-ci.org/buttercup/iconographer.svg?branch=master)](https://travis-ci.org/buttercup/iconographer)
+
 ## About
 
 This library provides icon fetching functionality originally intended for use with the [**Buttercup** suite of products](https://github.com/buttercup). It allows the fetching of icons (primarily _favicons_) from URLs stored within user archives.
