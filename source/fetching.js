@@ -1,4 +1,5 @@
 const convert = require("xml-js");
+const { resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
 function fetchIconData(iconURL) {
@@ -7,7 +8,7 @@ function fetchIconData(iconURL) {
 }
 
 function fetchLinkAttributes(linkHTML) {
-    const sanitisedHTML = `${linkHTML}</link>`; // links are crap
+    const sanitisedHTML = linkHTML.trim().replace(/\/?>$/, "></link>");
     const struct = convert.xml2js(sanitisedHTML, { compact: true, ignoreText: true });
     return (struct && struct.link && struct.link._attributes) || {};
 }
@@ -25,12 +26,10 @@ function getIcon(url) {
 
 function getIcons(url) {
     return getRawLinks(url).then(links => {
-        const icons = links
-            .filter(link => /(apple-touch-icon|^icon$)/.test(link.rel || "") && /^https?:\/\//i.test(link.href))
-            .map(link => ({
-                url: link.href,
-                size: processIconSize(link.sizes)
-            }));
+        const icons = links.filter(link => /(apple-touch-icon|^icon$)/.test(link.rel || "")).map(link => ({
+            url: processIconHref(url, link.href),
+            size: processIconSize(link.sizes)
+        }));
         return icons.sort((iconA, iconB) => {
             if (iconA.size > iconB.size) {
                 return -1;
@@ -43,7 +42,7 @@ function getIcons(url) {
 }
 
 function getRawLinks(url) {
-    const linkRexp = /<link("([^"]|\\")+"|[\sa-z0-9=:-]+)+>/gi;
+    const linkRexp = /<link("([^"]|\\")+"|[\sa-z0-9=/:-]+)+>/gi;
     return getPageSource(url).then(source => {
         const linkEls = [];
         let match;
@@ -59,6 +58,13 @@ function getPageSource(url) {
     return fetch(url);
 }
 
+function processIconHref(page, url) {
+    if (/^https?:\/\//i.test(url)) {
+        return resolveURL(page, url);
+    }
+    return url;
+}
+
 function processIconSize(size) {
     const targetSize = size || "";
     const [width] = targetSize.split(/x/i);
@@ -66,5 +72,8 @@ function processIconSize(size) {
 }
 
 module.exports = {
-    getIcon
+    fetchIconData,
+    fetchLinkAttributes,
+    getIcon,
+    getIcons
 };

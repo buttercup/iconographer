@@ -109,6 +109,4 @@ describe("Iconographer", function() {
             expect(this.ic.processIconForURL.calledWithExactly(TEST_URL)).to.be.true;
         });
     });
-
-    describe("processIconForURL", function() {});
 });
