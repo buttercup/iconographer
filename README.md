@@ -34,6 +34,8 @@ getIconForURL("https://buttercup.pw").then(iconData => {
 
 Icons fetched using `getIconForURL` are cached using a private `Iconographer` instance and an in-memory data store, so be careful not to over-use it.
 
+It is also possible, when using Iconographer in a **controlled** environment (where no other imports of Iconographer exist), to set the `Iconographer` instance within the library. This would be useful when specifying your own storage platform. Checkout the [`hybrid.js`](https://github.com/buttercup/iconographer/blob/master/example/hybrid.js) example for how to use this method.
+
 ### Managed (batch) icon fetching
 
 Instantiate the `Iconographer` class to get started:
