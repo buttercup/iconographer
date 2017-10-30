@@ -35,6 +35,9 @@
 <dt><a href="#setTextFetcher">setTextFetcher(fn)</a></dt>
 <dd><p>Set the text fetching function</p>
 </dd>
+<dt><a href="#getIcon">getIcon(url)</a> ⇒ <code>Promise.&lt;(ProcessedIcon|null)&gt;</code></dt>
+<dd><p>Get an icon from a page</p>
+</dd>
 <dt><a href="#getIconForURL">getIconForURL(url)</a> ⇒ <code>Promise.&lt;(Buffer|null)&gt;</code></dt>
 <dd><p>Get the icon data from a page URL</p>
 </dd>
@@ -43,6 +46,9 @@
 ## Typedefs
 
 <dl>
+<dt><a href="#ProcessedIcon">ProcessedIcon</a> : <code>Object</code></dt>
+<dd><p>Processed icon information</p>
+</dd>
 <dt><a href="#Entry">Entry</a> : <code>Object</code></dt>
 <dd><p>Buttercup Entry</p>
 </dd>
@@ -62,9 +68,12 @@ Iconographer class for processing icons and managing storage
 **Extends**: <code>EventEmitter</code>  
 
 * [Iconographer](#Iconographer) ⇐ <code>EventEmitter</code>
+    * [.downloadChannel](#Iconographer+downloadChannel) : <code>Channel</code>
     * [.queue](#Iconographer+queue) : <code>ChannelQueue</code>
     * [.storageInterface](#Iconographer+storageInterface) : [<code>StorageInterface</code>](#StorageInterface)
+    * [.storeChannel](#Iconographer+storeChannel) : <code>Channel</code>
     * [.emitAsync(key, ...args)](#Iconographer+emitAsync)
+    * [.fetchIconDataForPage(pageURL)](#Iconographer+fetchIconDataForPage) ⇒ <code>Promise.&lt;(BuffProcessedIconer\|null)&gt;</code>
     * [.getIconForEntry(buttercupEntry)](#Iconographer+getIconForEntry) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
     * [.getIconForURL(pageURL)](#Iconographer+getIconForURL) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
     * [.processIconForEntry(buttercupEntry)](#Iconographer+processIconForEntry) ⇒ <code>Promise.&lt;Boolean&gt;</code>
@@ -75,6 +84,12 @@ Iconographer class for processing icons and managing storage
     * ["iconFetchFailed"](#Iconographer+event_iconFetchFailed)
     * ["iconRemoved"](#Iconographer+event_iconRemoved)
 
+<a name="Iconographer+downloadChannel"></a>
+
+### iconographer.downloadChannel : <code>Channel</code>
+The download channel, for queuing downloads
+
+**Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
 <a name="Iconographer+queue"></a>
 
 ### iconographer.queue : <code>ChannelQueue</code>
@@ -85,6 +100,12 @@ Get the channel queue instance
 
 ### iconographer.storageInterface : [<code>StorageInterface</code>](#StorageInterface)
 Get the storage interface instance
+
+**Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
+<a name="Iconographer+storeChannel"></a>
+
+### iconographer.storeChannel : <code>Channel</code>
+The store channel, for storing data
 
 **Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
 <a name="Iconographer+emitAsync"></a>
@@ -98,6 +119,19 @@ Emit an event asynchronously
 | --- | --- | --- |
 | key | <code>String</code> | The event key |
 | ...args | <code>\*</code> | The event arguments |
+
+<a name="Iconographer+fetchIconDataForPage"></a>
+
+### iconographer.fetchIconDataForPage(pageURL) ⇒ <code>Promise.&lt;(BuffProcessedIconer\|null)&gt;</code>
+Download icon data from a page
+
+**Kind**: instance method of [<code>Iconographer</code>](#Iconographer)  
+**Returns**: <code>Promise.&lt;(BuffProcessedIconer\|null)&gt;</code> - A promise that resolves with either icon
+ info, or null  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| pageURL | <code>String</code> | The page URL |
 
 <a name="Iconographer+getIconForEntry"></a>
 
@@ -425,6 +459,18 @@ Set the text fetching function
 | --- | --- | --- |
 | fn | <code>function</code> \| <code>undefined</code> | The function to use or undefined to reset |
 
+<a name="getIcon"></a>
+
+## getIcon(url) ⇒ <code>Promise.&lt;(ProcessedIcon\|null)&gt;</code>
+Get an icon from a page
+
+**Kind**: global function  
+**Returns**: <code>Promise.&lt;(ProcessedIcon\|null)&gt;</code> - A promise that resolves with icon information, or null  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>String</code> | The page URL |
+
 <a name="getIconForURL"></a>
 
 ## getIconForURL(url) ⇒ <code>Promise.&lt;(Buffer\|null)&gt;</code>
@@ -437,6 +483,20 @@ Get the icon data from a page URL
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>String</code> | The target page URL |
+
+<a name="ProcessedIcon"></a>
+
+## ProcessedIcon : <code>Object</code>
+Processed icon information
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| data | <code>Buffer</code> | The icon's data |
+| url | <code>String</code> | URL of the icon |
+| size | <code>Number</code> | Size of the icon (width == height) |
 
 <a name="Entry"></a>
 
