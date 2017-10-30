@@ -1,7 +1,7 @@
 {
   "name": "@buttercup/iconographer",
   "version": "0.1.0",
-  "description": "Icon fetching, caching and queuing library",
+  "description": "Icon queuing, fetching and caching library",
   "main": "source/index.js",
   "scripts": {
     "docs": "jsdoc2md source/**/*.js > API.md",

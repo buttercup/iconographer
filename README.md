@@ -1,6 +1,6 @@
 # Iconographer
 
-> Icon fetching, caching and queuing library
+> Icon queuing, fetching and caching library
 
 [![Build Status](https://travis-ci.org/buttercup/iconographer.svg?branch=master)](https://travis-ci.org/buttercup/iconographer)
 
