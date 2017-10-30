@@ -28,7 +28,9 @@ function getIconographerInstance() {
 function processAndGetIcon(ic, url) {
     return ic.processIconForURL(url).then(succeeded => {
         if (succeeded) {
-            return ic.getIconForURL(url);
+            return ic.getIconForURL(url).catch(err => {
+                console.error(err);
+            });
         }
         return null;
     });

@@ -1,4 +1,5 @@
-const convert = require("xml-js");
+// const convert = require("xml-js");
+const { parseFragment } = require("parse5");
 const { resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
@@ -16,9 +17,19 @@ function fetchIconData(iconURL) {
 }
 
 function fetchLinkAttributes(linkHTML) {
-    const sanitisedHTML = linkHTML.trim().replace(/\/?>$/, "></link>");
-    const struct = convert.xml2js(sanitisedHTML, { compact: true, ignoreText: true });
-    return (struct && struct.link && struct.link._attributes) || {};
+    // const sanitisedHTML = linkHTML.trim().replace(/\/?>$/, "></link>");
+    // console.log("LINKEROOS", sanitisedHTML);
+    // const struct = convert.xml2js(sanitisedHTML, { compact: true, ignoreText: true });
+    const struct = parseFragment(linkHTML).childNodes[0];
+    const attributes =
+        (struct &&
+            struct.attrs &&
+            struct.attrs.reduce((output, nextAttr) => {
+                output[nextAttr.name] = nextAttr.value;
+                return output;
+            }, {})) ||
+        {};
+    return attributes;
 }
 
 /**
@@ -72,7 +83,7 @@ function getPageSource(url) {
 }
 
 function processIconHref(page, url) {
-    if (/^https?:\/\//i.test(url)) {
+    if (/^https?:\/\//i.test(url) !== true) {
         return resolveURL(page, url);
     }
     return url;
