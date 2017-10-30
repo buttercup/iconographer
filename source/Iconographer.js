@@ -3,7 +3,7 @@ const ChannelQueue = require("@buttercup/channel-queue");
 const StorageInterface = require("./StorageInterface.js");
 const MemoryStorageInterface = require("./MemoryStorageInterface.js");
 const { getEntryURL } = require("./entry.js");
-const { getIcon } = require("./fetching.js");
+const { getIcon: getIconOfPage } = require("./fetching.js");
 
 /**
  * Buttercup Entry
@@ -20,6 +20,14 @@ class Iconographer extends EventEmitter {
         super();
         this._storageInterface = null;
         this._queue = new ChannelQueue();
+    }
+
+    /**
+     * The download channel, for queuing downloads
+     * @type {Channel}
+     */
+    get downloadChannel() {
+        return this.queue.channel("icon:download");
     }
 
     /**
@@ -41,6 +49,14 @@ class Iconographer extends EventEmitter {
         return this._storageInterface;
     }
 
+    /**
+     * The store channel, for storing data
+     * @type {Channel}
+     */
+    get storeChannel() {
+        return this.queue.channel("icon:store");
+    }
+
     set storageInterface(si) {
         if (si instanceof StorageInterface !== true) {
             throw new Error("Unable to set storage interface: provided object not an instance of StorageInterface");
@@ -57,6 +73,16 @@ class Iconographer extends EventEmitter {
         setTimeout(() => {
             this.emit(key, ...args);
         }, 0);
+    }
+
+    /**
+     * Download icon data from a page
+     * @param {String} pageURL The page URL
+     * @returns {Promise.<BuffProcessedIconer|null>} A promise that resolves with either icon
+     *  info, or null
+     */
+    fetchIconDataForPage(pageURL) {
+        return getIconOfPage(pageURL);
     }
 
     /**
@@ -111,10 +137,10 @@ class Iconographer extends EventEmitter {
      * @fires Iconographer#iconFetchFailed
      */
     processIconForURL(pageURL) {
-        const downloadChannel = this.queue.channel("icon:download");
-        const storeChannel = this.queue.channel("icon:store");
-        return downloadChannel.enqueue(() => getIcon(pageURL)).then(iconResult =>
-            storeChannel.enqueue(() => {
+        // const downloadChannel = this.queue.channel("icon:download");
+        // const storeChannel = this.queue.channel("icon:store");
+        return this.downloadChannel.enqueue(() => this.fetchIconDataForPage(pageURL)).then(iconResult =>
+            this.storeChannel.enqueue(() => {
                 if (iconResult !== null) {
                     const { data } = iconResult;
                     return this.storageInterface

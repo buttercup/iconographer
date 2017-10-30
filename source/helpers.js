@@ -34,6 +34,12 @@ function processAndGetIcon(ic, url) {
     });
 }
 
+function setIconographerInstance(ic) {
+    __ic = ic;
+}
+
 module.exports = {
-    getIconForURL
+    getIconographerInstance,
+    getIconForURL,
+    setIconographerInstance
 };

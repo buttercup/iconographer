@@ -2,6 +2,14 @@ const convert = require("xml-js");
 const { resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
+/**
+ * Processed icon information
+ * @typedef {Object} ProcessedIcon
+ * @property {Buffer} data - The icon's data
+ * @property {String} url - URL of the icon
+ * @property {Number} size - Size of the icon (width == height)
+ */
+
 function fetchIconData(iconURL) {
     const fetch = getDataFetcher();
     return fetch(iconURL);
@@ -13,6 +21,11 @@ function fetchLinkAttributes(linkHTML) {
     return (struct && struct.link && struct.link._attributes) || {};
 }
 
+/**
+ * Get an icon from a page
+ * @param {String} url The page URL
+ * @returns {Promise.<ProcessedIcon|null>} A promise that resolves with icon information, or null
+ */
 function getIcon(url) {
     return getIcons(url).then(icons => {
         // select largest icon (first)

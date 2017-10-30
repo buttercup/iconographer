@@ -109,4 +109,75 @@ describe("Iconographer", function() {
             expect(this.ic.processIconForURL.calledWithExactly(TEST_URL)).to.be.true;
         });
     });
+
+    describe("processIconForURL", function() {
+        const sampleOutput = {
+            data: new Buffer([1, 2, 3]),
+            url: "https://test.com/favicon.ico",
+            size: 16
+        };
+
+        beforeEach(function() {
+            this.ic = new Iconographer();
+            this.stubFetching = (output = sampleOutput) => {
+                sinon.stub(this.ic, "fetchIconDataForPage").returns(Promise.resolve(output));
+            };
+        });
+
+        it("fetches the icon", function() {
+            this.stubFetching();
+            return this.ic.processIconForURL("https://test.com").then(() => {
+                expect(this.ic.fetchIconDataForPage.calledWithExactly("https://test.com")).to.be.true;
+                expect(this.ic.fetchIconDataForPage.calledOnce).to.be.true;
+            });
+        });
+
+        it("returns true if the download was successful", function() {
+            this.stubFetching();
+            return this.ic.processIconForURL("https://test.com").then(result => {
+                expect(result).to.be.true;
+            });
+        });
+
+        it("queues the download and storing of icons", function() {
+            this.stubFetching();
+            sinon.spy(this.ic.downloadChannel, "enqueue");
+            sinon.spy(this.ic.storeChannel, "enqueue");
+            return this.ic.processIconForURL("https://test.com").then(() => {
+                expect(this.ic.downloadChannel.enqueue.calledOnce).to.be.true;
+                expect(this.ic.storeChannel.enqueue.calledOnce).to.be.true;
+                expect(this.ic.downloadChannel.enqueue.calledBefore(this.ic.storeChannel.enqueue)).to.be.true;
+            });
+        });
+
+        it("emits an event for success", function() {
+            this.stubFetching();
+            sinon.spy(this.ic, "emitAsync");
+            return this.ic.processIconForURL("https://test.com").then(() => {
+                expect(this.ic.emitAsync.calledWithExactly("iconAdded", "https://test.com")).to.be.true;
+                expect(this.ic.emitAsync.calledWithExactly("iconFetchFailed", "https://test.com")).to.be.false;
+            });
+        });
+
+        it("emits an event for failure", function() {
+            this.stubFetching(null);
+            sinon.spy(this.ic, "emitAsync");
+            return this.ic.processIconForURL("https://test.com").then(() => {
+                expect(this.ic.emitAsync.calledWithExactly("iconAdded", "https://test.com")).to.be.false;
+                expect(this.ic.emitAsync.calledWithExactly("iconFetchFailed", "https://test.com")).to.be.true;
+            });
+        });
+
+        it("encodes the icon before storage", function() {
+            this.stubFetching();
+            sinon.spy(this.ic.storageInterface, "encodeIconForStorage");
+            sinon.spy(this.ic.storageInterface, "storeIcon");
+            return this.ic.processIconForURL("https://test.com").then(() => {
+                expect(this.ic.storageInterface.encodeIconForStorage.calledWithExactly(sampleOutput.data)).to.be.true;
+                expect(this.ic.storageInterface.storeIcon.calledOnce).to.be.true;
+                expect(this.ic.storageInterface.encodeIconForStorage.calledBefore(this.ic.storageInterface.storeIcon))
+                    .to.be.true;
+            });
+        });
+    });
 });
