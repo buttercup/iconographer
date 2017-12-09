@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "description": "Icon queuing, fetching and caching library",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "babel -d dist source",
     "docs": "jsdoc2md source/**/*.js > API.md",
     "format": "prettier --write '{source,test}/**/*.js'",
     "precommit": "lint-staged",
+    "prepublishOnly": "npm run test && npm run format && npm run build",
     "test": "run-s test:unit test:format",
     "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'",
