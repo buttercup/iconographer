@@ -11,8 +11,8 @@
     "docs": "jsdoc2md source/**/*.js > API.md",
     "format": "prettier --write '{source,test}/**/*.js'",
     "precommit": "lint-staged",
-    "prepublishOnly": "npm run test && npm run format && npm run build",
-    "test": "run-s test:unit test:format",
+    "prepublishOnly": "run-s test format",
+    "test": "run-s build test:unit test:format",
     "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'",
     "test:unit:watch": "npm run test:unit -- --watch"
