@@ -2,12 +2,17 @@
   "name": "@buttercup/iconographer",
   "version": "0.1.0",
   "description": "Icon queuing, fetching and caching library",
-  "main": "source/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "babel -d dist source",
     "docs": "jsdoc2md source/**/*.js > API.md",
     "format": "prettier --write '{source,test}/**/*.js'",
     "precommit": "lint-staged",
-    "test": "run-s test:unit test:format",
+    "prepublishOnly": "run-s test format",
+    "test": "run-s build test:unit test:format",
     "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'",
     "test:unit:watch": "npm run test:unit -- --watch"
@@ -46,6 +51,8 @@
     "url": "~0.11.0"
   },
   "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-preset-env": "~1.6.1",
     "chai": "~4.1.2",
     "chai-as-promised": "~7.1.1",
     "husky": "~0.14.3",
