@@ -137,8 +137,6 @@ class Iconographer extends EventEmitter {
      * @fires Iconographer#iconFetchFailed
      */
     processIconForURL(pageURL) {
-        // const downloadChannel = this.queue.channel("icon:download");
-        // const storeChannel = this.queue.channel("icon:store");
         return this.downloadChannel.enqueue(() => this.fetchIconDataForPage(pageURL)).then(iconResult =>
             this.storeChannel.enqueue(() => {
                 if (iconResult !== null) {
@@ -188,10 +186,10 @@ class Iconographer extends EventEmitter {
         return this.queue.channel("icon:store").enqueue(() =>
             this.storageInterface.deleteIcon(pageURL).then(() => {
                 /**
-                     * Icon removed event
-                     * Fired with the associated page URL
-                     * @event Iconographer#iconRemoved
-                     */
+                 * Icon removed event
+                 * Fired with the associated page URL
+                 * @event Iconographer#iconRemoved
+                 */
                 this.emit("iconRemoved", pageURL);
                 return true;
             })
