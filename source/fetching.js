@@ -3,6 +3,8 @@ const { parseFragment } = require("parse5");
 const { resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
+const ICON_REL = /(apple-touch-icon|\bicon\b)/;
+
 /**
  * Processed icon information
  * @typedef {Object} ProcessedIcon
@@ -50,7 +52,7 @@ function getIcon(url) {
 
 function getIcons(url) {
     return getRawLinks(url).then(links => {
-        const icons = links.filter(link => /(apple-touch-icon|^icon$)/.test(link.rel || "")).map(link => ({
+        const icons = links.filter(link => ICON_REL.test(link.rel || "")).map(link => ({
             url: processIconHref(url, link.href),
             size: processIconSize(link.sizes)
         }));
