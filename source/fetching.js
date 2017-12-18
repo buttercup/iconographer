@@ -1,6 +1,5 @@
-// const convert = require("xml-js");
 const { parseFragment } = require("parse5");
-const { resolve: resolveURL } = require("url");
+const { parse: parseURL, resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
 const ICON_REL = /(apple-touch-icon|\bicon\b)/;
@@ -15,13 +14,10 @@ const ICON_REL = /(apple-touch-icon|\bicon\b)/;
 
 function fetchIconData(iconURL) {
     const fetch = getDataFetcher();
-    return fetch(iconURL);
+    return fetch(iconURL).catch(err => null);
 }
 
 function fetchLinkAttributes(linkHTML) {
-    // const sanitisedHTML = linkHTML.trim().replace(/\/?>$/, "></link>");
-    // console.log("LINKEROOS", sanitisedHTML);
-    // const struct = convert.xml2js(sanitisedHTML, { compact: true, ignoreText: true });
     const struct = parseFragment(linkHTML).childNodes[0];
     const attributes =
         (struct &&
@@ -34,6 +30,11 @@ function fetchLinkAttributes(linkHTML) {
     return attributes;
 }
 
+function getBaseURL(url) {
+    const { protocol, host } = parseURL(url);
+    return `${protocol}${host}`;
+}
+
 /**
  * Get an icon from a page
  * @param {String} url The page URL
@@ -44,7 +45,12 @@ function getIcon(url) {
         // select largest icon (first)
         const [icon] = icons;
         if (icon) {
-            return fetchIconData(icon.url).then(data => Object.assign(icon, { data }));
+            return fetchIconData(icon.url).then(data => {
+                if (data) {
+                    return Object.assign(icon, { data });
+                }
+                return null;
+            });
         }
         return null;
     });
@@ -56,6 +62,10 @@ function getIcons(url) {
             url: processIconHref(url, link.href),
             size: processIconSize(link.sizes)
         }));
+        icons.push({
+            url: `${getBaseURL(url)}/favicon.ico`,
+            size: 0
+        });
         return icons.sort((iconA, iconB) => {
             if (iconA.size > iconB.size) {
                 return -1;
