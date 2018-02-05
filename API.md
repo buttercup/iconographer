@@ -36,7 +36,8 @@
 <dd><p>Set the text fetching function</p>
 </dd>
 <dt><a href="#getIcon">getIcon(url)</a> ⇒ <code>Promise.&lt;(ProcessedIcon|null)&gt;</code></dt>
-<dd><p>Get an icon from a page</p>
+<dd><p>Get an icon from a page
+Resolves the URL before processing</p>
 </dd>
 <dt><a href="#getIconForURL">getIconForURL(url)</a> ⇒ <code>Promise.&lt;(Buffer|null)&gt;</code></dt>
 <dd><p>Get the icon data from a page URL</p>
@@ -463,6 +464,7 @@ Set the text fetching function
 
 ## getIcon(url) ⇒ <code>Promise.&lt;(ProcessedIcon\|null)&gt;</code>
 Get an icon from a page
+Resolves the URL before processing
 
 **Kind**: global function  
 **Returns**: <code>Promise.&lt;(ProcessedIcon\|null)&gt;</code> - A promise that resolves with icon information, or null  

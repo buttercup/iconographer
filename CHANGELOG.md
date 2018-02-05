@@ -1,5 +1,11 @@
 # Iconographer Release Changelog
 
+## v0.4.0
+_2018-02-05_
+
+ * Resolve URLs before trying to fetch them (ensure absolute + protocol switching)
+ * Update all dependencies
+
 ## v0.3.0
 _2017-12-18_
 
