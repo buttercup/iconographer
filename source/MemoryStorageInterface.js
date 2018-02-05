@@ -21,7 +21,7 @@ class MemoryStorageInterface extends StorageInterface {
     }
 
     getIconKeys() {
-        return Object.keys(this.icons);
+        return Promise.resolve(Object.keys(this.icons));
     }
 
     retrieveIcon(iconKey) {

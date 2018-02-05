@@ -37,23 +37,26 @@ function getBaseURL(url) {
 
 /**
  * Get an icon from a page
+ * Resolves the URL before processing
  * @param {String} url The page URL
  * @returns {Promise.<ProcessedIcon|null>} A promise that resolves with icon information, or null
  */
 function getIcon(url) {
-    return getIcons(url).then(icons => {
-        // select largest icon (first)
-        const [icon] = icons;
-        if (icon) {
-            return fetchIconData(icon.url).then(data => {
-                if (data) {
-                    return Object.assign(icon, { data });
-                }
-                return null;
-            });
-        }
-        return null;
-    });
+    return resolvePageURL(url)
+        .then(resolvedURL => getIcons(resolvedURL))
+        .then(icons => {
+            // select largest icon (first)
+            const [icon] = icons;
+            if (icon) {
+                return fetchIconData(icon.url).then(data => {
+                    if (data) {
+                        return Object.assign(icon, { data });
+                    }
+                    return null;
+                });
+            }
+            return null;
+        });
 }
 
 function getIcons(url) {
@@ -107,9 +110,30 @@ function processIconSize(size) {
     return (width && parseInt(width, 10)) || 0;
 }
 
+function resolvePageURL(url) {
+    let wip = url;
+    if (/^https?:\/\//i.test(wip) !== true) {
+        wip = `https://${wip}`;
+    }
+    // Try the initial form first
+    return getPageSource(wip)
+        .then(() => wip)
+        .catch(() => {
+            // Request failed, alternate to the other
+            const replacement = /^https/i.test(wip) ? "http://" : "https://";
+            wip = wip.replace(/^https?:\/\//i, replacement);
+            return getPageSource(wip)
+                .then(() => wip)
+                .catch(() => {
+                    throw new Error(`Failed resolving page for URL: ${wip}`);
+                });
+        });
+}
+
 module.exports = {
     fetchIconData,
     fetchLinkAttributes,
     getIcon,
-    getIcons
+    getIcons,
+    resolvePageURL
 };
