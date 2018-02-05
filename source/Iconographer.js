@@ -5,6 +5,8 @@ const MemoryStorageInterface = require("./MemoryStorageInterface.js");
 const { getEntryURL } = require("./entry.js");
 const { getIcon: getIconOfPage } = require("./fetching.js");
 
+const DEFAULT_TIMEOUT = 15000;
+
 /**
  * Buttercup Entry
  * @typedef {Object} Entry
@@ -20,6 +22,7 @@ class Iconographer extends EventEmitter {
         super();
         this._storageInterface = null;
         this._queue = new ChannelQueue();
+        this._timeout = DEFAULT_TIMEOUT;
     }
 
     /**
@@ -28,6 +31,14 @@ class Iconographer extends EventEmitter {
      */
     get downloadChannel() {
         return this.queue.channel("icon:download");
+    }
+
+    /**
+     * The timeout for downloading icons in milliseconds
+     * @type {Number}
+     */
+    get downloadTimeout() {
+        return this._timeout;
     }
 
     /**
@@ -57,6 +68,10 @@ class Iconographer extends EventEmitter {
         return this.queue.channel("icon:store");
     }
 
+    set downloadTimeout(timeout) {
+        this._timeout = parseInt(timeout, 10) || DEFAULT_TIMEOUT;
+    }
+
     set storageInterface(si) {
         if (si instanceof StorageInterface !== true) {
             throw new Error("Unable to set storage interface: provided object not an instance of StorageInterface");
@@ -82,7 +97,18 @@ class Iconographer extends EventEmitter {
      *  info, or null
      */
     fetchIconDataForPage(pageURL) {
-        return getIconOfPage(pageURL);
+        let timeout;
+        return Promise.race([
+            getIconOfPage(pageURL).then(iconData => {
+                clearTimeout(timeout);
+                return iconData;
+            }),
+            new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject(new Error(`Timed-out fetching icon data for URL: ${pageURL}`));
+                }, this.downloadTimeout);
+            })
+        ]);
     }
 
     /**
