@@ -70,6 +70,7 @@ Iconographer class for processing icons and managing storage
 
 * [Iconographer](#Iconographer) ⇐ <code>EventEmitter</code>
     * [.downloadChannel](#Iconographer+downloadChannel) : <code>Channel</code>
+    * [.downloadTimeout](#Iconographer+downloadTimeout) : <code>Number</code>
     * [.queue](#Iconographer+queue) : <code>ChannelQueue</code>
     * [.storageInterface](#Iconographer+storageInterface) : [<code>StorageInterface</code>](#StorageInterface)
     * [.storeChannel](#Iconographer+storeChannel) : <code>Channel</code>
@@ -89,6 +90,12 @@ Iconographer class for processing icons and managing storage
 
 ### iconographer.downloadChannel : <code>Channel</code>
 The download channel, for queuing downloads
+
+**Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
+<a name="Iconographer+downloadTimeout"></a>
+
+### iconographer.downloadTimeout : <code>Number</code>
+The timeout for downloading icons in milliseconds
 
 **Kind**: instance property of [<code>Iconographer</code>](#Iconographer)  
 <a name="Iconographer+queue"></a>

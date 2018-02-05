@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v0.5.0
+_2018-02-05_
+
+ * Timeout support for icon downloads
+
 ## v0.4.0
 _2018-02-05_
 
