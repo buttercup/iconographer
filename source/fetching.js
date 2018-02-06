@@ -4,6 +4,7 @@ const { parse: parseURL, resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
 const ICON_REL = /(apple-touch-icon|\bicon\b)/;
+const EXT_WHITELIST = ["jpg", "png", "gif", "ico", "bmp"];
 
 /**
  * Processed icon information
@@ -50,8 +51,9 @@ function getIcon(url) {
             const [icon] = icons;
             if (icon) {
                 return fetchIconData(icon.url).then(data => {
-                    if (data && fileType(data) !== null) {
-                        return Object.assign(icon, { data });
+                    const dataType = fileType(data);
+                    if (dataType !== null && EXT_WHITELIST.indexOf(dataType.ext) > -1) {
+                        return Object.assign(icon, { data }, dataType);
                     }
                     return null;
                 });
