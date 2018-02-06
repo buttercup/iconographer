@@ -45,6 +45,7 @@
   "dependencies": {
     "@buttercup/channel-queue": "~0.2.2",
     "eventemitter3": "~3.0.0",
+    "file-type": "~7.5.0",
     "icojs": "~0.10.1",
     "is-node": "~1.0.2",
     "node-fetch": "~2.0.0",
