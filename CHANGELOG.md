@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v0.6.0
+_2018-02-06_
+
+ * (#5) Detect returned content type (and fail if not of image type)
+
 ## v0.5.0
 _2018-02-05_
 
