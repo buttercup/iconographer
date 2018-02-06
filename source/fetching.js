@@ -1,3 +1,4 @@
+const fileType = require("file-type");
 const { parseFragment } = require("parse5");
 const { parse: parseURL, resolve: resolveURL } = require("url");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
@@ -49,7 +50,7 @@ function getIcon(url) {
             const [icon] = icons;
             if (icon) {
                 return fetchIconData(icon.url).then(data => {
-                    if (data) {
+                    if (data && fileType(data) !== null) {
                         return Object.assign(icon, { data });
                     }
                     return null;
