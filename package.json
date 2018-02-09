@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/buttercup/iconographer#readme",
   "dependencies": {
-    "@buttercup/channel-queue": "~0.2.2",
+    "@buttercup/channel-queue": "~0.3.0",
     "eventemitter3": "~3.0.0",
     "file-type": "~7.5.0",
     "icojs": "~0.10.1",
