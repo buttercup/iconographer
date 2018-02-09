@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v0.7.0
+_2018-02-09_
+
+ * Parallel icon downloads
+
 ## v0.6.0
 _2018-02-06_
 
