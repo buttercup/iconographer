@@ -23,6 +23,8 @@ class Iconographer extends EventEmitter {
         this._storageInterface = null;
         this._queue = new ChannelQueue();
         this._timeout = DEFAULT_TIMEOUT;
+        // setup parallel channels
+        this.queue.createParallelChannel("icon:download", 5);
     }
 
     /**
