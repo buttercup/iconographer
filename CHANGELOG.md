@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v0.7.1
+_2018-02-18_
+
+ * Fix regex crashing bug for certain `<link>` elements
+
 ## v0.7.0
 _2018-02-09_
 
