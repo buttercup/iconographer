@@ -84,7 +84,7 @@ function getIcons(url) {
 }
 
 function getRawLinks(url) {
-    const linkRexp = /<link("([^"]|\\")+"|[\sa-z0-9=/:-]+)+>/gi;
+    const linkRexp = /<link(\s|[^\s>]+)+(\/>|>)/gi;
     return getPageSource(url).then(source => {
         const linkEls = [];
         let match;
