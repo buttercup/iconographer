@@ -36,7 +36,7 @@ function fetchElementAttributes(linkHTML) {
 
 function getBaseURL(url) {
     const { protocol, host } = parseURL(url);
-    return `${protocol}${host}`;
+    return `${protocol}//${host}`;
 }
 
 /**
@@ -52,6 +52,7 @@ function getIcon(url) {
             // select largest icon (first)
             const [icon] = icons;
             if (icon) {
+                console.log(`  Trying: ${icon.url}`);
                 return fetchIconData(icon.url).then(data => {
                     const dataType = fileType(data);
                     if (dataType !== null && EXT_WHITELIST.indexOf(dataType.ext) > -1) {
@@ -74,11 +75,10 @@ function getIcons(url) {
             ...links.map(processLinkEl),
             ...meta.map(processMetaEl)
         ])
+        .then(icons => icons.map(icon => Object.assign(icon, {
+            url: processIconHref(url, icon.url)
+        })))
         .then(icons => {
-            // const icons = links.filter(link => ICON_REL.test(link.rel || "")).map(link => ({
-            //     url: processIconHref(url, link.href),
-            //     size: processIconSize(link.sizes)
-            // }));
             icons.push({
                 url: `${getBaseURL(url)}/favicon.ico`,
                 size: 0

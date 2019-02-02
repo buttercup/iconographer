@@ -39,11 +39,21 @@ const actions = domainsToFetch.map(domain => () => {
                     }
                     resolve(domainFilename);
                 });
+            }),
+            new Promise((resolve, reject) => {
+                const domainFilename = `${domain.replace(/\./g, "_")}.grey.png`;
+                fs.writeFile(path.join(IMAGES, domainFilename), icon.dataGrey, err => {
+                    if (err) {
+                        return reject(err);
+                    }
+                    resolve(domainFilename);
+                });
             })
         ]))
-        .then(([filename]) => {
+        .then(([filename, filenameGreyscale]) => {
             manifest[domain] = {
                 filename,
+                filenameGreyscale,
                 updated: (new Date()).toISOString()
             };
         })

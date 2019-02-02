@@ -8,7 +8,6 @@ const SIZE = 256;
 
 function convertFetchedIconToPNG(fetchedIconInfo) {
     const { data, ext } = fetchedIconInfo;
-    console.log("FETCHED", fetchedIconInfo);
     if (ext === "ico") {
         return icoJS
             .parse(data, "image/png")
@@ -52,20 +51,30 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             }))
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
     }
+    const newOutput = Object.assign({}, fetchedIconInfo, {
+        size: SIZE,
+        ext: "png",
+        mime: "image/png"
+    })
     return Jimp
         .read(data)
+        .then(jimp => {
+            jimp.resize(SIZE, SIZE);
+            return jimp.getBufferAsync(Jimp.MIME_PNG);
+        })
+        .then(buff => {
+            newOutput.data = buff;
+            return Jimp.read(data);
+        })
         .then(jimp => {
             jimp
                 .resize(SIZE, SIZE)
                 .greyscale();
-            return jimp.getBufferAsync("image/png").then(buff =>
-                Object.assign({}, fetchedIconInfo, {
-                    data: buff,
-                    size: SIZE,
-                    ext: "png",
-                    mime: "image/png"
-                })
-            );
+            return jimp.getBufferAsync(Jimp.MIME_PNG);
+        })
+        .then(buff => {
+            newOutput.dataGrey = buff;
+            return newOutput;
         });
 }
 

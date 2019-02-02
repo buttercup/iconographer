@@ -1,6 +1,10 @@
 {
     "fetch": [
+        "apple.com",
+        "buttercup.pw",
         "facebook.com",
+        "microsoft.com",
+        "reddit.com",
         "twitter.com"
     ]
 }
