@@ -12,6 +12,8 @@ const EXT_WHITELIST = ["jpg", "png", "gif", "ico", "bmp", "svg"];
  * @property {Buffer} data - The icon's data
  * @property {String} url - URL of the icon
  * @property {Number} size - Size of the icon (width == height)
+ * @property {String} ext - The file extension
+ * @property {String} mime - The file's MIME type
  */
 
 function fetchIconData(iconURL) {
@@ -19,7 +21,7 @@ function fetchIconData(iconURL) {
     return fetch(iconURL).catch(err => null);
 }
 
-function fetchLinkAttributes(linkHTML) {
+function fetchElementAttributes(linkHTML) {
     const struct = parseFragment(linkHTML).childNodes[0];
     const attributes =
         (struct &&
@@ -63,36 +65,53 @@ function getIcon(url) {
 }
 
 function getIcons(url) {
-    return getRawLinks(url).then(links => {
-        const icons = links.filter(link => ICON_REL.test(link.rel || "")).map(link => ({
-            url: processIconHref(url, link.href),
-            size: processIconSize(link.sizes)
-        }));
-        icons.push({
-            url: `${getBaseURL(url)}/favicon.ico`,
-            size: 0
+    return getPageSource(url)
+        .then(source => Promise.all([
+            getRawLinks(source).filter(link => ICON_REL.test(link.rel || "")),
+            getRawMeta(source)
+        ]))
+        .then(([links, meta]) => [
+            ...links.map(processLinkEl),
+            ...meta.map(processMetaEl)
+        ])
+        .then(icons => {
+            // const icons = links.filter(link => ICON_REL.test(link.rel || "")).map(link => ({
+            //     url: processIconHref(url, link.href),
+            //     size: processIconSize(link.sizes)
+            // }));
+            icons.push({
+                url: `${getBaseURL(url)}/favicon.ico`,
+                size: 0
+            });
+            return icons.sort((iconA, iconB) => {
+                if (iconA.size > iconB.size) {
+                    return -1;
+                } else if (iconB.size > iconA.size) {
+                    return 1;
+                }
+                return 0;
+            });
         });
-        return icons.sort((iconA, iconB) => {
-            if (iconA.size > iconB.size) {
-                return -1;
-            } else if (iconB.size > iconA.size) {
-                return 1;
-            }
-            return 0;
-        });
-    });
 }
 
-function getRawLinks(url) {
+function getRawLinks(source) {
     const linkRexp = /<link(\s|[^\s>]+)+(\/>|>)/gi;
-    return getPageSource(url).then(source => {
-        const linkEls = [];
-        let match;
-        while ((match = linkRexp.exec(source))) {
-            linkEls.push(match[0]);
-        }
-        return linkEls.map(linkEl => fetchLinkAttributes(linkEl));
-    });
+    const linkEls = [];
+    let match;
+    while ((match = linkRexp.exec(source))) {
+        linkEls.push(match[0]);
+    }
+    return linkEls.map(linkEl => fetchElementAttributes(linkEl));
+}
+
+function getRawMeta(source) {
+    const metaExp = /<meta[^>]+property="og:image"[^>]*(\/>|>)/gi;
+    const metaEls = [];
+    let match;
+    while ((match = metaExp.exec(source))) {
+        metaEls.push(match[0]);
+    }
+    return metaEls.map(metaEl => fetchElementAttributes(metaEl));
 }
 
 function getPageSource(url) {
@@ -111,6 +130,22 @@ function processIconSize(size) {
     const targetSize = size || "";
     const [width] = targetSize.split(/x/i);
     return (width && parseInt(width, 10)) || 0;
+}
+
+function processLinkEl(linkEl) {
+    return {
+        url: linkEl.href,
+        size: processIconSize(linkEl.sizes)
+    };
+}
+
+function processMetaEl(metaEl) {
+    const match = /(\d+x\d+)/.exec(metaEl.content);
+    const size = match ? processIconSize(match[1]) : 0;
+    return {
+        url: metaEl.content,
+        size
+    };
 }
 
 function resolvePageURL(url) {
@@ -135,7 +170,7 @@ function resolvePageURL(url) {
 
 module.exports = {
     fetchIconData,
-    fetchLinkAttributes,
+    fetchElementAttributes,
     getIcon,
     getIcons,
     resolvePageURL
