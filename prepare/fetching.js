@@ -72,10 +72,8 @@ function getIcons(url) {
         })))
         .then(icons => [
             ...icons,
-            {
-                url: `${getBaseURL(url)}/favicon.ico`,
-                size: 0
-            }
+            { url: `${getBaseURL(url)}/favicon.ico` },
+            { url: `${getBaseURL(url)}/apple-touch-icon.png` }
         ])
         .then(icons => Promise.all(icons.map(icon => {
             return fetchIconData(icon.url)

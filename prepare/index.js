@@ -73,7 +73,7 @@ pAll(actions, { concurrency: 4 })
     }))
     .then(() => {
         if (failures.length > 0) {
-            console.error(`Failed to build ${failures.length} domains`);
+            console.error(`Failed to build ${failures.length} domains:\n\t${failures.join(", ")}`);
             process.exit(2);
         }
         console.log("Finished");
