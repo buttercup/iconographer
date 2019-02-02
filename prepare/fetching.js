@@ -88,10 +88,6 @@ function getIcons(url) {
                     });
                 })
                 .then(icon => convertFetchedIconToPNG(icon))
-                .then(icon => {
-                    console.log("ICON", icon);
-                    return icon;
-                })
                 .catch(err => {
                     console.log(icon.url, err);
                     delete icon.data;
@@ -100,7 +96,6 @@ function getIcons(url) {
         })))
         .then(icons => icons.filter(icon => !!icon.data))
         .then(icons => {
-            console.log("ICONS", icons.sort((a, b) => b.originalSize - a.originalSize));
             return icons.sort((a, b) => b.originalSize - a.originalSize);
         });
 }

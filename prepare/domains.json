@@ -1,10 +1,27 @@
 {
     "fetch": [
+        "1password.com",
+        "amazon.com",
         "apple.com",
+        "atlassian.com",
         "buttercup.pw",
+        "dashlane.com",
+        "duckduckgo.com",
         "facebook.com",
+        "github.com",
+        "google.com",
+        "lastpass.com",
         "microsoft.com",
+        "mozilla.org",
+        "npmjs.com",
         "reddit.com",
-        "twitter.com"
-    ]
+        "twitter.com",
+        "yandex.com",
+        "yandex.ru"
+    ],
+    "match": {
+        "amazon\\.(ca|cn|de|fr|in|it|jp|nl|es|co\\.uk)$": "amazon.com",
+        "amazon\\.com\\.(au|br|mx|tr)$": "amazon.com",
+        "atlassian\\.net$": "atlassian.com"
+    }
 }

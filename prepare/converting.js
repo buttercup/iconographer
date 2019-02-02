@@ -77,7 +77,6 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             return jimp.getBufferAsync(Jimp.MIME_PNG);
         })
         .then(buff => {
-            console.log("WRITE GREY", buff);
             newOutput.dataGrey = buff;
             return newOutput;
         });

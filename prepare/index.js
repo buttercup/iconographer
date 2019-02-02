@@ -9,7 +9,7 @@ const { getIcon } = require("./fetching.js");
 const { convertFetchedIconToPNG } = require("./converting.js");
 const DOMAINS = require("./domains.json");
 
-const { fetch: domainsToFetch } = DOMAINS;
+const { fetch: domainsToFetch, match: domainsToMatch } = DOMAINS;
 const OUTPUT = path.resolve(__dirname, "../resources");
 const IMAGES = path.join(OUTPUT, "images");
 
@@ -19,7 +19,10 @@ mkdir(OUTPUT);
 mkdir(IMAGES);
 console.log("Fetching icons...");
 
-const manifest = {};
+const manifest = {
+    domains: {},
+    match: domainsToMatch
+};
 const failures = [];
 const actions = domainsToFetch.map(domain => () => {
     console.log(`Fetching icon: ${domain}`);
@@ -45,7 +48,7 @@ const actions = domainsToFetch.map(domain => () => {
             })
         ]))
         .then(([filename, filenameGreyscale]) => {
-            manifest[domain] = {
+            manifest.domains[domain] = {
                 filename,
                 filenameGreyscale,
                 updated: (new Date()).toISOString()
