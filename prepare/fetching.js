@@ -50,6 +50,7 @@ function getIcon(url) {
         .then(resolvedURL => getIcons(resolvedURL))
         .then(icons => {
             // select largest icon (first)
+            console.log("UUUU", url, icons);
             const [icon] = icons;
             if (icon) {
                 console.log(`  Trying: ${icon.url}`);
@@ -140,8 +141,12 @@ function processLinkEl(linkEl) {
 }
 
 function processMetaEl(metaEl) {
+    let size = -1;
     const match = /(\d+x\d+)/.exec(metaEl.content);
-    const size = match ? processIconSize(match[1]) : 0;
+    if (match) {
+        const [width, height] = match[1].split(/x/i).map(p => parseInt(p, 10));
+        size = width === height ? width : size;
+    }
     return {
         url: metaEl.content,
         size
