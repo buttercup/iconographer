@@ -23,7 +23,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
     } else if (ext === "svg") {
         const svgData = data.toString("utf8");
-        return svg2png(svgData, { width: SIZE, height: SIZE })
+        return svgToPng(svgData, { width: SIZE, height: SIZE })
             .then(buff =>
                 Object.assign({}, fetchedIconInfo, {
                     data: buff,

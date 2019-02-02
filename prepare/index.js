@@ -28,6 +28,7 @@ const actions = domainsToFetch.map(domain => () => {
     console.log(`Fetching icon: ${domain}`);
     return getIcon(domain)
         .then(icon => Promise.all([
+            Promise.resolve(icon),
             new Promise((resolve, reject) => {
                 const domainFilename = `${domain.replace(/\./g, "_")}.png`;
                 fs.writeFile(path.join(IMAGES, domainFilename), icon.data, err => {
@@ -47,10 +48,11 @@ const actions = domainsToFetch.map(domain => () => {
                 });
             })
         ]))
-        .then(([filename, filenameGreyscale]) => {
+        .then(([icon, filename, filenameGreyscale]) => {
             manifest.domains[domain] = {
                 filename,
                 filenameGreyscale,
+                url: icon.url,
                 updated: (new Date()).toISOString()
             };
         })
@@ -62,7 +64,7 @@ const actions = domainsToFetch.map(domain => () => {
 
 pAll(actions, { concurrency: 4 })
     .then(() => new Promise((resolve, reject) => {
-        fs.writeFile(path.join(OUTPUT, "index.json"), JSON.stringify(manifest), err => {
+        fs.writeFile(path.join(OUTPUT, "index.json"), JSON.stringify(manifest, undefined, 2), err => {
             if (err) {
                 return reject(err);
             }

@@ -4,7 +4,8 @@ const { parse: parseURL, resolve: resolveURL } = require("url");
 const { convertFetchedIconToPNG, convertICOToPNG } = require("./converting.js");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
-const ICON_REL = /(apple-touch-icon|\bicon\b)/;
+const ICON_REL = /(apple-touch-icon|fluid-icon|\bicon\b)/;
+const ICON_REL_BLACKLIST = /(mask-icon)/;
 const EXT_WHITELIST = ["jpg", "png", "gif", "ico", "bmp", "svg"];
 
 /**
@@ -59,7 +60,7 @@ function getIcon(url) {
 function getIcons(url) {
     return getPageSource(url)
         .then(source => Promise.all([
-            getRawLinks(source).filter(link => ICON_REL.test(link.rel || "")),
+            getRawLinks(source).filter(link => ICON_REL.test(link.rel || "") && !ICON_REL_BLACKLIST.test(link.rel || "")),
             getRawMeta(source)
         ]))
         .then(([links, meta]) => [
@@ -79,7 +80,7 @@ function getIcons(url) {
         .then(icons => Promise.all(icons.map(icon => {
             return fetchIconData(icon.url)
                 .then(buff => {
-                    const dataType = fileType(buff) || guessDataType(icon.url);
+                    const dataType = guessDataType(icon.url) || fileType(buff);
                     if (!dataType || EXT_WHITELIST.indexOf(dataType.ext) === -1) {
                         throw new Error(`Invalid data type for icon: ${icon.url}`);
                     }
@@ -130,6 +131,11 @@ function guessDataType(url) {
         return {
             ext: "ico",
             mime: "image/x-icon"
+        };
+    } else if (/\.svg$/i.test(url)) {
+        return {
+            ext: "svg",
+            mime: "image/svg+xml"
         };
     }
     return null;

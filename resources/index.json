@@ -1,1 +1,117 @@
-{"domains":{"1password.com":{"filename":"1password_com.png","filenameGreyscale":"1password_com.grey.png","updated":"2019-02-02T22:34:37.684Z"},"buttercup.pw":{"filename":"buttercup_pw.png","filenameGreyscale":"buttercup_pw.grey.png","updated":"2019-02-02T22:34:38.123Z"},"atlassian.com":{"filename":"atlassian_com.png","filenameGreyscale":"atlassian_com.grey.png","updated":"2019-02-02T22:34:39.602Z"},"amazon.com":{"filename":"amazon_com.png","filenameGreyscale":"amazon_com.grey.png","updated":"2019-02-02T22:34:40.004Z"},"apple.com":{"filename":"apple_com.png","filenameGreyscale":"apple_com.grey.png","updated":"2019-02-02T22:34:40.022Z"},"dashlane.com":{"filename":"dashlane_com.png","filenameGreyscale":"dashlane_com.grey.png","updated":"2019-02-02T22:34:41.250Z"},"duckduckgo.com":{"filename":"duckduckgo_com.png","filenameGreyscale":"duckduckgo_com.grey.png","updated":"2019-02-02T22:34:41.251Z"},"github.com":{"filename":"github_com.png","filenameGreyscale":"github_com.grey.png","updated":"2019-02-02T22:34:42.913Z"},"google.com":{"filename":"google_com.png","filenameGreyscale":"google_com.grey.png","updated":"2019-02-02T22:34:42.993Z"},"facebook.com":{"filename":"facebook_com.png","filenameGreyscale":"facebook_com.grey.png","updated":"2019-02-02T22:34:43.052Z"},"npmjs.com":{"filename":"npmjs_com.png","filenameGreyscale":"npmjs_com.grey.png","updated":"2019-02-02T22:34:45.866Z"},"microsoft.com":{"filename":"microsoft_com.png","filenameGreyscale":"microsoft_com.grey.png","updated":"2019-02-02T22:34:46.157Z"},"mozilla.org":{"filename":"mozilla_org.png","filenameGreyscale":"mozilla_org.grey.png","updated":"2019-02-02T22:34:47.341Z"},"twitter.com":{"filename":"twitter_com.png","filenameGreyscale":"twitter_com.grey.png","updated":"2019-02-02T22:34:47.395Z"},"yandex.com":{"filename":"yandex_com.png","filenameGreyscale":"yandex_com.grey.png","updated":"2019-02-02T22:34:49.648Z"},"yandex.ru":{"filename":"yandex_ru.png","filenameGreyscale":"yandex_ru.grey.png","updated":"2019-02-02T22:34:49.836Z"},"reddit.com":{"filename":"reddit_com.png","filenameGreyscale":"reddit_com.grey.png","updated":"2019-02-02T22:34:50.456Z"},"lastpass.com":{"filename":"lastpass_com.png","filenameGreyscale":"lastpass_com.grey.png","updated":"2019-02-02T22:34:50.638Z"}},"match":{"amazon\\.(ca|cn|de|fr|in|it|jp|nl|es|co\\.uk)$":"amazon.com","amazon\\.com\\.(au|br|mx|tr)$":"amazon.com","atlassian\\.net$":"atlassian.com"}}
+{
+  "domains": {
+    "1password.com": {
+      "filename": "1password_com.png",
+      "filenameGreyscale": "1password_com.grey.png",
+      "url": "https://1password.com/icons/apple-touch-icon-180x180-precomposed-v1.png",
+      "updated": "2019-02-02T22:50:11.663Z"
+    },
+    "buttercup.pw": {
+      "filename": "buttercup_pw.png",
+      "filenameGreyscale": "buttercup_pw.grey.png",
+      "url": "https://buttercup.pw/static/img/buttercup.ico",
+      "updated": "2019-02-02T22:50:12.127Z"
+    },
+    "apple.com": {
+      "filename": "apple_com.png",
+      "filenameGreyscale": "apple_com.grey.png",
+      "url": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?201809210816",
+      "updated": "2019-02-02T22:50:12.924Z"
+    },
+    "amazon.com": {
+      "filename": "amazon_com.png",
+      "filenameGreyscale": "amazon_com.grey.png",
+      "url": "https://amazon.com/favicon.ico",
+      "updated": "2019-02-02T22:50:13.452Z"
+    },
+    "duckduckgo.com": {
+      "filename": "duckduckgo_com.png",
+      "filenameGreyscale": "duckduckgo_com.grey.png",
+      "url": "https://duckduckgo.com/assets/logo_social-media.png",
+      "updated": "2019-02-02T22:50:14.446Z"
+    },
+    "atlassian.com": {
+      "filename": "atlassian_com.png",
+      "filenameGreyscale": "atlassian_com.grey.png",
+      "url": "https://wac-cdn.atlassian.com/dam/jcr:8a794ead-879b-460e-b6be-1189ee66ab66/atlassian_logo-1200x630.png",
+      "updated": "2019-02-02T22:50:14.784Z"
+    },
+    "dashlane.com": {
+      "filename": "dashlane_com.png",
+      "filenameGreyscale": "dashlane_com.grey.png",
+      "url": "https://d38muu3h4xeqr1.cloudfront.net/website/static/FEM-WN-JOB1-1285/images/dashlane/icon_og_400x400.png",
+      "updated": "2019-02-02T22:50:15.658Z"
+    },
+    "github.com": {
+      "filename": "github_com.png",
+      "filenameGreyscale": "github_com.grey.png",
+      "url": "https://github.githubassets.com/images/modules/open_graph/github-logo.png",
+      "updated": "2019-02-02T22:50:17.298Z"
+    },
+    "google.com": {
+      "filename": "google_com.png",
+      "filenameGreyscale": "google_com.grey.png",
+      "url": "https://google.com/favicon.ico",
+      "updated": "2019-02-02T22:50:17.314Z"
+    },
+    "facebook.com": {
+      "filename": "facebook_com.png",
+      "filenameGreyscale": "facebook_com.grey.png",
+      "url": "https://www.facebook.com/images/fb_icon_325x325.png",
+      "updated": "2019-02-02T22:50:17.358Z"
+    },
+    "npmjs.com": {
+      "filename": "npmjs_com.png",
+      "filenameGreyscale": "npmjs_com.grey.png",
+      "url": "https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png",
+      "updated": "2019-02-02T22:50:18.595Z"
+    },
+    "microsoft.com": {
+      "filename": "microsoft_com.png",
+      "filenameGreyscale": "microsoft_com.grey.png",
+      "url": "https://microsoft.com/favicon.ico",
+      "updated": "2019-02-02T22:50:20.127Z"
+    },
+    "mozilla.org": {
+      "filename": "mozilla_org.png",
+      "filenameGreyscale": "mozilla_org.grey.png",
+      "url": "https://www.mozilla.org/media/img/mozorg/mozilla-256.4720741d4108.jpg",
+      "updated": "2019-02-02T22:50:20.336Z"
+    },
+    "twitter.com": {
+      "filename": "twitter_com.png",
+      "filenameGreyscale": "twitter_com.grey.png",
+      "url": "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
+      "updated": "2019-02-02T22:50:21.292Z"
+    },
+    "yandex.com": {
+      "filename": "yandex_com.png",
+      "filenameGreyscale": "yandex_com.grey.png",
+      "url": "https://yastatic.net/morda-logo/i/yandex_share-icon-comtr_200.png",
+      "updated": "2019-02-02T22:50:21.307Z"
+    },
+    "reddit.com": {
+      "filename": "reddit_com.png",
+      "filenameGreyscale": "reddit_com.grey.png",
+      "url": "https://www.redditstatic.com/icon.png",
+      "updated": "2019-02-02T22:50:22.163Z"
+    },
+    "yandex.ru": {
+      "filename": "yandex_ru.png",
+      "filenameGreyscale": "yandex_ru.grey.png",
+      "url": "https://yastatic.net/morda-logo/i/share-logo-ru.png",
+      "updated": "2019-02-02T22:50:22.530Z"
+    },
+    "lastpass.com": {
+      "filename": "lastpass_com.png",
+      "filenameGreyscale": "lastpass_com.grey.png",
+      "url": "https://lp-cdn.lastpass.com/lporcamedia/-/media/43c6c6862a08410a8ef34ab46a3a750b.ico",
+      "updated": "2019-02-02T22:50:23.798Z"
+    }
+  },
+  "match": {
+    "amazon\\.(ca|cn|de|fr|in|it|jp|nl|es|co\\.uk)$": "amazon.com",
+    "amazon\\.com\\.(au|br|mx|tr)$": "amazon.com",
+    "atlassian\\.net$": "atlassian.com"
+  }
+}
