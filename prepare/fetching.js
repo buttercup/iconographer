@@ -1,6 +1,7 @@
 const fileType = require("file-type");
 const { parseFragment } = require("parse5");
 const { parse: parseURL, resolve: resolveURL } = require("url");
+const { convertFetchedIconToPNG, convertICOToPNG } = require("./converting.js");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
 const ICON_REL = /(apple-touch-icon|\bicon\b)/;
@@ -50,19 +51,8 @@ function getIcon(url) {
         .then(resolvedURL => getIcons(resolvedURL))
         .then(icons => {
             // select largest icon (first)
-            console.log("UUUU", url, icons);
             const [icon] = icons;
-            if (icon) {
-                console.log(`  Trying: ${icon.url}`);
-                return fetchIconData(icon.url).then(data => {
-                    const dataType = fileType(data);
-                    if (dataType !== null && EXT_WHITELIST.indexOf(dataType.ext) > -1) {
-                        return Object.assign(icon, { data }, dataType);
-                    }
-                    return null;
-                });
-            }
-            return null;
+            return icon || null;
         });
 }
 
@@ -79,19 +69,39 @@ function getIcons(url) {
         .then(icons => icons.map(icon => Object.assign(icon, {
             url: processIconHref(url, icon.url)
         })))
-        .then(icons => {
-            icons.push({
+        .then(icons => [
+            ...icons,
+            {
                 url: `${getBaseURL(url)}/favicon.ico`,
                 size: 0
-            });
-            return icons.sort((iconA, iconB) => {
-                if (iconA.size > iconB.size) {
-                    return -1;
-                } else if (iconB.size > iconA.size) {
-                    return 1;
-                }
-                return 0;
-            });
+            }
+        ])
+        .then(icons => Promise.all(icons.map(icon => {
+            return fetchIconData(icon.url)
+                .then(buff => {
+                    const dataType = fileType(buff) || guessDataType(icon.url);
+                    if (!dataType || EXT_WHITELIST.indexOf(dataType.ext) === -1) {
+                        throw new Error(`Invalid data type for icon: ${icon.url}`);
+                    }
+                    return Object.assign(icon, dataType, {
+                        data: buff
+                    });
+                })
+                .then(icon => convertFetchedIconToPNG(icon))
+                .then(icon => {
+                    console.log("ICON", icon);
+                    return icon;
+                })
+                .catch(err => {
+                    console.log(icon.url, err);
+                    delete icon.data;
+                    return icon;
+                });
+        })))
+        .then(icons => icons.filter(icon => !!icon.data))
+        .then(icons => {
+            console.log("ICONS", icons.sort((a, b) => b.originalSize - a.originalSize));
+            return icons.sort((a, b) => b.originalSize - a.originalSize);
         });
 }
 
@@ -118,6 +128,16 @@ function getRawMeta(source) {
 function getPageSource(url) {
     const fetch = getTextFetcher();
     return fetch(url);
+}
+
+function guessDataType(url) {
+    if (/\.ico$/i.test(url)) {
+        return {
+            ext: "ico",
+            mime: "image/x-icon"
+        };
+    }
+    return null;
 }
 
 function processIconHref(page, url) {

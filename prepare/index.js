@@ -24,12 +24,6 @@ const failures = [];
 const actions = domainsToFetch.map(domain => () => {
     console.log(`Fetching icon: ${domain}`);
     return getIcon(domain)
-        .then(icon => {
-            if (!icon) {
-                throw new Error(`Failed retrieving icon for domain: ${domain}`);
-            }
-            return convertFetchedIconToPNG(icon);
-        })
         .then(icon => Promise.all([
             new Promise((resolve, reject) => {
                 const domainFilename = `${domain.replace(/\./g, "_")}.png`;
@@ -58,7 +52,7 @@ const actions = domainsToFetch.map(domain => () => {
             };
         })
         .catch(err => {
-            console.error(err.message);
+            // console.error(err.message);
             failures.push(domain);
         });
 });

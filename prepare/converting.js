@@ -3,19 +3,19 @@ const svgToPng = require("svg2png");
 const gifFrames = require("gif-frames");
 const streamToBuffer = require("stream-to-buffer");
 const Jimp = require("jimp");
+const imageSize = require("image-size");
+const arrayBufferToBuffer = require("arraybuffer-to-buffer");
 
 const SIZE = 256;
 
 function convertFetchedIconToPNG(fetchedIconInfo) {
     const { data, ext } = fetchedIconInfo;
     if (ext === "ico") {
-        return icoJS
-            .parse(data, "image/png")
-            .then(selectLargestIco)
-            .then(image =>
+        return convertICOToPNG(data)
+            .then(({ data, size }) =>
                 Object.assign({}, fetchedIconInfo, {
-                    data: image.buffer,
-                    size: image.width,
+                    data,
+                    size,
                     ext: "png",
                     mime: "image/png"
                 })
@@ -51,8 +51,12 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             }))
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
     }
+    const { width } = imageSize(data);
+    let originalSize = fetchedIconInfo.size > 0 ? fetchedIconInfo.size : width;
     const newOutput = Object.assign({}, fetchedIconInfo, {
         size: SIZE,
+        originalSize,
+        originalData: data,
         ext: "png",
         mime: "image/png"
     })
@@ -68,14 +72,25 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
         })
         .then(jimp => {
             jimp
-                .resize(SIZE, SIZE)
-                .greyscale();
+                .greyscale()
+                .resize(SIZE, SIZE);
             return jimp.getBufferAsync(Jimp.MIME_PNG);
         })
         .then(buff => {
+            console.log("WRITE GREY", buff);
             newOutput.dataGrey = buff;
             return newOutput;
         });
+}
+
+function convertICOToPNG(buff) {
+    return icoJS
+        .parse(buff, "image/png")
+        .then(selectLargestIco)
+        .then(img => ({
+            data: arrayBufferToBuffer(img.buffer),
+            size: img.width
+        }));
 }
 
 function selectLargestIco(images) {
@@ -92,5 +107,6 @@ function selectLargestIco(images) {
 }
 
 module.exports = {
-    convertFetchedIconToPNG
+    convertFetchedIconToPNG,
+    convertICOToPNG
 };
