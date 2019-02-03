@@ -7,6 +7,7 @@
         * [.getIconDataURI(domain, [opts])](#module_Iconographer.getIconDataURI) ⇒ <code>Promise.&lt;String&gt;</code>
         * [.getIconDetails(domain, [param1])](#module_Iconographer.getIconDetails) ⇒ <code>IconDetails</code>
         * [.getIconFilename(domain, [opts])](#module_Iconographer.getIconFilename) ⇒ <code>String</code>
+        * [.getResourcesPath()](#module_Iconographer.getResourcesPath) ⇒ <code>String</code>
         * [.iconExists(domain)](#module_Iconographer.iconExists) ⇒ <code>Boolean</code>
     * _inner_
         * [~IconOptions](#module_Iconographer..IconOptions) : <code>Object</code>
@@ -51,6 +52,13 @@ Get the filename of an icon for a domain
 | domain | <code>String</code> | The domain |
 | [opts] | <code>IconOptions</code> | Options for getting the icon |
 
+<a name="module_Iconographer.getResourcesPath"></a>
+
+### Iconographer.getResourcesPath() ⇒ <code>String</code>
+Return the path to the resources directory
+
+**Kind**: static method of [<code>Iconographer</code>](#module_Iconographer)  
+**Returns**: <code>String</code> - The path  
 <a name="module_Iconographer.iconExists"></a>
 
 ### Iconographer.iconExists(domain) ⇒ <code>Boolean</code>
