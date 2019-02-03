@@ -551,6 +551,132 @@
       "filenameGreyscale": "tiktok_com.grey.png",
       "url": "http://s16a.tiktokcdn.com/aweme/resource/web_i18n/static/image/logo/logo_icon_v2_40f12f4.png",
       "updated": "2019-02-03T19:40:56.189Z"
+    },
+    "digitalocean.com": {
+      "filename": "digitalocean_com.png",
+      "filenameGreyscale": "digitalocean_com.grey.png",
+      "url": "https://www.digitalocean.com/assets/media/logo-a721c4a7.png",
+      "updated": "2019-02-03T19:50:15.397Z"
+    },
+    "flickr.com": {
+      "filename": "flickr_com.png",
+      "filenameGreyscale": "flickr_com.grey.png",
+      "url": "https://s.yimg.com/pw/apple-touch-icon.png",
+      "updated": "2019-02-03T19:50:18.179Z"
+    },
+    "bit.ly": {
+      "filename": "bit_ly.png",
+      "filenameGreyscale": "bit_ly.grey.png",
+      "url": "https://dl6fh5ptkejqa.cloudfront.net/0482a3c938673192a591f2845b9eb275.png",
+      "updated": "2019-02-03T19:50:18.328Z"
+    },
+    "vk.com": {
+      "filename": "vk_com.png",
+      "filenameGreyscale": "vk_com.grey.png",
+      "url": "https://vk.com/images/safari_152.png?1",
+      "updated": "2019-02-03T19:50:18.844Z"
+    },
+    "youtu.be": {
+      "filename": "youtu_be.png",
+      "filenameGreyscale": "youtu_be.grey.png",
+      "url": "https://s.ytimg.com/yts/img/favicon_144-vfliLAfaB.png",
+      "updated": "2019-02-03T19:50:21.782Z"
+    },
+    "godaddy.com": {
+      "filename": "godaddy_com.png",
+      "filenameGreyscale": "godaddy_com.grey.png",
+      "url": "https://img1.wsimg.com/ux/favicon/android-icon-192x192.png",
+      "updated": "2019-02-03T19:50:21.942Z"
+    },
+    "algolia.com": {
+      "filename": "algolia_com.png",
+      "filenameGreyscale": "algolia_com.grey.png",
+      "url": "https://www.algolia.com/static_assets/images/favicon/favicon-196x196-96d81b1d.png",
+      "updated": "2019-02-03T19:53:20.533Z"
+    },
+    "commercetools.com": {
+      "filename": "commercetools_com.png",
+      "filenameGreyscale": "commercetools_com.grey.png",
+      "url": "https://commercetools.com/wp-content/uploads/2018/06/cropped-favicon-192x192.png",
+      "updated": "2019-02-03T19:53:21.846Z"
+    },
+    "box.com": {
+      "filename": "box_com.png",
+      "filenameGreyscale": "box_com.grey.png",
+      "url": "https://box.com/favicon.ico",
+      "updated": "2019-02-03T19:53:22.769Z"
+    },
+    "disqus.com": {
+      "filename": "disqus_com.png",
+      "filenameGreyscale": "disqus_com.grey.png",
+      "url": "https://c.disquscdn.com/next/current/marketing/assets/img/brand/favicon-192x192.png",
+      "updated": "2019-02-03T19:53:23.873Z"
+    },
+    "contentful.com": {
+      "filename": "contentful_com.png",
+      "filenameGreyscale": "contentful_com.grey.png",
+      "url": "https://contentful.com/assets/images/favicons/favicon.png",
+      "updated": "2019-02-03T19:53:24.070Z"
+    },
+    "n26.com": {
+      "filename": "n26_com.png",
+      "filenameGreyscale": "n26_com.grey.png",
+      "url": "https://n26.com/build/favicon.png",
+      "updated": "2019-02-03T19:53:26.224Z"
+    },
+    "dropbox.com": {
+      "filename": "dropbox_com.png",
+      "filenameGreyscale": "dropbox_com.grey.png",
+      "url": "https://cfl.dropboxstatic.com/static/images/logo_catalog/dropbox_webclip_152_m1.png",
+      "updated": "2019-02-03T19:53:27.334Z"
+    },
+    "nike.com": {
+      "filename": "nike_com.png",
+      "filenameGreyscale": "nike_com.grey.png",
+      "url": "https://nike.com/apple-touch-icon.png",
+      "updated": "2019-02-03T19:53:29.621Z"
+    },
+    "slack.com": {
+      "filename": "slack_com.png",
+      "filenameGreyscale": "slack_com.grey.png",
+      "url": "https://a.slack-edge.com/45901/marketing/img/_rebrand/meta/slack_hash_256.png",
+      "updated": "2019-02-03T19:53:30.982Z"
+    },
+    "namecheap.com": {
+      "filename": "namecheap_com.png",
+      "filenameGreyscale": "namecheap_com.grey.png",
+      "url": "https://namecheap.com/assets/img/nc-icon/namecheap-icon-152x152.png",
+      "updated": "2019-02-03T19:53:32.220Z"
+    },
+    "tieto.com": {
+      "filename": "tieto_com.png",
+      "filenameGreyscale": "tieto_com.grey.png",
+      "url": "https://tieto.com/apple-touch-icon-144x144-precomposed.png",
+      "updated": "2019-02-03T19:53:35.878Z"
+    },
+    "name.com": {
+      "filename": "name_com.png",
+      "filenameGreyscale": "name_com.grey.png",
+      "url": "https://d1hoh05jeo8jse.cloudfront.net/media/apple-touch-icon-114-name-precomposed.jpg",
+      "updated": "2019-02-03T19:53:35.879Z"
+    },
+    "trello.com": {
+      "filename": "trello_com.png",
+      "filenameGreyscale": "trello_com.grey.png",
+      "url": "https://trello.com/favicon.ico",
+      "updated": "2019-02-03T19:53:36.593Z"
+    },
+    "kiosked.com": {
+      "filename": "kiosked_com.png",
+      "filenameGreyscale": "kiosked_com.grey.png",
+      "url": "http://kiosked.com/favicon.ico",
+      "updated": "2019-02-03T19:53:36.984Z"
+    },
+    "zalando.com": {
+      "filename": "zalando_com.png",
+      "filenameGreyscale": "zalando_com.grey.png",
+      "url": "https://zalando.com/favicon.ico",
+      "updated": "2019-02-03T19:53:38.462Z"
     }
   },
   "match": {
