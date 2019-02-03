@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## **v1.0.0**
+_2019-02-03_
+
+ * Static icons - no network requests
+
 ## v0.7.1
 _2018-02-18_
 
