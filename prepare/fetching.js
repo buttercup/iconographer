@@ -61,8 +61,13 @@ function getIcons(url) {
     return getPageSource(url)
         .then(source => Promise.all([
             getRawLinks(source).filter(link => ICON_REL.test(link.rel || "") && !ICON_REL_BLACKLIST.test(link.rel || "")),
-            getRawMeta(source)
+            getRawMeta(source),
+            Promise.resolve(source)
         ]))
+        .then(links => {
+            console.log("SRC", url, links[2]);
+            return links;
+        })
         .then(([links, meta]) => [
             ...links.map(processLinkEl),
             ...meta.map(processMetaEl)

@@ -8,7 +8,9 @@ let __dataFetcher, __textFetcher;
  * @returns {Promise.<Buffer>} A promise that resolves with the data in a buffer
  */
 function fetchData(url) {
-    return nodeFetch(url).then(res => res.buffer());
+    return nodeFetch(url, {
+        timeout: 15000
+    }).then(res => res.buffer());
 }
 
 /**
@@ -17,7 +19,9 @@ function fetchData(url) {
  * @returns {Promise.<String>} A promise that resolves with the fetched text
  */
 function fetchText(url) {
-    return nodeFetch(url).then(res => res.text());
+    return nodeFetch(url, {
+        timeout: 10000
+    }).then(res => res.text());
 }
 
 function getDataFetcher() {

@@ -353,6 +353,48 @@
       "filenameGreyscale": "redhat_com.grey.png",
       "url": "https://www.redhat.com/cms/managed-files/og-homepage-FY2019-q4-1200x675.png",
       "updated": "2019-02-02T23:33:14.225Z"
+    },
+    "bankofamerica.com": {
+      "filename": "bankofamerica_com.png",
+      "filenameGreyscale": "bankofamerica_com.grey.png",
+      "url": "https://www2.bac-assets.com/homepage/spa-assets/images/assets-images-global-favicon-android-chrome-192x192-CSXf4a81122.png",
+      "updated": "2019-02-03T12:41:36.070Z"
+    },
+    "wellsfargo.com": {
+      "filename": "wellsfargo_com.png",
+      "filenameGreyscale": "wellsfargo_com.grey.png",
+      "url": "https://www01.wellsfargomedia.com/assets/images/icons/icon-hires-192x192.png",
+      "updated": "2019-02-03T12:41:36.896Z"
+    },
+    "www.boc.cn": {
+      "filename": "www_boc_cn.png",
+      "filenameGreyscale": "www_boc_cn.grey.png",
+      "url": "http://www.boc.cn/favicon.ico",
+      "updated": "2019-02-03T12:44:26.808Z"
+    },
+    "db.com": {
+      "filename": "db_com.png",
+      "filenameGreyscale": "db_com.grey.png",
+      "url": "https://db.com/company/img/favicon.ico",
+      "updated": "2019-02-03T12:48:40.569Z"
+    },
+    "citigroup.com": {
+      "filename": "citigroup_com.png",
+      "filenameGreyscale": "citigroup_com.grey.png",
+      "url": "https://citigroup.com/citi/favicon.ico",
+      "updated": "2019-02-03T12:48:42.307Z"
+    },
+    "chase.com": {
+      "filename": "chase_com.png",
+      "filenameGreyscale": "chase_com.grey.png",
+      "url": "https://chase.com/etc/designs/chase-ux/favicon-152.png",
+      "updated": "2019-02-03T12:48:43.216Z"
+    },
+    "rbcroyalbank.com": {
+      "filename": "rbcroyalbank_com.png",
+      "filenameGreyscale": "rbcroyalbank_com.grey.png",
+      "url": "http://rbcroyalbank.com/favicon.ico",
+      "updated": "2019-02-03T12:48:51.638Z"
     }
   },
   "match": {
