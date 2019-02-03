@@ -5,6 +5,7 @@ const { parseFragment } = require("parse5");
 
 function followHTTPRedirect(fetchResponse, url, opts = {}) {
     if (/text\/html/.test(fetchResponse.headers.get("content-type"))) {
+        const originalResponse = fetchResponse.clone();
         return fetchResponse
             .text()
             .then(src => {
@@ -13,7 +14,7 @@ function followHTTPRedirect(fetchResponse, url, opts = {}) {
                     const redirURL = new URL(redirInfo.url, url);
                     return nodeFetch(redirURL.href, opts);
                 }
-                return fetchResponse;
+                return originalResponse;
             });
     }
     return Promise.resolve(fetchResponse);
