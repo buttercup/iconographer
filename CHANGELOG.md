@@ -1,6 +1,11 @@
 # Iconographer Release Changelog
 
-## **v1.0.0**
+## v1.1.0
+_2019-02-03_
+
+ * Add `getResourcesPath` for easier packager integration
+
+## **v1.0.1**
 _2019-02-03_
 
  * Static icons - no network requests
