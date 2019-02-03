@@ -461,6 +461,66 @@
       "filenameGreyscale": "roku_com.grey.png",
       "url": "https://www.roku.com/assets/roku-logo-purple.png",
       "updated": "2019-02-03T15:47:01.754Z"
+    },
+    "etsy.com": {
+      "filename": "etsy_com.png",
+      "filenameGreyscale": "etsy_com.grey.png",
+      "url": "https://etsy.com/apple-touch-icon.png",
+      "updated": "2019-02-03T19:15:28.946Z"
+    },
+    "adobe.com": {
+      "filename": "adobe_com.png",
+      "filenameGreyscale": "adobe_com.grey.png",
+      "url": "https://www.adobe.com/homepage/index/index.thumb.800.480.png?ck=1543967209",
+      "updated": "2019-02-03T19:15:29.516Z"
+    },
+    "pinterest.com": {
+      "filename": "pinterest_com.png",
+      "filenameGreyscale": "pinterest_com.grey.png",
+      "url": "https://s.pinimg.com/webapp/style/images/logo_trans_144x144-642179a1.png",
+      "updated": "2019-02-03T19:15:32.382Z"
+    },
+    "tinder.com": {
+      "filename": "tinder_com.png",
+      "filenameGreyscale": "tinder_com.grey.png",
+      "url": "https://tinder.com/static/tinder.png",
+      "updated": "2019-02-03T19:15:33.766Z"
+    },
+    "target.com": {
+      "filename": "target_com.png",
+      "filenameGreyscale": "target_com.grey.png",
+      "url": "https://assets.targetimg1.com/static/images/apple-touch-icon-precomposed.png",
+      "updated": "2019-02-03T19:15:33.769Z"
+    },
+    "tumblr.com": {
+      "filename": "tumblr_com.png",
+      "filenameGreyscale": "tumblr_com.grey.png",
+      "url": "https://assets.tumblr.com/images/favicons/favicon.ico?_v=8bfa6dd3e1249cd567350c606f8574dc",
+      "updated": "2019-02-03T19:15:36.724Z"
+    },
+    "whatsapp.com": {
+      "filename": "whatsapp_com.png",
+      "filenameGreyscale": "whatsapp_com.grey.png",
+      "url": "https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png",
+      "updated": "2019-02-03T19:15:39.512Z"
+    },
+    "wechat.com": {
+      "filename": "wechat_com.png",
+      "filenameGreyscale": "wechat_com.grey.png",
+      "url": "https://wechat.com/favicon.ico",
+      "updated": "2019-02-03T19:15:42.813Z"
+    },
+    "www.walmart.com": {
+      "filename": "www_walmart_com.png",
+      "filenameGreyscale": "www_walmart_com.grey.png",
+      "url": "https://www.walmart.com/apple-touch-icon.png",
+      "updated": "2019-02-03T19:35:10.455Z"
+    },
+    "costco.com": {
+      "filename": "costco_com.png",
+      "filenameGreyscale": "costco_com.grey.png",
+      "url": "http://costco.com/wcsstore/CostcoGLOBALSAS/images/favicon.ico",
+      "updated": "2019-02-03T19:37:18.503Z"
     }
   },
   "match": {

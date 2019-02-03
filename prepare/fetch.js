@@ -1,5 +1,7 @@
 const nodeFetch = require("node-fetch");
 
+const USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36";
+
 let __dataFetcher, __textFetcher;
 
 /**
@@ -9,6 +11,9 @@ let __dataFetcher, __textFetcher;
  */
 function fetchData(url) {
     return nodeFetch(url, {
+        headers: {
+            "User-Agent": USER_AGENT
+        },
         timeout: 15000
     }).then(res => res.buffer());
 }
@@ -20,6 +25,9 @@ function fetchData(url) {
  */
 function fetchText(url) {
     const opts = {
+        headers: {
+            "User-Agent": USER_AGENT
+        },
         timeout: 10000
     };
     return nodeFetch(url, opts)
