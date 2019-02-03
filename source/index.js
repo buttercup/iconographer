@@ -15,18 +15,18 @@ function getIconDataURI(domain, opts) {
     return readIconProcess.then(iconData => encodeDataURI(iconData, "image/png"));
 }
 
-function getIconDetails(domain, { grey = false }) {
+function getIconDetails(domain, { grey = false } = {}) {
     const { domains, match } = require("../resources/index.json");
     const domainKey = domain.toLowerCase();
     let filename,
         isDefault = false;
     if (domains[domainKey]) {
         const { filename: imageFilename, filenameGreyscale: imageFilenameGrey } = domains[domainKey];
-        filename = grep ? imageFilenameGrey : imageFilename;
+        filename = grey ? imageFilenameGrey : imageFilename;
         filename = path.resolve(__dirname, "../resources/images/", filename);
     } else {
         isDefault = true;
-        filename = grep ? "default.grey.png" : "default.png";
+        filename = grey ? "default.grey.png" : "default.png";
         filename = path.resolve(__dirname, "../resources/images/", filename);
     }
     return {
@@ -45,6 +45,7 @@ function iconExists(domain) {
 
 module.exports = {
     getIconDataURI,
+    getIconDetails,
     getIconFilename,
     iconExists
 };
