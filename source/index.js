@@ -97,6 +97,15 @@ function getIconFilename(domain, opts) {
 }
 
 /**
+ * Return the path to the resources directory
+ * @returns {String} The path
+ * @memberof module:Iconographer
+ */
+function getResourcesPath() {
+    return path.resolve(__dirname, "../resources");
+}
+
+/**
  * Check if a unique icon exists for a domain
  * @param {String} domain The domain to check for
  * @returns {Boolean} True if a unique icon exists, false if only the default icon
@@ -110,5 +119,6 @@ module.exports = {
     getIconDataURI,
     getIconDetails,
     getIconFilename,
+    getResourcesPath,
     iconExists
 };
