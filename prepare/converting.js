@@ -51,14 +51,15 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             }))
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
     }
-    const { width } = imageSize(data);
+    const { width, height } = imageSize(data);
     let originalSize = fetchedIconInfo.size > 0 ? fetchedIconInfo.size : width;
     const newOutput = Object.assign({}, fetchedIconInfo, {
         size: SIZE,
         originalSize,
         originalData: data,
         ext: "png",
-        mime: "image/png"
+        mime: "image/png",
+        square: width === height
     })
     return Jimp
         .read(data)

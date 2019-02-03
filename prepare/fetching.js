@@ -94,7 +94,7 @@ function getIcons(url) {
                     return icon;
                 });
         })))
-        .then(icons => icons.filter(icon => !!icon.data))
+        .then(icons => icons.filter(icon => !!icon.data && icon.square))
         .then(icons => {
             return icons.sort((a, b) => b.originalSize - a.originalSize);
         });

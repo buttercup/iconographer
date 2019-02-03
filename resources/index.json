@@ -401,6 +401,30 @@
       "filenameGreyscale": "www_ing_com.grey.png",
       "url": "https://www.ing.com/static/ingdotcompresentation/static/images/ING_lion_RGB_200x200.png",
       "updated": "2019-02-03T13:40:16.319Z"
+    },
+    "imgur.com": {
+      "filename": "imgur_com.png",
+      "filenameGreyscale": "imgur_com.grey.png",
+      "url": "https://s.imgur.com/images/favicon-152.png",
+      "updated": "2019-02-03T15:29:17.110Z"
+    },
+    "vimeo.com": {
+      "filename": "vimeo_com.png",
+      "filenameGreyscale": "vimeo_com.grey.png",
+      "url": "https://f.vimeocdn.com/images_v6/logo.png?DEV",
+      "updated": "2019-02-03T15:29:18.154Z"
+    },
+    "wordpress.org": {
+      "filename": "wordpress_org.png",
+      "filenameGreyscale": "wordpress_org.grey.png",
+      "url": "https://s.w.org/images/home/screen-themes.png?3",
+      "updated": "2019-02-03T15:31:51.993Z"
+    },
+    "wordpress.com": {
+      "filename": "wordpress_com.png",
+      "filenameGreyscale": "wordpress_com.grey.png",
+      "url": "https://0.gravatar.com/blavatar/653166773dc88127bd3afe0b6dfe5ea7?s=114&d=http%3A%2F%2Fs0.wp.com%2Fi%2Fwebclip.png",
+      "updated": "2019-02-03T15:34:45.538Z"
     }
   },
   "match": {
