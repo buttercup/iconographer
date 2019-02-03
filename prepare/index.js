@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const execa = require("execa");
 const pAll = require("p-all");
 const rimraf = require("rimraf").sync;
 const mkdir = require("mkdirp").sync;
@@ -75,6 +76,10 @@ const actions = domainsToFetch
     });
 
 pAll(actions, { concurrency: 4 })
+    .then(() => execa("/bin/cp", [
+        path.join(__dirname, "./{default.png,default.grey.png}"),
+        path.join(IMAGES, "/")
+    ], { shell: true }))
     .then(() => new Promise((resolve, reject) => {
         fs.writeFile(path.join(OUTPUT, "index.json"), JSON.stringify(manifest, undefined, 2), err => {
             if (err) {
