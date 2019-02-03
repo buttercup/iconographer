@@ -52,7 +52,7 @@
     "file-type": "^7.5.0",
     "gif-frames": "^1.0.1",
     "husky": "~0.14.3",
-    "icojs": "^0.10.1",
+    "icojs": "^0.12.3",
     "image-size": "^0.7.1",
     "jimp": "^0.6.0",
     "jsdoc-to-markdown": "~4.0.1",

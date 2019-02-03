@@ -4,427 +4,463 @@
       "filename": "1password_com.png",
       "filenameGreyscale": "1password_com.grey.png",
       "url": "https://1password.com/icons/apple-touch-icon-180x180-precomposed-v1.png",
-      "updated": "2019-02-02T23:23:47.947Z"
+      "updated": "2019-02-03T15:40:23.052Z"
     },
     "amazon.com": {
       "filename": "amazon_com.png",
       "filenameGreyscale": "amazon_com.grey.png",
       "url": "https://amazon.com/favicon.ico",
-      "updated": "2019-02-02T23:23:48.299Z"
-    },
-    "apple.com": {
-      "filename": "apple_com.png",
-      "filenameGreyscale": "apple_com.grey.png",
-      "url": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?201809210816",
-      "updated": "2019-02-02T23:23:50.324Z"
+      "updated": "2019-02-03T15:40:24.383Z"
     },
     "aliexpress.com": {
       "filename": "aliexpress_com.png",
       "filenameGreyscale": "aliexpress_com.grey.png",
-      "url": "https://i.alicdn.com/ae-header/20150924192652/buyer/common/img/logo-new-1x.png",
-      "updated": "2019-02-02T23:23:50.414Z"
+      "url": "https://ae01.alicdn.com/images/eng/wholesale/icon/aliexpress.ico",
+      "updated": "2019-02-03T15:40:26.554Z"
+    },
+    "apple.com": {
+      "filename": "apple_com.png",
+      "filenameGreyscale": "apple_com.grey.png",
+      "url": "https://apple.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:40:28.478Z"
     },
     "atlassian.com": {
       "filename": "atlassian_com.png",
       "filenameGreyscale": "atlassian_com.grey.png",
-      "url": "https://wac-cdn.atlassian.com/dam/jcr:8a794ead-879b-460e-b6be-1189ee66ab66/atlassian_logo-1200x630.png",
-      "updated": "2019-02-02T23:23:52.319Z"
-    },
-    "buttercup.pw": {
-      "filename": "buttercup_pw.png",
-      "filenameGreyscale": "buttercup_pw.grey.png",
-      "url": "https://buttercup.pw/static/img/buttercup.ico",
-      "updated": "2019-02-02T23:23:52.757Z"
-    },
-    "blogspot.com": {
-      "filename": "blogspot_com.png",
-      "filenameGreyscale": "blogspot_com.grey.png",
-      "url": "https://blogspot.com/favicon.ico",
-      "updated": "2019-02-02T23:23:54.734Z"
-    },
-    "dashlane.com": {
-      "filename": "dashlane_com.png",
-      "filenameGreyscale": "dashlane_com.grey.png",
-      "url": "https://d38muu3h4xeqr1.cloudfront.net/website/static/FEM-WN-JOB1-1285/images/dashlane/icon_og_400x400.png",
-      "updated": "2019-02-02T23:23:57.939Z"
-    },
-    "baidu.com": {
-      "filename": "baidu_com.png",
-      "filenameGreyscale": "baidu_com.grey.png",
-      "url": "https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg",
-      "updated": "2019-02-02T23:24:00.437Z"
-    },
-    "duckduckgo.com": {
-      "filename": "duckduckgo_com.png",
-      "filenameGreyscale": "duckduckgo_com.grey.png",
-      "url": "https://duckduckgo.com/assets/logo_social-media.png",
-      "updated": "2019-02-02T23:24:00.460Z"
-    },
-    "csdn.net": {
-      "filename": "csdn_net.png",
-      "filenameGreyscale": "csdn_net.grey.png",
-      "url": "https://csdn.net/favicon.ico",
-      "updated": "2019-02-02T23:24:01.347Z"
-    },
-    "facebook.com": {
-      "filename": "facebook_com.png",
-      "filenameGreyscale": "facebook_com.grey.png",
-      "url": "https://www.facebook.com/images/fb_icon_325x325.png",
-      "updated": "2019-02-02T23:24:02.139Z"
-    },
-    "github.com": {
-      "filename": "github_com.png",
-      "filenameGreyscale": "github_com.grey.png",
-      "url": "https://github.githubassets.com/images/modules/open_graph/github-logo.png",
-      "updated": "2019-02-02T23:24:03.778Z"
-    },
-    "google.com": {
-      "filename": "google_com.png",
-      "filenameGreyscale": "google_com.grey.png",
-      "url": "https://google.com/favicon.ico",
-      "updated": "2019-02-02T23:24:04.194Z"
-    },
-    "ebay.com": {
-      "filename": "ebay_com.png",
-      "filenameGreyscale": "ebay_com.grey.png",
-      "url": "https://ebay.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:07.007Z"
-    },
-    "instagram.com": {
-      "filename": "instagram_com.png",
-      "filenameGreyscale": "instagram_com.grey.png",
-      "url": "https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png",
-      "updated": "2019-02-02T23:24:07.050Z"
-    },
-    "imdb.com": {
-      "filename": "imdb_com.png",
-      "filenameGreyscale": "imdb_com.grey.png",
-      "url": "https://m.media-amazon.com/images/G/01/imdb/images/safari-favicon-517611381._CB483525257_.svg",
-      "updated": "2019-02-02T23:24:08.909Z"
-    },
-    "livejasmin.com": {
-      "filename": "livejasmin_com.png",
-      "filenameGreyscale": "livejasmin_com.grey.png",
-      "url": "https://www.livejasmin.com/favicon.ico",
-      "updated": "2019-02-02T23:24:10.855Z"
-    },
-    "mail.ru": {
-      "filename": "mail_ru.png",
-      "filenameGreyscale": "mail_ru.grey.png",
-      "url": "https://limg.imgsmail.ru/splash/v/i/share-fp-a2954bf3df.png",
-      "updated": "2019-02-02T23:24:11.995Z"
-    },
-    "lastpass.com": {
-      "filename": "lastpass_com.png",
-      "filenameGreyscale": "lastpass_com.grey.png",
-      "url": "https://lastpass.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:13.619Z"
-    },
-    "microsoft.com": {
-      "filename": "microsoft_com.png",
-      "filenameGreyscale": "microsoft_com.grey.png",
-      "url": "https://microsoft.com/favicon.ico",
-      "updated": "2019-02-02T23:24:15.406Z"
-    },
-    "mozilla.org": {
-      "filename": "mozilla_org.png",
-      "filenameGreyscale": "mozilla_org.grey.png",
-      "url": "https://www.mozilla.org/media/img/mozorg/mozilla-256.4720741d4108.jpg",
-      "updated": "2019-02-02T23:24:16.564Z"
-    },
-    "msn.com": {
-      "filename": "msn_com.png",
-      "filenameGreyscale": "msn_com.grey.png",
-      "url": "https://msn.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:18.027Z"
-    },
-    "npmjs.com": {
-      "filename": "npmjs_com.png",
-      "filenameGreyscale": "npmjs_com.grey.png",
-      "url": "https://static.npmjs.com/338e4905a2684ca96e08c7780fc68412.png",
-      "updated": "2019-02-02T23:24:20.735Z"
-    },
-    "outlook.live.com": {
-      "filename": "outlook_live_com.png",
-      "filenameGreyscale": "outlook_live_com.grey.png",
-      "url": "https://outlook.live.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:21.389Z"
-    },
-    "netflix.com": {
-      "filename": "netflix_com.png",
-      "filenameGreyscale": "netflix_com.grey.png",
-      "url": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
-      "updated": "2019-02-02T23:24:24.090Z"
-    },
-    "paypal.com": {
-      "filename": "paypal_com.png",
-      "filenameGreyscale": "paypal_com.grey.png",
-      "url": "https://www.paypalobjects.com/webstatic/icon/pp258.png",
-      "updated": "2019-02-02T23:24:25.370Z"
-    },
-    "porn555.com": {
-      "filename": "porn555_com.png",
-      "filenameGreyscale": "porn555_com.grey.png",
-      "url": "https://porn555.com/images/favicons/favicon-194x194.png?v=20161031",
-      "updated": "2019-02-02T23:24:25.393Z"
-    },
-    "pornhub.com": {
-      "filename": "pornhub_com.png",
-      "filenameGreyscale": "pornhub_com.grey.png",
-      "url": "https://pornhub.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:26.965Z"
-    },
-    "jd.com": {
-      "filename": "jd_com.png",
-      "filenameGreyscale": "jd_com.grey.png",
-      "url": "https://www.jd.com/favicon.ico",
-      "updated": "2019-02-02T23:24:29.160Z"
-    },
-    "reddit.com": {
-      "filename": "reddit_com.png",
-      "filenameGreyscale": "reddit_com.grey.png",
-      "url": "https://www.redditstatic.com/icon.png",
-      "updated": "2019-02-02T23:24:31.034Z"
-    },
-    "stackoverflow.com": {
-      "filename": "stackoverflow_com.png",
-      "filenameGreyscale": "stackoverflow_com.grey.png",
-      "url": "https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded",
-      "updated": "2019-02-02T23:24:32.582Z"
-    },
-    "sohu.com": {
-      "filename": "sohu_com.png",
-      "filenameGreyscale": "sohu_com.grey.png",
-      "url": "https://statics.itc.cn/web/static/images/pic/sohu-logo/logo-144.png",
-      "updated": "2019-02-02T23:24:38.745Z"
-    },
-    "taobao.com": {
-      "filename": "taobao_com.png",
-      "filenameGreyscale": "taobao_com.grey.png",
-      "url": "https://img.alicdn.com/tfs/TB1VlKFRpXXXXcNapXXXXXXXXXX-16-16.png",
-      "updated": "2019-02-02T23:24:44.808Z"
-    },
-    "tmall.com": {
-      "filename": "tmall_com.png",
-      "filenameGreyscale": "tmall_com.grey.png",
-      "url": "https://img.alicdn.com/tfs/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png",
-      "updated": "2019-02-02T23:24:46.432Z"
-    },
-    "twitch.tv": {
-      "filename": "twitch_tv.png",
-      "filenameGreyscale": "twitch_tv.grey.png",
-      "url": "https://twitch.tv/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:48.656Z"
-    },
-    "tribunnews.com": {
-      "filename": "tribunnews_com.png",
-      "filenameGreyscale": "tribunnews_com.grey.png",
-      "url": "http://cdn2.tstatic.net/tribunnews/foto/bank/images/logo-tribunnews1_20160901_101844.jpg",
-      "updated": "2019-02-02T23:24:49.527Z"
-    },
-    "twitter.com": {
-      "filename": "twitter_com.png",
-      "filenameGreyscale": "twitter_com.grey.png",
-      "url": "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
-      "updated": "2019-02-02T23:24:49.797Z"
-    },
-    "wikipedia.org": {
-      "filename": "wikipedia_org.png",
-      "filenameGreyscale": "wikipedia_org.grey.png",
-      "url": "https://wikipedia.org/static/apple-touch/wikipedia.png",
-      "updated": "2019-02-02T23:24:51.299Z"
-    },
-    "www.bing.com": {
-      "filename": "www_bing_com.png",
-      "filenameGreyscale": "www_bing_com.grey.png",
-      "url": "https://www.bing.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:52.382Z"
-    },
-    "xvideos.com": {
-      "filename": "xvideos_com.png",
-      "filenameGreyscale": "xvideos_com.grey.png",
-      "url": "https://xvideos.com/apple-touch-icon.png",
-      "updated": "2019-02-02T23:24:53.694Z"
-    },
-    "weibo.com": {
-      "filename": "weibo_com.png",
-      "filenameGreyscale": "weibo_com.grey.png",
-      "url": "https://weibo.com/favicon.ico",
-      "updated": "2019-02-02T23:24:57.992Z"
-    },
-    "yahoo.co.jp": {
-      "filename": "yahoo_co_jp.png",
-      "filenameGreyscale": "yahoo_co_jp.grey.png",
-      "url": "https://yahoo.co.jp/favicon.ico",
-      "updated": "2019-02-02T23:24:59.335Z"
-    },
-    "yandex.com": {
-      "filename": "yandex_com.png",
-      "filenameGreyscale": "yandex_com.grey.png",
-      "url": "https://yastatic.net/morda-logo/i/yandex_share-icon-comtr_200.png",
-      "updated": "2019-02-02T23:25:00.301Z"
-    },
-    "yandex.ru": {
-      "filename": "yandex_ru.png",
-      "filenameGreyscale": "yandex_ru.grey.png",
-      "url": "https://yastatic.net/morda-logo/i/share-logo-ru.png",
-      "updated": "2019-02-02T23:25:01.508Z"
-    },
-    "youtube.com": {
-      "filename": "youtube_com.png",
-      "filenameGreyscale": "youtube_com.grey.png",
-      "url": "https://youtube.com/yts/img/yt_1200-vfl4C3T0K.png",
-      "updated": "2019-02-02T23:25:07.081Z"
-    },
-    "yahoo.com": {
-      "filename": "yahoo_com.png",
-      "filenameGreyscale": "yahoo_com.grey.png",
-      "url": "https://s.yimg.com/os/mit/media/p/common/images/favicon_new-7483e38.svg",
-      "updated": "2019-02-02T23:25:07.094Z"
-    },
-    "alipay.com": {
-      "filename": "alipay_com.png",
-      "filenameGreyscale": "alipay_com.grey.png",
-      "url": "https://i.alipayobjects.com/common/favicon/favicon.ico",
-      "updated": "2019-02-02T23:25:10.748Z"
-    },
-    "qq.com": {
-      "filename": "qq_com.png",
-      "filenameGreyscale": "qq_com.grey.png",
-      "url": "http://mat1.gtimg.com/www/icon/favicon2.ico",
-      "updated": "2019-02-02T23:25:44.414Z"
-    },
-    "finnair.com": {
-      "filename": "finnair_com.png",
-      "filenameGreyscale": "finnair_com.grey.png",
-      "url": "http://www.finnair.com/go/pageimages/finnair.jpg",
-      "updated": "2019-02-02T23:26:12.422Z"
-    },
-    "nordea.fi": {
-      "filename": "nordea_fi.png",
-      "filenameGreyscale": "nordea_fi.grey.png",
-      "url": "https://nordea.fi/favicon.ico",
-      "updated": "2019-02-02T23:26:13.434Z"
-    },
-    "keepass.info": {
-      "filename": "keepass_info.png",
-      "filenameGreyscale": "keepass_info.grey.png",
-      "url": "https://keepass.info/favicon.ico",
-      "updated": "2019-02-02T23:29:15.842Z"
-    },
-    "coinbase.com": {
-      "filename": "coinbase_com.png",
-      "filenameGreyscale": "coinbase_com.grey.png",
-      "url": "https://www.coinbase.com/img/og-default.jpg",
-      "updated": "2019-02-02T23:29:17.355Z"
-    },
-    "rottentomatoes.com": {
-      "filename": "rottentomatoes_com.png",
-      "filenameGreyscale": "rottentomatoes_com.grey.png",
-      "url": "https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg",
-      "updated": "2019-02-02T23:29:20.007Z"
-    },
-    "binance.com": {
-      "filename": "binance_com.png",
-      "filenameGreyscale": "binance_com.grey.png",
-      "url": "https://public.bnbstatic.com/static/images/common/ogImage.jpg",
-      "updated": "2019-02-02T23:29:21.123Z"
-    },
-    "telegram.org": {
-      "filename": "telegram_org.png",
-      "filenameGreyscale": "telegram_org.grey.png",
-      "url": "https://telegram.org/img/t_logo.png",
-      "updated": "2019-02-02T23:33:08.151Z"
-    },
-    "ubuntu.com": {
-      "filename": "ubuntu_com.png",
-      "filenameGreyscale": "ubuntu_com.grey.png",
-      "url": "https://assets.ubuntu.com/v1/3361409d-apple-touch-icon-144x144-precomposed.png",
-      "updated": "2019-02-02T23:33:09.864Z"
-    },
-    "bitbucket.org": {
-      "filename": "bitbucket_org.png",
-      "filenameGreyscale": "bitbucket_org.grey.png",
-      "url": "https://bitbucket-marketing-cdn.atlassian.com/dam/jcr:e75ffb0e-b3ee-40ca-8659-ecb93675a379/Bitbucket@2x-blue.png",
-      "updated": "2019-02-02T23:33:09.976Z"
-    },
-    "redhat.com": {
-      "filename": "redhat_com.png",
-      "filenameGreyscale": "redhat_com.grey.png",
-      "url": "https://www.redhat.com/cms/managed-files/og-homepage-FY2019-q4-1200x675.png",
-      "updated": "2019-02-02T23:33:14.225Z"
+      "url": "https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/apple-touch-icon-152x152.png",
+      "updated": "2019-02-03T15:40:28.706Z"
     },
     "bankofamerica.com": {
       "filename": "bankofamerica_com.png",
       "filenameGreyscale": "bankofamerica_com.grey.png",
       "url": "https://www2.bac-assets.com/homepage/spa-assets/images/assets-images-global-favicon-android-chrome-192x192-CSXf4a81122.png",
-      "updated": "2019-02-03T12:41:36.070Z"
+      "updated": "2019-02-03T15:40:36.808Z"
     },
-    "wellsfargo.com": {
-      "filename": "wellsfargo_com.png",
-      "filenameGreyscale": "wellsfargo_com.grey.png",
-      "url": "https://www01.wellsfargomedia.com/assets/images/icons/icon-hires-192x192.png",
-      "updated": "2019-02-03T12:41:36.896Z"
+    "baidu.com": {
+      "filename": "baidu_com.png",
+      "filenameGreyscale": "baidu_com.grey.png",
+      "url": "https://www.baidu.com/img/baidu_85beaf5496f291521eb75ba38eacbd87.svg",
+      "updated": "2019-02-03T15:40:38.556Z"
     },
-    "www.boc.cn": {
-      "filename": "www_boc_cn.png",
-      "filenameGreyscale": "www_boc_cn.grey.png",
-      "url": "http://www.boc.cn/favicon.ico",
-      "updated": "2019-02-03T12:44:26.808Z"
+    "bitbucket.org": {
+      "filename": "bitbucket_org.png",
+      "filenameGreyscale": "bitbucket_org.grey.png",
+      "url": "https://bitbucket-marketing-cdn.atlassian.com/assets/img/favicons/bitbucket/apple-touch-icon.png",
+      "updated": "2019-02-03T15:40:39.214Z"
     },
-    "db.com": {
-      "filename": "db_com.png",
-      "filenameGreyscale": "db_com.grey.png",
-      "url": "https://db.com/company/img/favicon.ico",
-      "updated": "2019-02-03T12:48:40.569Z"
+    "buttercup.pw": {
+      "filename": "buttercup_pw.png",
+      "filenameGreyscale": "buttercup_pw.grey.png",
+      "url": "https://buttercup.pw/static/img/buttercup.ico",
+      "updated": "2019-02-03T15:40:39.413Z"
+    },
+    "alipay.com": {
+      "filename": "alipay_com.png",
+      "filenameGreyscale": "alipay_com.grey.png",
+      "url": "https://i.alipayobjects.com/common/favicon/favicon.ico",
+      "updated": "2019-02-03T15:40:39.565Z"
+    },
+    "blogspot.com": {
+      "filename": "blogspot_com.png",
+      "filenameGreyscale": "blogspot_com.grey.png",
+      "url": "https://blogspot.com/favicon.ico",
+      "updated": "2019-02-03T15:40:40.898Z"
     },
     "citigroup.com": {
       "filename": "citigroup_com.png",
       "filenameGreyscale": "citigroup_com.grey.png",
       "url": "https://citigroup.com/citi/favicon.ico",
-      "updated": "2019-02-03T12:48:42.307Z"
+      "updated": "2019-02-03T15:40:43.677Z"
+    },
+    "coinbase.com": {
+      "filename": "coinbase_com.png",
+      "filenameGreyscale": "coinbase_com.grey.png",
+      "url": "https://coinbase.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:40:43.693Z"
     },
     "chase.com": {
       "filename": "chase_com.png",
       "filenameGreyscale": "chase_com.grey.png",
       "url": "https://chase.com/etc/designs/chase-ux/favicon-152.png",
-      "updated": "2019-02-03T12:48:43.216Z"
+      "updated": "2019-02-03T15:40:44.421Z"
     },
-    "rbcroyalbank.com": {
-      "filename": "rbcroyalbank_com.png",
-      "filenameGreyscale": "rbcroyalbank_com.grey.png",
-      "url": "http://rbcroyalbank.com/favicon.ico",
-      "updated": "2019-02-03T12:48:51.638Z"
+    "duckduckgo.com": {
+      "filename": "duckduckgo_com.png",
+      "filenameGreyscale": "duckduckgo_com.grey.png",
+      "url": "https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png",
+      "updated": "2019-02-03T15:40:45.647Z"
+    },
+    "db.com": {
+      "filename": "db_com.png",
+      "filenameGreyscale": "db_com.grey.png",
+      "url": "https://db.com/company/img/favicon.ico",
+      "updated": "2019-02-03T15:40:46.543Z"
+    },
+    "dashlane.com": {
+      "filename": "dashlane_com.png",
+      "filenameGreyscale": "dashlane_com.grey.png",
+      "url": "https://d38muu3h4xeqr1.cloudfront.net/website/static/FEM-WN-JOB1-1285/images/dashlane/icon_og_400x400.png",
+      "updated": "2019-02-03T15:40:47.571Z"
+    },
+    "facebook.com": {
+      "filename": "facebook_com.png",
+      "filenameGreyscale": "facebook_com.grey.png",
+      "url": "https://www.facebook.com/images/fb_icon_325x325.png",
+      "updated": "2019-02-03T15:40:49.782Z"
+    },
+    "finnair.com": {
+      "filename": "finnair_com.png",
+      "filenameGreyscale": "finnair_com.grey.png",
+      "url": "http://www.finnair.com/go/pageimages/finnair.jpg",
+      "updated": "2019-02-03T15:40:50.534Z"
+    },
+    "github.com": {
+      "filename": "github_com.png",
+      "filenameGreyscale": "github_com.grey.png",
+      "url": "https://github.githubassets.com/images/modules/open_graph/github-logo.png",
+      "updated": "2019-02-03T15:40:52.095Z"
+    },
+    "google.com": {
+      "filename": "google_com.png",
+      "filenameGreyscale": "google_com.grey.png",
+      "url": "https://google.com/favicon.ico",
+      "updated": "2019-02-03T15:40:52.394Z"
+    },
+    "ebay.com": {
+      "filename": "ebay_com.png",
+      "filenameGreyscale": "ebay_com.grey.png",
+      "url": "https://ebay.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:40:52.497Z"
     },
     "imgur.com": {
       "filename": "imgur_com.png",
       "filenameGreyscale": "imgur_com.grey.png",
       "url": "https://s.imgur.com/images/favicon-152.png",
-      "updated": "2019-02-03T15:29:17.110Z"
+      "updated": "2019-02-03T15:40:53.546Z"
+    },
+    "csdn.net": {
+      "filename": "csdn_net.png",
+      "filenameGreyscale": "csdn_net.grey.png",
+      "url": "https://csdn.net/favicon.ico",
+      "updated": "2019-02-03T15:40:53.547Z"
+    },
+    "keepass.info": {
+      "filename": "keepass_info.png",
+      "filenameGreyscale": "keepass_info.grey.png",
+      "url": "https://keepass.info/favicon.ico",
+      "updated": "2019-02-03T15:40:54.167Z"
+    },
+    "instagram.com": {
+      "filename": "instagram_com.png",
+      "filenameGreyscale": "instagram_com.grey.png",
+      "url": "https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png",
+      "updated": "2019-02-03T15:40:55.623Z"
+    },
+    "imdb.com": {
+      "filename": "imdb_com.png",
+      "filenameGreyscale": "imdb_com.grey.png",
+      "url": "https://m.media-amazon.com/images/G/01/imdb/images/safari-favicon-517611381._CB483525257_.svg",
+      "updated": "2019-02-03T15:40:59.919Z"
+    },
+    "livejasmin.com": {
+      "filename": "livejasmin_com.png",
+      "filenameGreyscale": "livejasmin_com.grey.png",
+      "url": "https://www.livejasmin.com/favicon.ico",
+      "updated": "2019-02-03T15:41:00.565Z"
+    },
+    "mail.ru": {
+      "filename": "mail_ru.png",
+      "filenameGreyscale": "mail_ru.grey.png",
+      "url": "https://limg.imgsmail.ru/splash/v/i/share-fp-a2954bf3df.png",
+      "updated": "2019-02-03T15:41:01.262Z"
+    },
+    "lastpass.com": {
+      "filename": "lastpass_com.png",
+      "filenameGreyscale": "lastpass_com.grey.png",
+      "url": "https://lastpass.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:03.277Z"
+    },
+    "microsoft.com": {
+      "filename": "microsoft_com.png",
+      "filenameGreyscale": "microsoft_com.grey.png",
+      "url": "https://microsoft.com/favicon.ico",
+      "updated": "2019-02-03T15:41:04.051Z"
+    },
+    "mozilla.org": {
+      "filename": "mozilla_org.png",
+      "filenameGreyscale": "mozilla_org.grey.png",
+      "url": "https://www.mozilla.org/media/img/mozorg/mozilla-256.4720741d4108.jpg",
+      "updated": "2019-02-03T15:41:07.999Z"
+    },
+    "nordea.fi": {
+      "filename": "nordea_fi.png",
+      "filenameGreyscale": "nordea_fi.grey.png",
+      "url": "https://nordea.fi/favicon.ico",
+      "updated": "2019-02-03T15:41:10.091Z"
+    },
+    "npmjs.com": {
+      "filename": "npmjs_com.png",
+      "filenameGreyscale": "npmjs_com.grey.png",
+      "url": "https://static.npmjs.com/1996fcfdf7ca81ea795f67f093d7f449.png",
+      "updated": "2019-02-03T15:41:13.804Z"
+    },
+    "jd.com": {
+      "filename": "jd_com.png",
+      "filenameGreyscale": "jd_com.grey.png",
+      "url": "https://www.jd.com/favicon.ico",
+      "updated": "2019-02-03T15:41:13.917Z"
+    },
+    "outlook.live.com": {
+      "filename": "outlook_live_com.png",
+      "filenameGreyscale": "outlook_live_com.grey.png",
+      "url": "https://outlook.live.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:14.503Z"
+    },
+    "porn555.com": {
+      "filename": "porn555_com.png",
+      "filenameGreyscale": "porn555_com.grey.png",
+      "url": "https://porn555.com/images/favicons/favicon-194x194.png?v=20161031",
+      "updated": "2019-02-03T15:41:15.581Z"
+    },
+    "pornhub.com": {
+      "filename": "pornhub_com.png",
+      "filenameGreyscale": "pornhub_com.grey.png",
+      "url": "https://pornhub.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:16.403Z"
+    },
+    "netflix.com": {
+      "filename": "netflix_com.png",
+      "filenameGreyscale": "netflix_com.grey.png",
+      "url": "https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico",
+      "updated": "2019-02-03T15:41:17.558Z"
+    },
+    "paypal.com": {
+      "filename": "paypal_com.png",
+      "filenameGreyscale": "paypal_com.grey.png",
+      "url": "https://www.paypalobjects.com/webstatic/icon/pp258.png",
+      "updated": "2019-02-03T15:41:17.994Z"
+    },
+    "reddit.com": {
+      "filename": "reddit_com.png",
+      "filenameGreyscale": "reddit_com.grey.png",
+      "url": "https://www.redditstatic.com/icon.png",
+      "updated": "2019-02-03T15:41:21.425Z"
+    },
+    "redhat.com": {
+      "filename": "redhat_com.png",
+      "filenameGreyscale": "redhat_com.grey.png",
+      "url": "https://www.redhat.com/profiles/rh/themes/redhatdotcom/favicon.ico",
+      "updated": "2019-02-03T15:41:21.702Z"
+    },
+    "rottentomatoes.com": {
+      "filename": "rottentomatoes_com.png",
+      "filenameGreyscale": "rottentomatoes_com.grey.png",
+      "url": "https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/apple-touch-icon-180.jpg",
+      "updated": "2019-02-03T15:41:25.062Z"
+    },
+    "stackoverflow.com": {
+      "filename": "stackoverflow_com.png",
+      "filenameGreyscale": "stackoverflow_com.grey.png",
+      "url": "https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded",
+      "updated": "2019-02-03T15:41:26.764Z"
+    },
+    "rbcroyalbank.com": {
+      "filename": "rbcroyalbank_com.png",
+      "filenameGreyscale": "rbcroyalbank_com.grey.png",
+      "url": "http://rbcroyalbank.com/favicon.ico",
+      "updated": "2019-02-03T15:41:29.041Z"
+    },
+    "qq.com": {
+      "filename": "qq_com.png",
+      "filenameGreyscale": "qq_com.grey.png",
+      "url": "http://mat1.gtimg.com/www/icon/favicon2.ico",
+      "updated": "2019-02-03T15:41:29.042Z"
+    },
+    "telegram.org": {
+      "filename": "telegram_org.png",
+      "filenameGreyscale": "telegram_org.grey.png",
+      "url": "https://telegram.org/img/t_logo.png",
+      "updated": "2019-02-03T15:41:30.283Z"
+    },
+    "sohu.com": {
+      "filename": "sohu_com.png",
+      "filenameGreyscale": "sohu_com.grey.png",
+      "url": "https://statics.itc.cn/web/static/images/pic/sohu-logo/logo-144.png",
+      "updated": "2019-02-03T15:41:34.797Z"
+    },
+    "tribunnews.com": {
+      "filename": "tribunnews_com.png",
+      "filenameGreyscale": "tribunnews_com.grey.png",
+      "url": "http://cdn1.tstatic.net/img/icon/tribun-icon_128.png",
+      "updated": "2019-02-03T15:41:35.180Z"
+    },
+    "twitter.com": {
+      "filename": "twitter_com.png",
+      "filenameGreyscale": "twitter_com.grey.png",
+      "url": "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
+      "updated": "2019-02-03T15:41:36.235Z"
+    },
+    "twitch.tv": {
+      "filename": "twitch_tv.png",
+      "filenameGreyscale": "twitch_tv.grey.png",
+      "url": "https://twitch.tv/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:36.638Z"
+    },
+    "ubuntu.com": {
+      "filename": "ubuntu_com.png",
+      "filenameGreyscale": "ubuntu_com.grey.png",
+      "url": "https://assets.ubuntu.com/v1/3361409d-apple-touch-icon-144x144-precomposed.png",
+      "updated": "2019-02-03T15:41:37.832Z"
     },
     "vimeo.com": {
       "filename": "vimeo_com.png",
       "filenameGreyscale": "vimeo_com.grey.png",
-      "url": "https://f.vimeocdn.com/images_v6/logo.png?DEV",
-      "updated": "2019-02-03T15:29:18.154Z"
+      "url": "https://i.vimeocdn.com/favicon/main-touch_180",
+      "updated": "2019-02-03T15:41:38.179Z"
     },
-    "wordpress.org": {
-      "filename": "wordpress_org.png",
-      "filenameGreyscale": "wordpress_org.grey.png",
-      "url": "https://s.w.org/images/home/screen-themes.png?3",
-      "updated": "2019-02-03T15:31:51.993Z"
+    "taobao.com": {
+      "filename": "taobao_com.png",
+      "filenameGreyscale": "taobao_com.grey.png",
+      "url": "http://img.alicdn.com/tfs/TB1VlKFRpXXXXcNapXXXXXXXXXX-16-16.png",
+      "updated": "2019-02-03T15:41:38.717Z"
+    },
+    "wikipedia.org": {
+      "filename": "wikipedia_org.png",
+      "filenameGreyscale": "wikipedia_org.grey.png",
+      "url": "https://wikipedia.org/static/apple-touch/wikipedia.png",
+      "updated": "2019-02-03T15:41:40.296Z"
+    },
+    "tmall.com": {
+      "filename": "tmall_com.png",
+      "filenameGreyscale": "tmall_com.grey.png",
+      "url": "https://img.alicdn.com/tfs/TB1XlF3RpXXXXc6XXXXXXXXXXXX-16-16.png",
+      "updated": "2019-02-03T15:41:41.588Z"
     },
     "wordpress.com": {
       "filename": "wordpress_com.png",
       "filenameGreyscale": "wordpress_com.grey.png",
       "url": "https://0.gravatar.com/blavatar/653166773dc88127bd3afe0b6dfe5ea7?s=114&d=http%3A%2F%2Fs0.wp.com%2Fi%2Fwebclip.png",
-      "updated": "2019-02-03T15:34:45.538Z"
+      "updated": "2019-02-03T15:41:41.763Z"
+    },
+    "www.bing.com": {
+      "filename": "www_bing_com.png",
+      "filenameGreyscale": "www_bing_com.grey.png",
+      "url": "https://www.bing.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:42.781Z"
+    },
+    "wordpress.org": {
+      "filename": "wordpress_org.png",
+      "filenameGreyscale": "wordpress_org.grey.png",
+      "url": "https://s.w.org/favicon.ico?2",
+      "updated": "2019-02-03T15:41:44.511Z"
     },
     "www.ing.com": {
       "filename": "www_ing_com.png",
       "filenameGreyscale": "www_ing_com.grey.png",
       "url": "https://www.ing.com/static/ingdotcompresentation/static/images/ING_lion_RGB_200x200.png",
-      "updated": "2019-02-03T15:39:31.971Z"
+      "updated": "2019-02-03T15:41:45.637Z"
+    },
+    "wellsfargo.com": {
+      "filename": "wellsfargo_com.png",
+      "filenameGreyscale": "wellsfargo_com.grey.png",
+      "url": "https://www01.wellsfargomedia.com/assets/images/icons/icon-hires-192x192.png",
+      "updated": "2019-02-03T15:41:46.578Z"
+    },
+    "xvideos.com": {
+      "filename": "xvideos_com.png",
+      "filenameGreyscale": "xvideos_com.grey.png",
+      "url": "https://xvideos.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:41:47.089Z"
+    },
+    "weibo.com": {
+      "filename": "weibo_com.png",
+      "filenameGreyscale": "weibo_com.grey.png",
+      "url": "https://weibo.com/favicon.ico",
+      "updated": "2019-02-03T15:41:48.190Z"
+    },
+    "yandex.com": {
+      "filename": "yandex_com.png",
+      "filenameGreyscale": "yandex_com.grey.png",
+      "url": "https://yastatic.net/morda-logo/i/yandex_share-icon-comtr_200.png",
+      "updated": "2019-02-03T15:41:49.241Z"
+    },
+    "yandex.ru": {
+      "filename": "yandex_ru.png",
+      "filenameGreyscale": "yandex_ru.grey.png",
+      "url": "https://yastatic.net/morda-logo/i/share-logo-ru.png",
+      "updated": "2019-02-03T15:41:50.502Z"
+    },
+    "yahoo.co.jp": {
+      "filename": "yahoo_co_jp.png",
+      "filenameGreyscale": "yahoo_co_jp.grey.png",
+      "url": "https://yahoo.co.jp/favicon.ico",
+      "updated": "2019-02-03T15:41:52.331Z"
+    },
+    "youtube.com": {
+      "filename": "youtube_com.png",
+      "filenameGreyscale": "youtube_com.grey.png",
+      "url": "https://youtube.com/yts/img/yt_1200-vfl4C3T0K.png",
+      "updated": "2019-02-03T15:41:56.165Z"
+    },
+    "yahoo.com": {
+      "filename": "yahoo_com.png",
+      "filenameGreyscale": "yahoo_com.grey.png",
+      "url": "https://s.yimg.com/os/mit/media/p/common/images/favicon_new-7483e38.svg",
+      "updated": "2019-02-03T15:41:56.192Z"
+    },
+    "www.boc.cn": {
+      "filename": "www_boc_cn.png",
+      "filenameGreyscale": "www_boc_cn.grey.png",
+      "url": "http://www.boc.cn/favicon.ico",
+      "updated": "2019-02-03T15:41:59.042Z"
+    },
+    "directv.com": {
+      "filename": "directv_com.png",
+      "filenameGreyscale": "directv_com.grey.png",
+      "url": "https://cdns.directv.com/images/common/icons/apple-touch-icon.png",
+      "updated": "2019-02-03T15:46:54.927Z"
+    },
+    "audible.com": {
+      "filename": "audible_com.png",
+      "filenameGreyscale": "audible_com.grey.png",
+      "url": "https://m.media-amazon.com/images/G/01/Audible/images/navigation/audible_black_logo_460._SY192_CB470736084_.jpg",
+      "updated": "2019-02-03T15:46:54.953Z"
+    },
+    "audible.ca": {
+      "filename": "audible_ca.png",
+      "filenameGreyscale": "audible_ca.grey.png",
+      "url": "https://m.media-amazon.com/images/G/01/Audible/images/navigation/audible_black_logo_460._SY192_CB470736084_.jpg",
+      "updated": "2019-02-03T15:46:55.019Z"
+    },
+    "msn.com": {
+      "filename": "msn_com.png",
+      "filenameGreyscale": "msn_com.grey.png",
+      "url": "https://msn.com/apple-touch-icon.png",
+      "updated": "2019-02-03T15:46:58.267Z"
+    },
+    "plex.tv": {
+      "filename": "plex_tv.png",
+      "filenameGreyscale": "plex_tv.grey.png",
+      "url": "https://zhf1943ap1t4f26r11i05c7l-wpengine.netdna-ssl.com/wp-content/themes/plex/assets/img/favicons/apple-touch-icon-152x152.png",
+      "updated": "2019-02-03T15:46:59.367Z"
+    },
+    "primevideo.com": {
+      "filename": "primevideo_com.png",
+      "filenameGreyscale": "primevideo_com.grey.png",
+      "url": "https://m.media-amazon.com/images/G/01/digital/video/acquisition/amazon_video_light_on_dark.png",
+      "updated": "2019-02-03T15:46:59.368Z"
+    },
+    "hulu.com": {
+      "filename": "hulu_com.png",
+      "filenameGreyscale": "hulu_com.grey.png",
+      "url": "https://hulu.com/static/icons/apple-touch-icon-152x152.png",
+      "updated": "2019-02-03T15:47:00.156Z"
+    },
+    "roku.com": {
+      "filename": "roku_com.png",
+      "filenameGreyscale": "roku_com.grey.png",
+      "url": "https://www.roku.com/assets/roku-logo-purple.png",
+      "updated": "2019-02-03T15:47:01.754Z"
     }
   },
   "match": {
@@ -432,6 +468,7 @@
     "amazon\\.com\\.(au|br|mx|tr)$": "amazon.com",
     "atlassian\\.net$": "atlassian.com",
     "(^|\\.)bing\\.com$": "www.bing.com",
+    "(^|\\.)boc\\.cn$": "www.boc.cn",
     "(^|\\.)live\\.com$": "outlook.live.com"
   }
 }
