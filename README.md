@@ -1,5 +1,7 @@
 # Iconographer
-> Icon Provider
+> Static Icon Provider
+
+[![npm version](https://badge.fury.io/js/%40buttercup%2Ficonographer.svg)](https://www.npmjs.com/package/@buttercup/iconographer) [![Build Status](https://travis-ci.org/buttercup/iconographer.svg?branch=master)](https://travis-ci.org/buttercup/iconographer)
 
 ## About
 
