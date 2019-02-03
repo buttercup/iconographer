@@ -396,12 +396,6 @@
       "url": "http://rbcroyalbank.com/favicon.ico",
       "updated": "2019-02-03T12:48:51.638Z"
     },
-    "www.ing.com": {
-      "filename": "www_ing_com.png",
-      "filenameGreyscale": "www_ing_com.grey.png",
-      "url": "https://www.ing.com/static/ingdotcompresentation/static/images/ING_lion_RGB_200x200.png",
-      "updated": "2019-02-03T13:40:16.319Z"
-    },
     "imgur.com": {
       "filename": "imgur_com.png",
       "filenameGreyscale": "imgur_com.grey.png",
@@ -425,6 +419,12 @@
       "filenameGreyscale": "wordpress_com.grey.png",
       "url": "https://0.gravatar.com/blavatar/653166773dc88127bd3afe0b6dfe5ea7?s=114&d=http%3A%2F%2Fs0.wp.com%2Fi%2Fwebclip.png",
       "updated": "2019-02-03T15:34:45.538Z"
+    },
+    "www.ing.com": {
+      "filename": "www_ing_com.png",
+      "filenameGreyscale": "www_ing_com.grey.png",
+      "url": "https://www.ing.com/static/ingdotcompresentation/static/images/ING_lion_RGB_200x200.png",
+      "updated": "2019-02-03T15:39:31.971Z"
     }
   },
   "match": {

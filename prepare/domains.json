@@ -79,5 +79,8 @@
         "(^|\\.)bing\\.com$": "www.bing.com",
         "(^|\\.)boc\\.cn$": "www.boc.cn",
         "(^|\\.)live\\.com$": "outlook.live.com"
+    },
+    "resolve": {
+        "www.ing.com": "https://www.ing.com/Home.htm"
     }
 }

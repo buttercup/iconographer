@@ -11,7 +11,7 @@ const { convertFetchedIconToPNG } = require("./converting.js");
 const DOMAINS = require("./domains.json");
 
 const { process: fetchProcess = "all" } = minimist(process.argv.slice(2));
-const { fetch: domainsToFetch, match: domainsToMatch } = DOMAINS;
+const { fetch: domainsToFetch, match: domainsToMatch, resolve: domainResolution } = DOMAINS;
 const OUTPUT = path.resolve(__dirname, "../resources");
 const IMAGES = path.join(OUTPUT, "images");
 
@@ -36,8 +36,9 @@ const failures = [];
 const actions = domainsToFetch
     .filter(domain => existingDomains.includes(domain) === false)
     .map(domain => () => {
-        console.log(`Fetching icon: ${domain}`);
-        return getIcon(domain)
+        const fetchURL = domainResolution[domain] || domain;
+        console.log(`Fetching icon: ${domain} (${fetchURL})`);
+        return getIcon(fetchURL)
             .then(icon => Promise.all([
                 Promise.resolve(icon),
                 new Promise((resolve, reject) => {
