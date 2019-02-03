@@ -1,4 +1,5 @@
 const nodeFetch = require("node-fetch");
+const { followHTTPRedirect } = require("./redirect.js");
 
 let __dataFetcher, __textFetcher;
 
@@ -19,9 +20,12 @@ function fetchData(url) {
  * @returns {Promise.<String>} A promise that resolves with the fetched text
  */
 function fetchText(url) {
-    return nodeFetch(url, {
+    const opts = {
         timeout: 10000
-    }).then(res => res.text());
+    };
+    return nodeFetch(url, opts)
+        .then(res => followHTTPRedirect(res, url, opts))
+        .then(res => res.text());
 }
 
 function getDataFetcher() {

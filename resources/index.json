@@ -395,6 +395,12 @@
       "filenameGreyscale": "rbcroyalbank_com.grey.png",
       "url": "http://rbcroyalbank.com/favicon.ico",
       "updated": "2019-02-03T12:48:51.638Z"
+    },
+    "www.ing.com": {
+      "filename": "www_ing_com.png",
+      "filenameGreyscale": "www_ing_com.grey.png",
+      "url": "https://www.ing.com/static/ingdotcompresentation/static/images/ING_lion_RGB_200x200.png",
+      "updated": "2019-02-03T13:40:16.319Z"
     }
   },
   "match": {

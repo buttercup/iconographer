@@ -68,7 +68,7 @@ const actions = domainsToFetch
                 };
             })
             .catch(err => {
-                // console.error(err.message);
+                console.error(err.message);
                 failures.push(domain);
             });
     });

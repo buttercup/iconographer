@@ -64,10 +64,6 @@ function getIcons(url) {
             getRawMeta(source),
             Promise.resolve(source)
         ]))
-        .then(links => {
-            console.log("SRC", url, links[2]);
-            return links;
-        })
         .then(([links, meta]) => [
             ...links.map(processLinkEl),
             ...meta.map(processMetaEl)
@@ -185,7 +181,8 @@ function resolvePageURL(url) {
     // Try the initial form first
     return getPageSource(wip)
         .then(() => wip)
-        .catch(() => {
+        .catch(err => {
+            console.warn(`Page at URL not available (protocol): ${url} (${err.message})`);
             // Request failed, alternate to the other
             const replacement = /^https/i.test(wip) ? "http://" : "https://";
             wip = wip.replace(/^https?:\/\//i, replacement);
