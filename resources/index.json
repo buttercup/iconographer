@@ -677,6 +677,156 @@
       "filenameGreyscale": "zalando_com.grey.png",
       "url": "https://zalando.com/favicon.ico",
       "updated": "2019-02-03T19:53:38.462Z"
+    },
+    "elisa.fi": {
+      "filename": "elisa_fi.png",
+      "filenameGreyscale": "elisa_fi.grey.png",
+      "url": "https://elisa.fi/apple-touch-icon.png",
+      "updated": "2019-02-03T19:56:12.339Z"
+    },
+    "basicattentiontoken.org": {
+      "filename": "basicattentiontoken_org.png",
+      "filenameGreyscale": "basicattentiontoken_org.grey.png",
+      "url": "https://basicattentiontoken.org/images/cropped-bat-192x192.png",
+      "updated": "2019-02-03T19:56:12.880Z"
+    },
+    "telia.fi": {
+      "filename": "telia_fi.png",
+      "filenameGreyscale": "telia_fi.grey.png",
+      "url": "https://telia.fi/apple-touch-icon.png",
+      "updated": "2019-02-03T19:56:16.201Z"
+    },
+    "dna.fi": {
+      "filename": "dna_fi.png",
+      "filenameGreyscale": "dna_fi.grey.png",
+      "url": "https://www.dna.fi/o/dna-fi-theme/images/favicons/android-chrome-192x192.png",
+      "updated": "2019-02-03T19:56:16.309Z"
+    },
+    "codepen.io": {
+      "filename": "codepen_io.png",
+      "filenameGreyscale": "codepen_io.grey.png",
+      "url": "https://static.codepen.io/assets/social/facebook-default-05cf522ae1d4c215ae0f09d866d97413a2204b6c9339c6e7a1b96ab1d4a7340f.png",
+      "updated": "2019-02-03T20:02:10.122Z"
+    },
+    "booking.com": {
+      "filename": "booking_com.png",
+      "filenameGreyscale": "booking_com.grey.png",
+      "url": "https://booking.com/apple-touch-icon.png",
+      "updated": "2019-02-03T20:02:11.688Z"
+    },
+    "battle.net": {
+      "filename": "battle_net.png",
+      "filenameGreyscale": "battle_net.grey.png",
+      "url": "https://d9me64que7cqs.cloudfront.net/images/favicon-cb34a003c6f2f637ee8f4f7b406f3b9b120b918c04cabec7f03a760e708977ea9689a1c638f4396def8dce7b202cd007eae91946cc3c4a578aa8b5694226cfc6.ico",
+      "updated": "2019-02-03T20:02:12.845Z"
+    },
+    "fastmail.com": {
+      "filename": "fastmail_com.png",
+      "filenameGreyscale": "fastmail_com.grey.png",
+      "url": "https://fastmail.com/static/favicons/touch-icon-196x196.png",
+      "updated": "2019-02-03T20:02:14.437Z"
+    },
+    "gitlab.com": {
+      "filename": "gitlab_com.png",
+      "filenameGreyscale": "gitlab_com.grey.png",
+      "url": "https://gitlab.com/apple-touch-icon.png",
+      "updated": "2019-02-03T20:02:16.553Z"
+    },
+    "hostelworld.com": {
+      "filename": "hostelworld_com.png",
+      "filenameGreyscale": "hostelworld_com.grey.png",
+      "url": "https://icd.hwstatic.com/static/images/3.95.0.0/favicons/android-chrome-192x192.png",
+      "updated": "2019-02-03T20:02:17.014Z"
+    },
+    "itch.io": {
+      "filename": "itch_io.png",
+      "filenameGreyscale": "itch_io.grey.png",
+      "url": "https://itch.io/favicon.ico",
+      "updated": "2019-02-03T20:02:18.094Z"
+    },
+    "keybase.io": {
+      "filename": "keybase_io.png",
+      "filenameGreyscale": "keybase_io.grey.png",
+      "url": "https://keybase.io/favicon.ico",
+      "updated": "2019-02-03T20:02:18.095Z"
+    },
+    "mojang.com": {
+      "filename": "mojang_com.png",
+      "filenameGreyscale": "mojang_com.grey.png",
+      "url": "https://mojang.com/assets/icons/favicon-192x192-6556e573fea89a3eb85a3f23977294484c72f864ca0ed1d118ad8562cb8e840f.png",
+      "updated": "2019-02-03T20:02:19.020Z"
+    },
+    "hotels.com": {
+      "filename": "hotels_com.png",
+      "filenameGreyscale": "hotels_com.grey.png",
+      "url": "https://a.cdn-hotels.com/da/assets/s/63.0.9093/images/brands/hcom/icons/ios-bookmark-180.png",
+      "updated": "2019-02-03T20:02:19.398Z"
+    },
+    "mastodon.technology": {
+      "filename": "mastodon_technology.png",
+      "filenameGreyscale": "mastodon_technology.grey.png",
+      "url": "https://mastodon.technology/apple-touch-icon.png",
+      "updated": "2019-02-03T20:02:20.551Z"
+    },
+    "playstation.com": {
+      "filename": "playstation_com.png",
+      "filenameGreyscale": "playstation_com.grey.png",
+      "url": "http://playstation.com/favicon.ico",
+      "updated": "2019-02-03T20:02:21.709Z"
+    },
+    "steampowered.com": {
+      "filename": "steampowered_com.png",
+      "filenameGreyscale": "steampowered_com.grey.png",
+      "url": "https://steamstore-a.akamaihd.net/public/shared/images/responsive/share_steam_logo.png",
+      "updated": "2019-02-03T20:02:23.817Z"
+    },
+    "patreon.com": {
+      "filename": "patreon_com.png",
+      "filenameGreyscale": "patreon_com.grey.png",
+      "url": "https://c5.patreon.com/external/favicon/apple-touch-icon.png?v=jw6AR4Rg74",
+      "updated": "2019-02-03T20:02:23.836Z"
+    },
+    "valvesoftware.com": {
+      "filename": "valvesoftware_com.png",
+      "filenameGreyscale": "valvesoftware_com.grey.png",
+      "url": "https://steamcdn-a.akamaihd.net/valvesoftware/images/favicon.ico",
+      "updated": "2019-02-03T20:02:25.880Z"
+    },
+    "docracy.com": {
+      "filename": "docracy_com.png",
+      "filenameGreyscale": "docracy_com.grey.png",
+      "url": "https://docracyprod-13cb.kxcdn.com/cdn/public/images/apple-touch-icon-114x114-precomposed.png",
+      "updated": "2019-02-03T20:04:17.348Z"
+    },
+    "expensify.com": {
+      "filename": "expensify_com.png",
+      "filenameGreyscale": "expensify_com.grey.png",
+      "url": "https://d2k5nsl2zxldvw.cloudfront.net/images/favicon-2019.png",
+      "updated": "2019-02-03T20:04:18.155Z"
+    },
+    "aol.com": {
+      "filename": "aol_com.png",
+      "filenameGreyscale": "aol_com.grey.png",
+      "url": "https://s.blogsmithmedia.com/www.aol.com/assets-ha21785b1fd096bbf369cf90f2b866137/images/favicon/android-chrome-192x192.png?h=c58a2e25108c16c28d0a2c1e554b73a6",
+      "updated": "2019-02-03T20:04:18.470Z"
+    },
+    "pandadoc.com": {
+      "filename": "pandadoc_com.png",
+      "filenameGreyscale": "pandadoc_com.grey.png",
+      "url": "https://assets.cdnpandadoc.com/packages/www-merge/img/fav/icon-192-f436404c57.png",
+      "updated": "2019-02-03T20:04:23.823Z"
+    },
+    "nextcloud.com": {
+      "filename": "nextcloud_com.png",
+      "filenameGreyscale": "nextcloud_com.grey.png",
+      "url": "https://nextcloud.com/media/screenshot.png",
+      "updated": "2019-02-03T20:05:27.843Z"
+    },
+    "owncloud.org": {
+      "filename": "owncloud_org.png",
+      "filenameGreyscale": "owncloud_org.grey.png",
+      "url": "https://owncloud.org/wp-content/uploads/2017/12/cropped-owncloud-logo-favicon-192x192.jpg",
+      "updated": "2019-02-03T20:05:29.612Z"
     }
   },
   "match": {
