@@ -4,7 +4,10 @@
   "description": "Icon queuing, fetching and caching library",
   "main": "source/index.js",
   "files": [
-    "source"
+    "resources/**/*",
+    "source/**/*",
+    "API.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "node ./prepare/index.js",
