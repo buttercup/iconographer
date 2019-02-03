@@ -37,6 +37,16 @@ describe("iconographer", function() {
             expect(filename).to.match(/qq_com\.png$/);
         });
 
+        it("returns the correct filename for existing domains in greyscale", function() {
+            const filename = getIconFilename("qq.com", { greyscale: true });
+            expect(filename).to.match(/qq_com\.grey\.png$/);
+        });
+
+        it("returns the correct filename for existing domains when tested from a subdomain", function() {
+            const filename = getIconFilename("sub.qq.com");
+            expect(filename).to.match(/qq_com\.png$/);
+        });
+
         it("returns the correct filename for non-existing domains", function() {
             const filename = getIconFilename("perrymitchell.net");
             expect(filename).to.match(/default\.png$/);
@@ -46,6 +56,10 @@ describe("iconographer", function() {
     describe("iconExists", function() {
         it("returns true for existing icons", function() {
             expect(iconExists("plex.tv")).to.be.true;
+        });
+
+        it("returns true for existing icons on subdomains", function() {
+            expect(iconExists("login.auth.plex.tv")).to.be.true;
         });
 
         it("returns false for non-existing icons", function() {
