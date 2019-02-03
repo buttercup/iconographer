@@ -1,59 +1,30 @@
 # Iconographer
-
-> Icon queuing, fetching and caching library
-
-[![npm version](https://badge.fury.io/js/%40buttercup%2Ficonographer.svg)](https://www.npmjs.com/package/@buttercup/iconographer) [![Build Status](https://travis-ci.org/buttercup/iconographer.svg?branch=master)](https://travis-ci.org/buttercup/iconographer)
+> Icon Provider
 
 ## About
 
-This library provides icon fetching functionality originally intended for use with the [**Buttercup** suite of products](https://github.com/buttercup). It allows the fetching of icons (primarily _favicons_) from URLs stored within user archives.
-
-## Installation
-
-Install as a dependency:
-
-```shell
-npm install @buttercup/iconographer --save
-```
+Iconographer is a small, static icon provider utility that returns an icon file for a specific domain. It will always return an icon, using a default image if the domain is not matched. No requests are made while using the library, so it's fine to use offline and in secure scenarios.
 
 ## Usage
 
-There's 2 ways to use this library to fetch icons: The simplistic method, which is suitable for grabbing a couple of icons manually, and the managed method, which requires interfacing with the `Iconographer` class and its events:
+Install the libary by running `npm install @buttercup/iconographer`.
 
-### Simple icon fetching
-
-You can grab icons from a URL by running the following:
+You can fetch the absolute URL for an icon like so:
 
 ```javascript
-const { getIconForURL } = require("@buttercup/iconographer");
+const { getIconFilename } = require("@buttercup/iconographer");
 
-getIconForURL("https://buttercup.pw").then(iconData => {
-    // iconData is either a buffer or null
-});
+const filename = getIconFilename("amazon.com");
 ```
 
-Icons fetched using `getIconForURL` are cached using a private `Iconographer` instance and an in-memory data store, so be careful not to over-use it.
+The returned file will always be a PNG. You can get greyscale icons by using the option: `getIconFilename("amazon.com", { greyscale: true })`.
 
-It is also possible, when using Iconographer in a **controlled** environment (where no other imports of Iconographer exist), to set the `Iconographer` instance within the library. This would be useful when specifying your own storage platform. Checkout the [`hybrid.js`](https://github.com/buttercup/iconographer/blob/master/example/hybrid.js) example for how to use this method.
+Check out the [API documentation](API.md) for more information on the other available methods.
 
-### Managed (batch) icon fetching
+## Development
 
-Instantiate the `Iconographer` class to get started:
+You can build the full set of icons by running `npm run build`. This will delete all icon files and request them again, one by one. They're committed to the repository.
 
-```javascript
-const { Iconographer } = require("@buttercup/iconographer");
-const ic = new Iconographer();
+You can build only the missing icons by running `npm run build:missing`.
 
-const targetURL = "https://buttercup.pw";
-
-ic.once("iconAdded", pageURL => {
-    if (pageURL === targetURL) {
-        ic.getIconForURL(targetURL).then(buttercupIconData => {
-            // do something with the buffered data
-        });
-    }
-});
-ic.processIconForURL(targetURL);
-```
-
-Read the [API documentation](https://github.com/buttercup/iconographer/blob/master/API.md) for more detailed instructions on method usage.
+**Make sure that when contributing**, don't commit any updated icons. You're welcome to add to the list in `prepare/domains.json` but don't commit the built files.
