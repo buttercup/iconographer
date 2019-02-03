@@ -521,6 +521,36 @@
       "filenameGreyscale": "costco_com.grey.png",
       "url": "http://costco.com/wcsstore/CostcoGLOBALSAS/images/favicon.ico",
       "updated": "2019-02-03T19:37:18.503Z"
+    },
+    "linkedin.com": {
+      "filename": "linkedin_com.png",
+      "filenameGreyscale": "linkedin_com.grey.png",
+      "url": "https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico",
+      "updated": "2019-02-03T19:40:49.016Z"
+    },
+    "medium.com": {
+      "filename": "medium_com.png",
+      "filenameGreyscale": "medium_com.grey.png",
+      "url": "https://cdn-images-1.medium.com/fit/c/304/304/1*8I-HPL0bfoIzGied-dzOvA.png",
+      "updated": "2019-02-03T19:40:50.525Z"
+    },
+    "snapchat.com": {
+      "filename": "snapchat_com.png",
+      "filenameGreyscale": "snapchat_com.grey.png",
+      "url": "https://snapchat.com/static/assets/icon_100.png",
+      "updated": "2019-02-03T19:40:51.975Z"
+    },
+    "line.me": {
+      "filename": "line_me.png",
+      "filenameGreyscale": "line_me.grey.png",
+      "url": "https://d.line-scdn.net/n/line_lp/img/ogimage.png",
+      "updated": "2019-02-03T19:40:54.331Z"
+    },
+    "tiktok.com": {
+      "filename": "tiktok_com.png",
+      "filenameGreyscale": "tiktok_com.grey.png",
+      "url": "http://s16a.tiktokcdn.com/aweme/resource/web_i18n/static/image/logo/logo_icon_v2_40f12f4.png",
+      "updated": "2019-02-03T19:40:56.189Z"
     }
   },
   "match": {
