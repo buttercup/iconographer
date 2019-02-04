@@ -1031,6 +1031,54 @@
       "filenameGreyscale": "xnxx_com.grey.png",
       "url": "https://www.xnxx.com/android-chrome-512x512.png",
       "updated": "2019-02-04T14:29:08.898Z"
+    },
+    "credit-agricole.fr": {
+      "filename": "credit-agricole_fr.png",
+      "filenameGreyscale": "credit-agricole_fr.grey.png",
+      "url": "https://www.credit-agricole.fr/favicon.ico",
+      "updated": "2019-02-04T14:48:52.699Z"
+    },
+    "labanquepostale.fr": {
+      "filename": "labanquepostale_fr.png",
+      "filenameGreyscale": "labanquepostale_fr.grey.png",
+      "url": "https://www.labanquepostale.fr/etc/designs/labanquepostale/core-designs/images/bp-app/logo-lbp.png",
+      "updated": "2019-02-04T14:48:53.674Z"
+    },
+    "sfr.fr": {
+      "filename": "sfr_fr.png",
+      "filenameGreyscale": "sfr_fr.grey.png",
+      "url": "https://sfr.fr/apple-touch-icon.png",
+      "updated": "2019-02-04T14:48:58.729Z"
+    },
+    "pole-emploi.fr": {
+      "filename": "pole-emploi_fr.png",
+      "filenameGreyscale": "pole-emploi_fr.grey.png",
+      "url": "https://www.pole-emploi.fr/accueil/file/sitemodel/pefr/img/favicon/safari-pinned-tab.svg",
+      "updated": "2019-02-04T14:49:03.808Z"
+    },
+    "viber.com": {
+      "filename": "viber_com.png",
+      "filenameGreyscale": "viber_com.grey.png",
+      "url": "https://viber.com/favicon.ico",
+      "updated": "2019-02-04T14:52:03.925Z"
+    },
+    "cdiscount.com": {
+      "filename": "cdiscount_com.png",
+      "filenameGreyscale": "cdiscount_com.grey.png",
+      "url": "https://cdiscount.com/favicon.ico",
+      "updated": "2019-02-04T14:52:05.383Z"
+    },
+    "binance.com": {
+      "filename": "binance_com.png",
+      "filenameGreyscale": "binance_com.grey.png",
+      "url": "https://ex.bnbstatic.com/static/images/common/favicon.ico",
+      "updated": "2019-02-04T14:52:08.753Z"
+    },
+    "wego.com": {
+      "filename": "wego_com.png",
+      "filenameGreyscale": "wego_com.grey.png",
+      "url": "https://www.wego.com/favicon.ico",
+      "updated": "2019-02-04T14:52:15.846Z"
     }
   },
   "match": {
