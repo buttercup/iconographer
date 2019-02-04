@@ -1,6 +1,7 @@
 const fileType = require("file-type");
 const { parseFragment } = require("parse5");
 const { parse: parseURL, resolve: resolveURL } = require("url");
+const getFavicons = require("get-website-favicon");
 const { convertFetchedIconToPNG, convertICOToPNG } = require("./converting.js");
 const { getDataFetcher, getTextFetcher } = require("./fetch.js");
 
@@ -65,11 +66,12 @@ function getIcons(url) {
         .then(source => Promise.all([
             getRawLinks(source).filter(link => ICON_REL.test(link.rel || "") && !ICON_REL_BLACKLIST.test(link.rel || "")),
             getRawMeta(source),
-            Promise.resolve(source)
+            getFavicons(url)
         ]))
-        .then(([links, meta]) => [
+        .then(([links, meta, favicons]) => [
             ...links.map(processLinkEl),
-            ...meta.map(processMetaEl)
+            ...meta.map(processMetaEl),
+            ...favicons.icons.map(processFavicon)
         ])
         .then(icons => icons.map(icon => Object.assign(icon, {
             url: processIconHref(url, icon.url)
@@ -92,7 +94,7 @@ function getIcons(url) {
                 })
                 .then(icon => convertFetchedIconToPNG(icon))
                 .catch(err => {
-                    console.log(icon.url, err);
+                    console.error(`Failed getting icon at URL: ${icon.url}`, err);
                     icon.data = null;
                     return icon;
                 });
@@ -152,6 +154,13 @@ function processIconSize(size) {
     const targetSize = size || "";
     const [width] = targetSize.split(/x/i);
     return (width && parseInt(width, 10)) || 0;
+}
+
+function processFavicon(extFavicon) {
+    return {
+        url: extFavicon.src,
+        size: processIconSize(extFavicon.sizes)
+    };
 }
 
 function processLinkEl(linkEl) {
