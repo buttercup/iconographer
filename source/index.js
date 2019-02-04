@@ -60,17 +60,18 @@ function getIconDataURI(domain, opts) {
 
 /**
  * Get icon details for a domain
- * @param {String} domain The domain to get icon details for
+ * @param {String|null} domain The domain to get icon details for. Pass null or undefined
+ *  to automatically fetch the default icon
  * @param {IconOptions=} param1 Options for getting the icon
  * @returns {IconDetails} Icon details
  * @memberof module:Iconographer
  */
 function getIconDetails(domain, { greyscale = false } = {}) {
     const { domains, match } = require("../resources/index.json");
-    const domainKey = findMatchingDomain(domain, Object.keys(domains), match);
+    const domainKey = domain ? findMatchingDomain(domain, Object.keys(domains), match) : domain;
     let filename,
         isDefault = false;
-    if (domains[domainKey]) {
+    if (domainKey && domains[domainKey]) {
         const { filename: imageFilename, filenameGreyscale: imageFilenameGrey } = domains[domainKey];
         filename = greyscale ? imageFilenameGrey : imageFilename;
         filename = path.resolve(__dirname, "../resources/images/", filename);

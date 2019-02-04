@@ -29,6 +29,14 @@ describe("iconographer", function() {
                 .that.matches(/default\.png$/);
             expect(details).to.have.property("isDefault", true);
         });
+
+        it("returns the correct details for falsy domains", function() {
+            const details = getIconDetails();
+            expect(details)
+                .to.have.property("filename")
+                .that.matches(/default\.png$/);
+            expect(details).to.have.property("isDefault", true);
+        });
     });
 
     describe("getIconFilename", function() {

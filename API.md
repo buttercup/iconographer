@@ -36,7 +36,7 @@ Get icon details for a domain
 
 | Param | Type | Description |
 | --- | --- | --- |
-| domain | <code>String</code> | The domain to get icon details for |
+| domain | <code>String</code> \| <code>null</code> | The domain to get icon details for. Pass null or undefined  to automatically fetch the default icon |
 | [param1] | <code>IconOptions</code> | Options for getting the icon |
 
 <a name="module_Iconographer.getIconFilename"></a>
