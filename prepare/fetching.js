@@ -53,7 +53,10 @@ function getIcon(url) {
         .then(icons => {
             // select largest icon (first)
             const [icon] = icons;
-            return icon || null;
+            if (!icon) {
+                throw new Error(`No icons available for URL: ${url}`);
+            }
+            return icon;
         });
 }
 
@@ -90,14 +93,12 @@ function getIcons(url) {
                 .then(icon => convertFetchedIconToPNG(icon))
                 .catch(err => {
                     console.log(icon.url, err);
-                    delete icon.data;
+                    icon.data = null;
                     return icon;
                 });
         })))
         .then(icons => icons.filter(icon => !!icon.data && icon.square))
-        .then(icons => {
-            return icons.sort((a, b) => b.originalSize - a.originalSize);
-        });
+        .then(icons => icons.sort((a, b) => b.originalSize - a.originalSize));
 }
 
 function getRawLinks(source) {

@@ -70,7 +70,7 @@ const actions = domainsToFetch
                 };
             })
             .catch(err => {
-                console.error(err.message);
+                console.error(`Failed getting icon for domain: ${domain}`, err);
                 failures.push(domain);
             });
     });
