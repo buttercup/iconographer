@@ -827,6 +827,90 @@
       "filenameGreyscale": "owncloud_org.grey.png",
       "url": "https://owncloud.org/wp-content/uploads/2017/12/cropped-owncloud-logo-favicon-192x192.jpg",
       "updated": "2019-02-03T20:05:29.612Z"
+    },
+    "asos.com": {
+      "filename": "asos_com.png",
+      "filenameGreyscale": "asos_com.grey.png",
+      "url": "https://asos.com/apple-touch-icon.png",
+      "updated": "2019-02-04T06:48:00.196Z"
+    },
+    "bbc.com": {
+      "filename": "bbc_com.png",
+      "filenameGreyscale": "bbc_com.grey.png",
+      "url": "https://static.bbci.co.uk/wwhp/1.135.526/responsive/img/apple-touch/apple-touch-180.jpg",
+      "updated": "2019-02-04T06:48:00.717Z"
+    },
+    "bbc.co.uk": {
+      "filename": "bbc_co_uk.png",
+      "filenameGreyscale": "bbc_co_uk.grey.png",
+      "url": "https://bbc.co.uk/apple-touch-icon.png",
+      "updated": "2019-02-04T06:48:00.809Z"
+    },
+    "bet365.com": {
+      "filename": "bet365_com.png",
+      "filenameGreyscale": "bet365_com.grey.png",
+      "url": "https://bet365.com/apple-touch-icon.png",
+      "updated": "2019-02-04T06:48:00.958Z"
+    },
+    "office.com": {
+      "filename": "office_com.png",
+      "filenameGreyscale": "office_com.grey.png",
+      "url": "https://weuofficehome.msocdn.com/s/7047452e/Content/images/favicon_metro.ico",
+      "updated": "2019-02-04T06:48:02.436Z"
+    },
+    "play.google.com": {
+      "filename": "play_google_com.png",
+      "filenameGreyscale": "play_google_com.grey.png",
+      "url": "https://www.gstatic.com/android/market_images/web/favicon_v2.ico",
+      "updated": "2019-02-04T06:48:06.481Z"
+    },
+    "oath.com": {
+      "filename": "oath_com.png",
+      "filenameGreyscale": "oath_com.grey.png",
+      "url": "https://s.blogsmithmedia.com/www.oath.com/assets-h49ed2055e5253958fa00c31f93e0696f/images/favicons/oathfavicon_64x64_aa_v2.png?h=5eb18974b8261bfb6d44daa2409d4b82",
+      "updated": "2019-02-04T06:48:06.509Z"
+    },
+    "engadget.com": {
+      "filename": "engadget_com.png",
+      "filenameGreyscale": "engadget_com.grey.png",
+      "url": "https://s.blogsmithmedia.com/www.engadget.com/assets-h09711bf7584cf2dcec1d7d92678580fd/images/favicon-160x160.png?h=1638b0a8bbe7effa8f85c3ecabb63620",
+      "updated": "2019-02-04T06:48:07.105Z"
+    },
+    "theguardian.com": {
+      "filename": "theguardian_com.png",
+      "filenameGreyscale": "theguardian_com.grey.png",
+      "url": "https://theguardian.com/apple-touch-icon.png",
+      "updated": "2019-02-04T06:48:08.338Z"
+    },
+    "skype.com": {
+      "filename": "skype_com.png",
+      "filenameGreyscale": "skype_com.grey.png",
+      "url": "https://secure.skypeassets.com/apollo/2.1.928/images/icons/favicon.ico",
+      "updated": "2019-02-04T06:48:10.821Z"
+    },
+    "cambridge.org": {
+      "filename": "cambridge_org.png",
+      "filenameGreyscale": "cambridge_org.grey.png",
+      "url": "http://cambridge.org/packages/cambridge_themes/images/favicons/touch-icon-iphone-retina-precomposed.png",
+      "updated": "2019-02-04T06:49:13.375Z"
+    },
+    "webex.com": {
+      "filename": "webex_com.png",
+      "filenameGreyscale": "webex_com.grey.png",
+      "url": "https://www.webex.com/content/dam/wbx/global/images/branding/cisco-webex-logo291x291.png",
+      "updated": "2019-02-04T06:49:44.547Z"
+    },
+    "hm.com": {
+      "filename": "hm_com.png",
+      "filenameGreyscale": "hm_com.grey.png",
+      "url": "http://hm.com/favicon.ico",
+      "updated": "2019-02-04T06:51:50.112Z"
+    },
+    "gov.uk": {
+      "filename": "gov_uk.png",
+      "filenameGreyscale": "gov_uk.grey.png",
+      "url": "https://assets.publishing.service.gov.uk/static/apple-touch-icon-180x180-ea1cbb1cbbeddfff275dfa6e8e46b84cd530892df79dc4882a8f99b802b49a90.png",
+      "updated": "2019-02-04T06:51:51.751Z"
     }
   },
   "match": {
