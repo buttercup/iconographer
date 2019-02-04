@@ -911,6 +911,66 @@
       "filenameGreyscale": "gov_uk.grey.png",
       "url": "https://assets.publishing.service.gov.uk/static/apple-touch-icon-180x180-ea1cbb1cbbeddfff275dfa6e8e46b84cd530892df79dc4882a8f99b802b49a90.png",
       "updated": "2019-02-04T06:51:51.751Z"
+    },
+    "independent.co.uk": {
+      "filename": "independent_co_uk.png",
+      "filenameGreyscale": "independent_co_uk.grey.png",
+      "url": "https://independent.co.uk/img/shortcut-icons/icon-72x72.png",
+      "updated": "2019-02-04T06:55:25.284Z"
+    },
+    "express.co.uk": {
+      "filename": "express_co_uk.png",
+      "filenameGreyscale": "express_co_uk.grey.png",
+      "url": "https://cdn.images.express.co.uk/appletouchicons/20160608/apple-touch-icon-180x180.png",
+      "updated": "2019-02-04T06:55:25.288Z"
+    },
+    "premierleague.com": {
+      "filename": "premierleague_com.png",
+      "filenameGreyscale": "premierleague_com.grey.png",
+      "url": "https://s3.amazonaws.com/premierleague-static-files/premierleague/pl_icon.png",
+      "updated": "2019-02-04T06:55:27.781Z"
+    },
+    "momondo.com": {
+      "filename": "momondo_com.png",
+      "filenameGreyscale": "momondo_com.grey.png",
+      "url": "https://a1.r9cdn.net/res/images/horizon/common/seo/brands/momondo/apple-touch-icon-152x152.png?v=72dba708850b086515d2d6ca5d460814f2357192&cluster=5",
+      "updated": "2019-02-04T06:58:47.786Z"
+    },
+    "skyscanner.fi": {
+      "filename": "skyscanner_fi.png",
+      "filenameGreyscale": "skyscanner_fi.grey.png",
+      "url": "https://www.skyscanner.fi/sttc/blackbird/opengraph_solid.png",
+      "updated": "2019-02-04T06:58:49.343Z"
+    },
+    "skysports.com": {
+      "filename": "skysports_com.png",
+      "filenameGreyscale": "skysports_com.grey.png",
+      "url": "http://skysports.com/assets/apple-touch-icon.png",
+      "updated": "2019-02-04T06:58:50.477Z"
+    },
+    "ryanair.com": {
+      "filename": "ryanair_com.png",
+      "filenameGreyscale": "ryanair_com.grey.png",
+      "url": "http://ryanair.com/apple-touch-icon.png",
+      "updated": "2019-02-04T06:58:56.226Z"
+    },
+    "expedia.com": {
+      "filename": "expedia_com.png",
+      "filenameGreyscale": "expedia_com.grey.png",
+      "url": "https://expedia.com/apple-touch-icon.png",
+      "updated": "2019-02-04T07:04:47.018Z"
+    },
+    "flytap.com": {
+      "filename": "flytap_com.png",
+      "filenameGreyscale": "flytap_com.grey.png",
+      "url": "https://flytap.com/assets/images/favicon.ico",
+      "updated": "2019-02-04T07:04:47.442Z"
+    },
+    "tripadvisor.com": {
+      "filename": "tripadvisor_com.png",
+      "filenameGreyscale": "tripadvisor_com.grey.png",
+      "url": "https://tripadvisor.com/apple-touch-icon.png",
+      "updated": "2019-02-04T07:04:51.252Z"
     }
   },
   "match": {
