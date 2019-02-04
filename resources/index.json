@@ -971,6 +971,42 @@
       "filenameGreyscale": "tripadvisor_com.grey.png",
       "url": "https://tripadvisor.com/apple-touch-icon.png",
       "updated": "2019-02-04T07:04:51.252Z"
+    },
+    "drive.google.com": {
+      "filename": "drive_google_com.png",
+      "filenameGreyscale": "drive_google_com.grey.png",
+      "url": "https://www.google.com/favicon.ico",
+      "updated": "2019-02-04T13:42:51.731Z"
+    },
+    "icloud.com": {
+      "filename": "icloud_com.png",
+      "filenameGreyscale": "icloud_com.grey.png",
+      "url": "https://www.icloud.com/icloud_logo/icloud_logo.png",
+      "updated": "2019-02-04T13:42:53.714Z"
+    },
+    "packagist.org": {
+      "filename": "packagist_org.png",
+      "filenameGreyscale": "packagist_org.grey.png",
+      "url": "https://packagist.org/apple-touch-icon.png",
+      "updated": "2019-02-04T13:42:54.762Z"
+    },
+    "epicgames.com": {
+      "filename": "epicgames_com.png",
+      "filenameGreyscale": "epicgames_com.grey.png",
+      "url": "https://epicgames.com/apple-touch-icon.png",
+      "updated": "2019-02-04T13:43:06.635Z"
+    },
+    "synology.com": {
+      "filename": "synology_com.png",
+      "filenameGreyscale": "synology_com.grey.png",
+      "url": "https://synology.com/img/icon/touch-icon-152.png",
+      "updated": "2019-02-04T13:43:08.802Z"
+    },
+    "zeit.co": {
+      "filename": "zeit_co.png",
+      "filenameGreyscale": "zeit_co.grey.png",
+      "url": "https://assets.zeit.co/image/upload/front/favicon/android-chrome-192x192.png",
+      "updated": "2019-02-04T13:43:13.514Z"
     }
   },
   "match": {
