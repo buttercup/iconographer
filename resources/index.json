@@ -1007,6 +1007,30 @@
       "filenameGreyscale": "zeit_co.grey.png",
       "url": "https://assets.zeit.co/image/upload/front/favicon/android-chrome-192x192.png",
       "updated": "2019-02-04T13:43:13.514Z"
+    },
+    "free.fr": {
+      "filename": "free_fr.png",
+      "filenameGreyscale": "free_fr.grey.png",
+      "url": "https://www.free.fr/img/fav/favicon-196x196.png",
+      "updated": "2019-02-04T14:28:52.930Z"
+    },
+    "orange.fr": {
+      "filename": "orange_fr.png",
+      "filenameGreyscale": "orange_fr.grey.png",
+      "url": "https://hp5.a.woopic.com/icons/WebClipIcon114.png",
+      "updated": "2019-02-04T14:28:57.062Z"
+    },
+    "similarweb.com": {
+      "filename": "similarweb_com.png",
+      "filenameGreyscale": "similarweb_com.grey.png",
+      "url": "https://similarweb.com/images/touch-icons/similarweb-152x152.png",
+      "updated": "2019-02-04T14:29:02.136Z"
+    },
+    "xnxx.com": {
+      "filename": "xnxx_com.png",
+      "filenameGreyscale": "xnxx_com.grey.png",
+      "url": "https://www.xnxx.com/android-chrome-512x512.png",
+      "updated": "2019-02-04T14:29:08.898Z"
     }
   },
   "match": {
