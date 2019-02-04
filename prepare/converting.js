@@ -5,6 +5,7 @@ const streamToBuffer = require("stream-to-buffer");
 const Jimp = require("jimp");
 const imageSize = require("image-size");
 const arrayBufferToBuffer = require("arraybuffer-to-buffer");
+const { getDataFetcher } = require("./fetch.js");
 
 const SIZE = 256;
 
@@ -20,6 +21,17 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
                     mime: "image/png"
                 })
             )
+            .catch(err => {
+                console.error(`Failed processing ICO: ${fetchedIconInfo.url}`);
+                console.log(`Attempting to use Google for ICO conversion: ${fetchedIconInfo.domain}`);
+                return convertICOToPNGUsingGoogle(fetchedIconInfo.domain)
+                    .then(({ buffer, size }) => Object.assign({}, fetchedIconInfo, {
+                        data: buffer,
+                        size: size.width,
+                        ext: "png",
+                        mime: "image/png"
+                    }));
+            })
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
     } else if (ext === "svg") {
         const svgData = data.toString("utf8");
@@ -90,6 +102,16 @@ function convertICOToPNG(buff) {
         .then(img => ({
             data: arrayBufferToBuffer(img.buffer),
             size: img.width
+        }));
+}
+
+function convertICOToPNGUsingGoogle(domain) {
+    // Eg: https://www.google.com/s2/favicons?domain=cdiscount.com
+    const fetch = getDataFetcher();
+    return fetch(`https://www.google.com/s2/favicons?domain=${domain}`)
+        .then(buffer => ({
+            buffer,
+            size: imageSize(buffer)
         }));
 }
 

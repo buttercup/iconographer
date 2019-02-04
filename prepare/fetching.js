@@ -48,9 +48,8 @@ function getBaseURL(url) {
  * @param {String} url The page URL
  * @returns {Promise.<ProcessedIcon|null>} A promise that resolves with icon information, or null
  */
-function getIcon(url) {
-    return resolvePageURL(url)
-        .then(resolvedURL => getIcons(resolvedURL))
+function getIcon(domain) {
+    return getIcons(domain)
         .then(icons => {
             // select largest icon (first)
             const [icon] = icons;
@@ -61,8 +60,13 @@ function getIcon(url) {
         });
 }
 
-function getIcons(url) {
-    return getPageSource(url)
+function getIcons(domain) {
+    let url;
+    return resolvePageURL(domain)
+        .then(resolvedURL => {
+            url = resolvedURL;
+        })
+        .then(() => getPageSource(url))
         .then(source => Promise.all([
             getRawLinks(source).filter(link => ICON_REL.test(link.rel || "") && !ICON_REL_BLACKLIST.test(link.rel || "")),
             getRawMeta(source),
@@ -73,14 +77,15 @@ function getIcons(url) {
             ...meta.map(processMetaEl),
             ...favicons.icons.map(processFavicon)
         ])
-        .then(icons => icons.map(icon => Object.assign(icon, {
-            url: processIconHref(url, icon.url)
-        })))
         .then(icons => [
             ...icons,
             { url: `${getBaseURL(url)}/favicon.ico` },
             { url: `${getBaseURL(url)}/apple-touch-icon.png` }
         ])
+        .then(icons => icons.map(icon => Object.assign(icon, {
+            url: processIconHref(url, icon.url),
+            domain
+        })))
         .then(icons => Promise.all(icons.map(icon => {
             return fetchIconData(icon.url)
                 .then(buff => {
