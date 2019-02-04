@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v1.1.1
+_2019-02-04_
+
+ * More icons
+
 ## v1.1.0
 _2019-02-03_
 
