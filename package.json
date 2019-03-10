@@ -6,11 +6,12 @@
   "files": [
     "resources/**/*",
     "source/**/*",
+    "dist/**/*",
     "API.md",
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "run-s fetch:missing clean build:webpack",
+    "build": "run-s clean build:webpack",
     "build:webpack": "webpack --mode production",
     "clean": "rimraf dist",
     "dev": "webpack --mode development --progress --watch",
