@@ -11,10 +11,11 @@ const { getIcon } = require("./fetching.js");
 const { convertFetchedIconToPNG } = require("./converting.js");
 const DOMAINS = require("./domains.json");
 
-const { process: fetchProcess = "all" } = minimist(process.argv.slice(2));
+const { process: fetchProcess = "all", domains: targetDomainsRaw = "" } = minimist(process.argv.slice(2));
 const { fetch: domainsToFetch, match: domainsToMatch, resolve: domainResolution } = DOMAINS;
 const OUTPUT = path.resolve(__dirname, "../resources");
 const IMAGES = path.join(OUTPUT, "images");
+const targetDomains = targetDomainsRaw.split(",").filter(domain => domain.length > 0);
 
 console.log(`Will fetch: ${fetchProcess}`);
 
@@ -24,12 +25,26 @@ if (fetchProcess === "all") {
     mkdir(OUTPUT);
     mkdir(IMAGES);
 }
-const manifest = fetchProcess === "missing"
-    ? require(path.join(OUTPUT, "index.json"))
-    : {
-        domains: {},
-        match: domainsToMatch
-      };
+let manifest;
+switch (fetchProcess) {
+    case "specific":
+        manifest = require(path.join(OUTPUT, "index.json"));
+        targetDomains.forEach(targetDomain => {
+            delete manifest.domains[targetDomain];
+        });
+        break;
+    case "missing":
+        manifest = require(path.join(OUTPUT, "index.json"));
+        break;
+    case "all":
+        /* falls-through */
+    default:
+        manifest = {
+            domains: {},
+            match: domainsToMatch
+        };
+        break;
+}
 const existingDomains = Object.keys(manifest.domains);
 console.log("Fetching icons...");
 
@@ -82,6 +97,25 @@ pAll(actions, { concurrency: 4 })
     ], { shell: true }))
     .then(() => new Promise((resolve, reject) => {
         fs.writeFile(path.join(OUTPUT, "index.json"), JSON.stringify(manifest, undefined, 2), err => {
+            if (err) {
+                return reject(err);
+            }
+            resolve();
+        });
+    }))
+    .then(() => new Promise((resolve, reject) => {
+        const allDomains = Object.keys(manifest.domains);
+        let bundleContent = "module.exports = {\n";
+        allDomains.forEach((domain, index) => {
+            const isLast = index === allDomains.length - 1;
+            bundleContent += `\t"${domain}": require("${path.join(IMAGES, manifest.domains[domain].filename)}")`;
+            if (!isLast) {
+                bundleContent += ",";
+            }
+            bundleContent += "\n";
+        });
+        bundleContent += "};\n";
+        fs.writeFile(path.join(OUTPUT, "index.js"), bundleContent, err => {
             if (err) {
                 return reject(err);
             }

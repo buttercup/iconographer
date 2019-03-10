@@ -82,6 +82,7 @@ function getIcons(domain) {
             { url: `${getBaseURL(url)}/favicon.ico` },
             { url: `${getBaseURL(url)}/apple-touch-icon.png` }
         ])
+        .then(icons => icons.filter(icon => !!icon))
         .then(icons => icons.map(icon => Object.assign(icon, {
             url: processIconHref(url, icon.url),
             domain
@@ -105,7 +106,7 @@ function getIcons(domain) {
                 });
         })))
         .then(icons => icons.filter(icon => !!icon.data && icon.square))
-        .then(icons => icons.sort((a, b) => b.originalSize - a.originalSize));
+        .then(icons => sortIcons(icons));
 }
 
 function getRawLinks(source) {
@@ -176,6 +177,9 @@ function processLinkEl(linkEl) {
 }
 
 function processMetaEl(metaEl) {
+    if (!metaEl.content) {
+        return null;
+    }
     let size = -1;
     const match = /(\d+x\d+)/.exec(metaEl.content);
     if (match) {
@@ -207,6 +211,17 @@ function resolvePageURL(url) {
                     throw new Error(`Failed resolving page for URL: ${wip}`);
                 });
         });
+}
+
+function sortIcons(icons) {
+    return icons.sort((iconA, iconB) => {
+        if (iconA.originalExt === "svg" && iconB.originalExt !== "svg") {
+            return 1;
+        } else if (iconB.originalExt === "svg" && iconA.originalExt !== "svg") {
+            return -1;
+        }
+        return iconB.originalSize - iconA.originalSize;
+    });
 }
 
 module.exports = {

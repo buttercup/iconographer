@@ -18,6 +18,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
                     data,
                     size,
                     ext: "png",
+                    originalExt: "ico",
                     mime: "image/png"
                 })
             )
@@ -29,6 +30,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
                         data: buffer,
                         size: size.width,
                         ext: "png",
+                        originalExt: "ico",
                         mime: "image/png"
                     }));
             })
@@ -41,6 +43,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
                     data: buff,
                     size: SIZE,
                     ext: "png",
+                    originalExt: "svg",
                     mime: "image/png"
                 })
             )
@@ -59,6 +62,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
             .then(buff => Object.assign({}, fetchedIconInfo, {
                 data: buff,
                 ext: "png",
+                originalExt: "gif",
                 mime: "image/png"
             }))
             .then(fetchedIcon => convertFetchedIconToPNG(fetchedIcon));
@@ -69,6 +73,7 @@ function convertFetchedIconToPNG(fetchedIconInfo) {
         size: SIZE,
         originalSize,
         originalData: data,
+        originalExt: fetchedIconInfo.originalExt || ext.toLowerCase(),
         ext: "png",
         mime: "image/png",
         square: width === height
