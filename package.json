@@ -1,6 +1,6 @@
 {
   "name": "@buttercup/iconographer",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Icon queuing, fetching and caching library",
   "main": "source/index.js",
   "files": [
