@@ -1,5 +1,10 @@
 # Iconographer Release Changelog
 
+## v1.2.0
+_2019-03-13_
+
+ * Web version
+
 ## v1.1.1
 _2019-02-04_
 
