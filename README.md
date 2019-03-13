@@ -23,6 +23,16 @@ The returned file will always be a PNG. You can get greyscale icons by using the
 
 Check out the [API documentation](API.md) for more information on the other available methods.
 
+### Web
+
+Bundled is also a web version, which can be imported like so:
+
+```javascript
+import { getIconFilename } from "@buttercup/iconographer/web/iconographer.js";
+
+// ...
+```
+
 ## Development
 
 You can build the full set of icons by running `npm run build`. This will delete all icon files and request them again, one by one. They're committed to the repository.

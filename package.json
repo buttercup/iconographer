@@ -6,7 +6,7 @@
   "files": [
     "resources/**/*",
     "source/**/*",
-    "dist/**/*",
+    "web/**/*",
     "API.md",
     "CHANGELOG.md"
   ],

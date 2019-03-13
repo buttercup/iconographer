@@ -2,7 +2,7 @@ const path = require("path");
 const { DefinePlugin } = require("webpack");
 const CopyPlugin = require("copy-webpack-plugin");
 
-const DIST = path.resolve(__dirname, "./dist");
+const WEB = path.resolve(__dirname, "./web");
 
 module.exports = {
     entry: path.resolve(__dirname, "./source/index.js"),
@@ -13,7 +13,7 @@ module.exports = {
 
     output: {
         filename: "iconographer.js",
-        path: DIST,
+        path: WEB,
         libraryTarget: "commonjs2"
     },
 
@@ -22,7 +22,7 @@ module.exports = {
             WP_ENV: true
         }),
         new CopyPlugin([
-            { from: "resources/images/*", to: path.join(DIST, "images"), flatten: true }
+            { from: "resources/images/*", to: path.join(WEB, "images"), flatten: true }
         ])
     ]
 };
