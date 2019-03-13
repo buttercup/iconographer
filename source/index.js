@@ -2,6 +2,8 @@ const path = require("path");
 const fs = require("fs");
 const { encode: encodeDataURI } = require("strong-data-uri");
 
+const BUNDLE = typeof WP_ENV === "boolean" && WP_ENV === true;
+
 /**
  * @module Iconographer
  */
@@ -40,6 +42,9 @@ function findMatchingDomain(domain, domains, lookup) {
  * @memberof module:Iconographer
  */
 function getIconDataURI(domain, opts) {
+    if (BUNDLE) {
+        return Promise.reject(new Error("Cannot process data URI in bundle-mode"));
+    }
     const readIconProcess = new Promise((resolve, reject) => {
         const iconFilename = getIconFilename(domain, opts);
         fs.readFile(iconFilename, (err, buff) => {
@@ -70,16 +75,14 @@ function getIconDetails(domain, { greyscale = false } = {}) {
     const { domains, match } = require("../resources/index.json");
     const domainKey = domain ? findMatchingDomain(domain, Object.keys(domains), match) : domain;
     let filename,
-        isDefault = false;
-    if (domainKey && domains[domainKey]) {
+        isDefault = !(domainKey && domains[domainKey]);
+    if (!isDefault) {
         const { filename: imageFilename, filenameGreyscale: imageFilenameGrey } = domains[domainKey];
         filename = greyscale ? imageFilenameGrey : imageFilename;
-        filename = path.resolve(__dirname, "../resources/images/", filename);
     } else {
-        isDefault = true;
         filename = greyscale ? "default.grey.png" : "default.png";
-        filename = path.resolve(__dirname, "../resources/images/", filename);
     }
+    filename = BUNDLE ? path.join("dist/images", filename) : path.resolve(__dirname, "../resources/images/", filename);
     return {
         filename,
         isDefault
@@ -103,6 +106,9 @@ function getIconFilename(domain, opts) {
  * @memberof module:Iconographer
  */
 function getResourcesPath() {
+    if (BUNDLE) {
+        return null;
+    }
     return path.resolve(__dirname, "../resources");
 }
 

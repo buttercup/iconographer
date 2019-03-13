@@ -150,12 +150,6 @@
       "url": "https://keepass.info/favicon.ico",
       "updated": "2019-02-03T15:40:54.167Z"
     },
-    "instagram.com": {
-      "filename": "instagram_com.png",
-      "filenameGreyscale": "instagram_com.grey.png",
-      "url": "https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png",
-      "updated": "2019-02-03T15:40:55.623Z"
-    },
     "imdb.com": {
       "filename": "imdb_com.png",
       "filenameGreyscale": "imdb_com.grey.png",
@@ -1079,6 +1073,18 @@
       "filenameGreyscale": "wego_com.grey.png",
       "url": "https://www.wego.com/favicon.ico",
       "updated": "2019-02-04T14:52:15.846Z"
+    },
+    "opencollective.com": {
+      "filename": "opencollective_com.png",
+      "filenameGreyscale": "opencollective_com.grey.png",
+      "url": "https://opencollective.com/favicon.ico",
+      "updated": "2019-03-10T16:49:29.661Z"
+    },
+    "instagram.com": {
+      "filename": "instagram_com.png",
+      "filenameGreyscale": "instagram_com.grey.png",
+      "url": "https://instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png",
+      "updated": "2019-03-10T17:16:45.622Z"
     }
   },
   "match": {

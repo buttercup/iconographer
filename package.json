@@ -6,15 +6,22 @@
   "files": [
     "resources/**/*",
     "source/**/*",
+    "web/**/*",
     "API.md",
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "node ./prepare/index.js",
-    "build:missing": "node ./prepare/index.js --process=missing",
+    "build": "run-s clean build:webpack",
+    "build:webpack": "webpack --mode production",
+    "clean": "rimraf dist",
+    "dev": "run-s clean dev:webpack",
+    "dev:webpack": "webpack --mode development --progress --watch",
     "docs": "jsdoc2md source/**/*.js > API.md",
+    "fetch": "node ./prepare/index.js",
+    "fetch:missing": "node ./prepare/index.js --process=missing",
     "format": "prettier --write '{source,test}/**/*.js'",
     "precommit": "lint-staged",
+    "prepublishOnly": "run-s build",
     "test": "run-s test:unit test:format",
     "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:unit": "mocha -r test/index.js 'test/**/*.spec.js'",
@@ -51,6 +58,7 @@
     "arraybuffer-to-buffer": "0.0.5",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "copy-webpack-plugin": "^5.0.1",
     "execa": "^1.0.0",
     "file-type": "^7.5.0",
     "get-website-favicon": "0.0.7",
@@ -74,6 +82,8 @@
     "sinon": "^4.2.2",
     "stream-to-buffer": "^0.1.0",
     "svg2png": "^4.1.1",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
