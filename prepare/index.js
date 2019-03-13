@@ -103,25 +103,6 @@ pAll(actions, { concurrency: 4 })
             resolve();
         });
     }))
-    .then(() => new Promise((resolve, reject) => {
-        const allDomains = Object.keys(manifest.domains);
-        let bundleContent = "module.exports = {\n";
-        allDomains.forEach((domain, index) => {
-            const isLast = index === allDomains.length - 1;
-            bundleContent += `\t"${domain}": require("${path.join(IMAGES, manifest.domains[domain].filename)}")`;
-            if (!isLast) {
-                bundleContent += ",";
-            }
-            bundleContent += "\n";
-        });
-        bundleContent += "};\n";
-        fs.writeFile(path.join(OUTPUT, "index.js"), bundleContent, err => {
-            if (err) {
-                return reject(err);
-            }
-            resolve();
-        });
-    }))
     .then(() => {
         if (failures.length > 0) {
             console.error(`Failed to build ${failures.length} domains:\n\t${failures.join(", ")}`);
