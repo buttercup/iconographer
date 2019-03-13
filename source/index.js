@@ -79,18 +79,10 @@ function getIconDetails(domain, { greyscale = false } = {}) {
     if (!isDefault) {
         const { filename: imageFilename, filenameGreyscale: imageFilenameGrey } = domains[domainKey];
         filename = greyscale ? imageFilenameGrey : imageFilename;
-        filename = path.resolve(__dirname, "../resources/images/", filename);
     } else {
         filename = greyscale ? "default.grey.png" : "default.png";
-        filename = path.resolve(__dirname, "../resources/images/", filename);
     }
-    if (BUNDLE) {
-        return {
-            data: isDefault ? require("../resources/index.js")[domainKey] : require("../resources/images/default.png"),
-            filename,
-            isDefault
-        };
-    }
+    filename = BUNDLE ? path.join("dist/images", filename) : path.resolve(__dirname, "../resources/images/", filename);
     return {
         filename,
         isDefault
