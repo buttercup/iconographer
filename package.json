@@ -53,8 +53,10 @@
   "homepage": "https://github.com/buttercup/iconographer#readme",
   "dependencies": {},
   "devDependencies": {
+    "@buttercup/channel-queue": "^0.5.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "debounce": "^1.2.0",
     "husky": "^4.2.1",
     "jsdoc-to-markdown": "~4.0.1",
     "lint-staged": "^10.0.2",
@@ -67,6 +69,7 @@
     "prettier-check": "^2.0.0",
     "rimraf": "^3.0.0",
     "sinon": "^8.1.1",
+    "url-join": "^4.0.1",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
